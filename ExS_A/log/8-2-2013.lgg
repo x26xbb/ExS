@@ -1,0 +1,17 @@
+Fri Feb 08 10:20:25 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Kevin',   PAPE= 'Villalobos', SAPE= 'Alfaro', GENERO= '1', TEL= '24514898', CEL = '83086170',EMAIL= 'kevin.villalobos.a@gmail.com', CID= '2', SEDE= '0', BECA= '11'  WHERE ID = '206910659'
+Fri Feb 08 10:20:29 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Fri Feb 08 10:20:40 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('206910659' , 'MAT-I13-09',  '2013-02-08' , 'Activo', '0.000000', '89678', '0' )
+Fri Feb 08 10:20:43 CST 2013		535-5.7.1 Username and Password not accepted. Learn more at
+535 5.7.1 http://support.google.com/mail/bin/answer.py?answer=14257 f3sm23116009ani.3 - gsmtp
+
+Fri Feb 08 10:20:43 CST 2013		Error al enviar el correo - tem/206910659_Mate General.pdf - kevin.villalobos.a@gmail.com
+Fri Feb 08 10:30:51 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Kevin',   PAPE= 'Villalobos', SAPE= 'Alfaro', GENERO= '1', TEL= '24514898', CEL = '83086170',EMAIL= 'kevin.villalobos.a@gmail.com', CID= '2', SEDE= '0', BECA= '11'  WHERE ID = '206910659'
+Fri Feb 08 10:30:54 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'max084'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Fri Feb 08 10:31:02 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('206910659' , 'max084-I13-01',  '2013-02-08' , 'Activo', '0.000000', '78', '0' )
+Fri Feb 08 10:31:07 CST 2013		Unknown SMTP host: smtp.una.cr
+Fri Feb 08 10:31:07 CST 2013		Error al enviar el correo - tem/206910659_mat cont.pdf - kevin.villalobos.a@gmail.com
+Fri Feb 08 10:43:55 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Kevin',   PAPE= 'Villalobos', SAPE= 'Alfaro', GENERO= '1', TEL= '24514898', CEL = '83086170',EMAIL= 'kevin.villalobos.a@gmail.com', CID= '2', SEDE= '0', BECA= '11'  WHERE ID = '206910659'
+Fri Feb 08 10:43:58 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'max084'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Fri Feb 08 10:44:00 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MATO'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Fri Feb 08 10:44:03 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Fri Feb 08 10:44:11 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('206910659' , 'MAT-I13-08',  '2013-02-08' , 'Activo', '0.000000', '8876', '0' )

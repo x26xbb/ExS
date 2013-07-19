@@ -1,0 +1,32 @@
+Tue Jan 15 11:28:30 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue Jan 15 11:28:30 CST 2013		com.mysql.jdbc.Driver exsdb root localhost 3306
+Tue Jan 15 11:37:31 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue Jan 15 11:37:31 CST 2013		com.mysql.jdbc.Driver exsdb root localhost 3306
+Tue Jan 15 14:17:03 CST 2013		DELETE FROM TUTORIA WHERE COD = 'MATO'
+Tue Jan 15 15:30:17 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('   ' , '    ')
+Tue Jan 15 15:30:23 CST 2013		DELETE FROM TUTORIA WHERE COD = '   '
+Tue Jan 15 17:30:38 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('206910659' , 'Kevin')
+Tue Jan 15 17:38:13 CST 2013		DELETE FROM TUTORIA WHERE COD = '206910659'
+Tue Jan 15 17:41:00 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('206910659' , 'Kevin', 'Villalobos', 'Alfaro', '1', '83237407', 'kevin.villalobos.a@gmail.com')
+Tue Jan 15 17:41:40 CST 2013		UPDATE TUTOR SET NOM = 'Kevin',   PAPE= 'Villalobos', SAPE= 'Alfaro', GENERO= '1', TEL= '83237407', EMAIL= 'soylagalletitadulcedelsabor@gmail.com'  WHERE ID = '206910659'
+Tue Jan 15 17:41:40 CST 2013		Data truncation: Data too long for column 'EMAIL' at row 1
+Tue Jan 15 17:52:42 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAT' , 'Mate General')
+Tue Jan 15 17:53:34 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('206910659' , 'Kevin', 'Villalobos', 'A', '1', '83237407', 'xjj@ff.com')
+Tue Jan 15 17:54:03 CST 2013		UPDATE TUTOR SET NOM = 'Kevin',   PAPE= 'Villalobos', SAPE= 'Alfaro', GENERO= '1', TEL= '83237407', EMAIL= 'kevin.villalobos.a@gmail.com'  WHERE ID = '206910659'
+Tue Jan 15 17:54:26 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('2222' , 'dddsd', 'ssa', 'ssadsa', '2', '222', 'sss@kksa.com')
+Tue Jan 15 17:54:36 CST 2013		DELETE FROM TUTOR WHERE ID = '2222'
+Tue Jan 15 17:56:26 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('43' , 'dsf', 'dfs', 'ds', '1', '33', 'das@dsa.ocm')
+Tue Jan 15 17:56:29 CST 2013		DELETE FROM TUTOR WHERE ID = '43'
+Tue Jan 15 18:08:13 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MATO' , 'MATE OTRA')
+Tue Jan 15 18:23:37 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MATE' , 'OTRA TODAVIA')
+Tue Jan 15 18:39:57 CST 2013		Unknown column 'COD' in 'where clause'
+Tue Jan 15 18:39:57 CST 2013		Unknown column 'COD' in 'where clause'
+Tue Jan 15 18:39:57 CST 2013		Unknown column 'COD' in 'where clause'
+Tue Jan 15 22:30:01 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue Jan 15 22:30:01 CST 2013		com.mysql.jdbc.Driver exsdb root localhost 3306

@@ -1,0 +1,26 @@
+Thu Jan 31 10:25:37 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Mariana',   PAPE= 'Córdoba', SAPE= 'Vargas', GENERO= '2', TEL= '24514898', CEL = '87745497',EMAIL= 'marianna2906@gmail.com', CID= '2', SEDE= '0', BECA= '8'  WHERE ID = '207010764'
+Thu Jan 31 10:25:40 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MATO'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 10:25:50 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 10:26:56 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('207010764' , 'MAT-I13-06',  '1359649616911' , 'Activo', '0.000000', '40123', '1' )
+Thu Jan 31 10:26:56 CST 2013		Data truncation: Incorrect date value: '1359649616911' for column 'FECHA' at row 1
+Thu Jan 31 10:34:04 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Sheldon',   PAPE= 'Cooper', SAPE= 'R', GENERO= '1', TEL= '0', CEL = '0',EMAIL= 'x26x_bb@hotmail.com', CID= '2', SEDE= '0', BECA= '0'  WHERE ID = '0'
+Thu Jan 31 10:34:06 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MATO'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 10:34:14 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('0' , 'MATO-I13-01',  '1359650054783' , 'Activo', '0.000000', '9908', '0' )
+Thu Jan 31 10:34:14 CST 2013		Data truncation: Incorrect date value: '1359650054783' for column 'FECHA' at row 1
+Thu Jan 31 12:40:19 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Sheldon',   PAPE= 'Cooper', SAPE= 'R', GENERO= '1', TEL= '0', CEL = '0',EMAIL= 'x26x_bb@hotmail.com', CID= '2', SEDE= '0', BECA= '0'  WHERE ID = '0'
+Thu Jan 31 12:40:22 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 12:40:35 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('0' , 'MAT-I13-03',  '1359657635415' , 'Activo', '0.000000', '987', '0' )
+Thu Jan 31 12:40:35 CST 2013		Data truncation: Incorrect date value: '1359657635415' for column 'FECHA' at row 1
+Thu Jan 31 12:50:24 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Sheldon',   PAPE= 'Cooper', SAPE= 'R', GENERO= '1', TEL= '0', CEL = '0',EMAIL= 'x26x_bb@hotmail.com', CID= '2', SEDE= '0', BECA= '0'  WHERE ID = '0'
+Thu Jan 31 12:50:28 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 12:50:34 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('0' , 'MAT-I13-02',  '2013-01-31' , 'Activo', '0.000000', '987', '0' )
+Thu Jan 31 12:50:34 CST 2013		Incorrect integer value: 'Activo' for column 'ESTADO' at row 1
+Thu Jan 31 12:53:18 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Sheldon',   PAPE= 'Cooper', SAPE= 'R', GENERO= '1', TEL= '0', CEL = '0',EMAIL= 'x26x_bb@hotmail.com', CID= '2', SEDE= '0', BECA= '0'  WHERE ID = '0'
+Thu Jan 31 12:53:20 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 12:53:28 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('0' , 'MAT-I13-02',  '2013-01-31' , 'Activo', '0.000000', '87654', '0' )
+Thu Jan 31 15:53:24 CST 2013		UPDATE ESTUDIANTE SET NOM = 'Kevin',   PAPE= 'Villalobos', SAPE= 'Alfaro', GENERO= '1', TEL= '24514898', CEL = '83086170',EMAIL= 'kevin.villalobos.a@gmail.com', CID= '2', SEDE= '0', BECA= '11'  WHERE ID = '206910659'
+Thu Jan 31 15:53:28 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 15:53:31 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf'  AND CICLO= '0' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Thu Jan 31 15:53:45 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('206910659' , 'Inf-I13-02',  '2013-01-31' , 'Activo', '0.000000', '9887', '0' )
+Thu Jan 31 15:53:47 CST 2013		Unknown SMTP host: smtp.gmail.com
+Thu Jan 31 15:53:47 CST 2013		Error al enviar el correo - tem/206910659_Progra I.pdf - kevin.villalobos.a@gmail.com

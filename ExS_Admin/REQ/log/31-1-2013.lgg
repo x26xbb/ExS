@@ -1,0 +1,74 @@
+Thu Jan 31 12:18:02 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf' 
+Thu Jan 31 12:29:38 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf' 
+Thu Jan 31 12:37:32 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 12:37:37 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 12:37:42 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf' 
+Thu Jan 31 12:37:47 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MATO' 
+Thu Jan 31 12:53:39 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 12:53:43 CST 2013		Id erronea null
+Thu Jan 31 12:53:43 CST 2013		No se encontró el tutor con el id null
+Thu Jan 31 12:53:52 CST 2013		Id erronea null
+Thu Jan 31 12:53:52 CST 2013		No se encontró el tutor con el id null
+Thu Jan 31 13:02:10 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 13:02:14 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf' 
+Thu Jan 31 13:02:18 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 13:02:22 CST 2013		Id erronea MAT-I13-02
+Thu Jan 31 13:02:22 CST 2013		No se encontró el estudiante con el id MAT-I13-02
+Thu Jan 31 13:02:24 CST 2013		Id erronea MAT-I13-02
+Thu Jan 31 13:02:24 CST 2013		No se encontró el estudiante con el id MAT-I13-02
+Thu Jan 31 13:02:26 CST 2013		Id erronea MAT-I13-02
+Thu Jan 31 13:02:26 CST 2013		No se encontró el estudiante con el id MAT-I13-02
+Thu Jan 31 13:02:26 CST 2013		Id erronea MAT-I13-02
+Thu Jan 31 13:02:26 CST 2013		No se encontró el estudiante con el id MAT-I13-02
+Thu Jan 31 13:02:26 CST 2013		Id erronea MAT-I13-02
+Thu Jan 31 13:02:26 CST 2013		No se encontró el estudiante con el id MAT-I13-02
+Thu Jan 31 13:05:26 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 13:06:38 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 15:45:06 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 15:47:41 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 15:49:12 CST 2013		DELETE FROM ESTUDIANTE WHERE ID = '0'
+Thu Jan 31 15:49:12 CST 2013		Cannot delete or update a parent row: a foreign key constraint fails (`exsdb`.`matricula`, CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`EID`) REFERENCES `estudiante` (`ID`))
+Thu Jan 31 15:49:12 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 15:49:28 CST 2013		No se encontró el estudiante con el id 21
+Thu Jan 31 15:49:28 CST 2013		No se encontró el estudiante con el id 21
+Thu Jan 31 15:49:28 CST 2013		No se encontró el estudiante con el id 2132
+Thu Jan 31 15:49:28 CST 2013		No se encontró el estudiante con el id 213213
+Thu Jan 31 15:49:28 CST 2013		No se encontró el estudiante con el id 213213
+Thu Jan 31 15:49:28 CST 2013		No se encontró el estudiante con el id 213213
+Thu Jan 31 15:49:49 CST 2013		INSERT INTO ESTUDIANTE  (ID , NOM, PAPE, SAPE, GENERO, TEL, CEL, EMAIL, CID, SEDE, BECA) VALUES ('213213' , 'sadsa', 'sadsa', 'dds', '1','3223' ,'231', 'xkeke@dsa.com', '2', '0', '2')
+Thu Jan 31 15:49:49 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 15:49:56 CST 2013		DELETE FROM ESTUDIANTE WHERE ID = '213213'
+Thu Jan 31 15:49:56 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 16:01:01 CST 2013		UPDATE GRUPO SET TID = '201720149',   TCOD= 'MAT', LUGAR = 'Aula 506', ANIO= '2013', CICLO= '0', HORARIO= 'V8', ESTADO= 'Abierto'  WHERE NUM = 'MAT-I13-02'
+Thu Jan 31 16:01:01 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAT' 
+Thu Jan 31 16:28:28 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf' 
+Thu Jan 31 16:28:45 CST 2013		UPDATE GRUPO SET TID = '206910659',   TCOD= 'Inf', LUGAR = 'Aula 5 Exito', ANIO= '2013', CICLO= '0', HORARIO= 'V11', ESTADO= 'Abierto'  WHERE NUM = 'Inf-I13-02'
+Thu Jan 31 16:28:45 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf' 
+Thu Jan 31 17:38:00 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'Inf' 
+Thu Jan 31 17:38:03 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:38:29 CST 2013		INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('CNR-I13-01' , '206910659', 'CNR','Lab 21', '2013', '0', 'L7', 'Abierto')
+Thu Jan 31 17:38:29 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:38:55 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('206910659' , 'CNR-I13-01',  '2013-01-31' , 'Activo', '0.000000', '312', '4' )
+Thu Jan 31 17:38:55 CST 2013		tem\206910659_Educacon Es.pdf (The system cannot find the path specified)
+Thu Jan 31 17:38:55 CST 2013		Error al crear el archivo tem/206910659_Educacon Es.pdf
+Thu Jan 31 17:38:55 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:44:02 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:45:59 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:47:40 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:48:19 CST 2013		UPDATE MATRICULA SET FECHA = '1359612000000', ESTADO = 'Inactivo', NOTA = '0.000000' , NRC = '31200', VECES = '0'  WHERE EID = '206910659'  AND GNUM = 'CNR-I13-01' 
+Thu Jan 31 17:48:19 CST 2013		Data truncation: Incorrect date value: '1359612000000' for column 'FECHA' at row 1
+Thu Jan 31 17:48:19 CST 2013		tem\206910659_Educacon Es.pdf (The system cannot find the path specified)
+Thu Jan 31 17:48:19 CST 2013		Error al crear el archivo tem/206910659_Educacon Es.pdf
+Thu Jan 31 17:48:19 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:48:36 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:50:25 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:50:37 CST 2013		UPDATE MATRICULA SET FECHA = '1359612000000', ESTADO = 'Suspendido', NOTA = '0.000000' , NRC = '312', VECES = '0'  WHERE EID = '206910659'  AND GNUM = 'CNR-I13-01' 
+Thu Jan 31 17:50:37 CST 2013		Data truncation: Incorrect date value: '1359612000000' for column 'FECHA' at row 1
+Thu Jan 31 17:50:38 CST 2013		C:\Users\X26X\Desktop\ExS\ExS_Admin\dist\img\una_logo.png (The system cannot find the file specified)
+Thu Jan 31 17:50:38 CST 2013		Error al crear el archivo tem/206910659_Educacon Es.pdf
+Thu Jan 31 17:50:38 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:53:48 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
+Thu Jan 31 17:54:02 CST 2013		UPDATE MATRICULA SET FECHA = '2013-01-31', ESTADO = 'Inactivo', NOTA = '0.000000' , NRC = '31200', VECES = '0'  WHERE EID = '206910659'  AND GNUM = 'CNR-I13-01' 
+Thu Jan 31 17:54:02 CST 2013		C:\Users\X26X\Desktop\ExS\ExS_Admin\dist\img\una_logo.png (The system cannot find the file specified)
+Thu Jan 31 17:54:02 CST 2013		Error al crear el archivo tem/206910659_Educacon Es.pdf
+Thu Jan 31 17:54:02 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'CNR' 
