@@ -17,17 +17,21 @@ public class Matricula_Var {
             + "Programa Éxito Académico\n"
             + "\t\t--ExS-- ";
     //Contrato
-    public static String RESPONSABILIDADES = " Tener el apoyo tutorial durante todo un ciclo lectivo."
-            + "\n\n Asistir a tutoría grupal como individual."
-            + "\n\n Realizar un diagnóstico psicopedagógico sobre: técnicas de estudio, estilos de aprendizaje, hábitos de estudio, entre otros."
-            + "\n\n Recibir retroalimentación referente al diagnóstico."
-            + "\n\n Participar de talleres en relación con temas psicoeducativos.\n";
-    public static String COMPROMISOS = " Llenar la boleta de inscripción."
-            + "\n\n Responsabilizarse de asistir puntual y frecuentemente a las tutorías."
-            + "\n\n Estudiar previo a la tutoría."
-            + "\n\n Mantener comunicación constante con los(las) tutores(as) y justificar las ausencias."
-            + "\n\n Estar dispuesto(a) a ceder su espacio en la tutoría si se ausenta de las mismas más de DOS veces sin justificar."
-            + "\n\n Firmar la lista de asistencia todas las semanas.\n";
+    public static String RESPONSABILIDADES = 
+            "Tener el apoyo de una tutoría en el curso que lo requiere durante todo ciclo lectivo; que consiste en un espacio de 2 horas \n"
+            + " semanales para la revisión y práctica de conceptos claves del curso."
+            + "\n\n Recibir seguimiento académico y  personal por parte del equipo de Orientación del Programa Éxito Académico."
+            + "\n\n Participar de talleres en relación con temas psicoeducativos. "
+            //+ "\n\n Participar de talleres en relación con temas psicoeducativos.\n"
+            ;
+    public static String COMPROMISOS = 
+            " Estar matriculado actualmente en el curso que requiere el apoyo de la tutoría. "
+            + "\n\n Asistir a la hora de consulta del profesor del curso. "
+            + "\n\n Estudiar mínimo 5 horas de manera independiente previo a la tutoría."
+            + "\n\n Responsabilizarse de  asistir a todas las tutorías y ser  puntual."
+            + "\n\n Realizar semanalmente las tareas formativas asignadas en las tutorías."
+            + "\n\n Estar dispuesto(a) a ceder su espacio en la tutoría si se ausenta de las mismas más de dos veces sin justificar."
+             + "\n\n Firmar la lista asistencia todas las semanas.";
     public static String RESPONSABILIDADES_F = " Tener el apoyo tutorial durante todo \nun ciclo lectivo."
             + "\n\n Asistir a tutoría grupal como individual."
             + "\n\n Realizar un diagnóstico psicopedagógico \nsobre: técnicas de estudio, estilos de \naprendizaje, hábitos de estudio, \nentre otros."
