@@ -1,0 +1,29 @@
+Thu Jul 18 11:07:12 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('PRUEBA1' , 'Curso Prueba')
+Thu Jul 18 11:08:45 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'PRUEBA1' 
+Thu Jul 18 11:09:22 CST 2013		No se encontró el tutor con el id 4
+Thu Jul 18 11:09:22 CST 2013		No se encontró el tutor con el id 40
+Thu Jul 18 11:09:23 CST 2013		No se encontró el tutor con el id 402
+Thu Jul 18 11:09:23 CST 2013		No se encontró el tutor con el id 4021
+Thu Jul 18 11:09:23 CST 2013		No se encontró el tutor con el id 40213
+Thu Jul 18 11:09:23 CST 2013		No se encontró el tutor con el id 402130
+Thu Jul 18 11:09:24 CST 2013		No se encontró el tutor con el id 4021306
+Thu Jul 18 11:09:24 CST 2013		No se encontró el tutor con el id 40213066
+Thu Jul 18 11:09:24 CST 2013		No se encontró el tutor con el id 402130668
+Thu Jul 18 11:09:54 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('402130668' , 'Tutor prueba', 'prueba', 'prueba', '1', '86830066', 'minorandres@gmail.com')
+Thu Jul 18 11:10:27 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'PRUEBA1' 
+Thu Jul 18 11:11:22 CST 2013		INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('PRUEBA1-II13-01' , '402130668', 'PRUEBA1','Aula prueba', '2013', '1', 'L8', 'Abierto')
+Thu Jul 18 11:11:22 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'PRUEBA1' 
+Thu Jul 18 11:12:36 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('402130668' , 'PRUEBA1-II13-01',  '2013-07-18' , 'Activo', '0.000000', '123', '1' )
+Thu Jul 18 11:12:41 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'PRUEBA1' 
+Thu Jul 18 11:13:04 CST 2013		DELETE FROM GRUPO WHERE NUM = 'PRUEBA1-II13-01'
+Thu Jul 18 11:13:04 CST 2013		Cannot delete or update a parent row: a foreign key constraint fails (`exsdb`.`matricula`, CONSTRAINT `matricula_ibfk_2` FOREIGN KEY (`GNUM`) REFERENCES `grupo` (`NUM`))
+Thu Jul 18 11:13:04 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'PRUEBA1' 
+Thu Jul 18 11:13:26 CST 2013		DELETE FROM GRUPO WHERE NUM = 'PRUEBA1-II13-01'
+Thu Jul 18 11:13:26 CST 2013		Cannot delete or update a parent row: a foreign key constraint fails (`exsdb`.`matricula`, CONSTRAINT `matricula_ibfk_2` FOREIGN KEY (`GNUM`) REFERENCES `grupo` (`NUM`))
+Thu Jul 18 11:13:26 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'PRUEBA1' 
+Thu Jul 18 11:13:35 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAX084' 
+Thu Jul 18 11:16:03 CST 2013		DELETE FROM ESTUDIANTE WHERE ID = '402130668'
+Thu Jul 18 11:16:04 CST 2013		Cannot delete or update a parent row: a foreign key constraint fails (`exsdb`.`matricula`, CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`EID`) REFERENCES `estudiante` (`ID`))
+Thu Jul 18 11:17:32 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAY431' 
+Thu Jul 18 11:18:00 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAY441' 
+Thu Jul 18 11:19:25 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAY441' 

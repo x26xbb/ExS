@@ -1,0 +1,160 @@
+Wed Feb 13 09:36:52 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('1' , 'Enseñanza del Español',  '0')
+Wed Feb 13 09:38:26 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('2' , 'Enseñanza del Francés',  '0')
+Wed Feb 13 09:38:58 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('3' , 'Enseñanza del Inglés',  '0')
+Wed Feb 13 09:40:10 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('4' , 'Bibliotecología y Documentación',  '0')
+Wed Feb 13 09:40:10 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:41:06 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('4' , 'Bibliotecología y Documentación',  '0')
+Wed Feb 13 09:41:06 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:42:28 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('4' , 'Biblotecología y Documentación',  '0')
+Wed Feb 13 09:42:53 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('5' , 'Filosofía',  '0')
+Wed Feb 13 09:44:08 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('6' , 'Gestión de Desarrollo Sostenible con Equidad de Género',  '0')
+Wed Feb 13 09:44:08 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:45:19 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('6' , 'Gestión de Desarrollo Sostenible con Equidad de Género',  '0')
+Wed Feb 13 09:45:19 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:46:51 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('6' , 'Gestión de Desarrollo Sostenible con Equidad de Género',  '0')
+Wed Feb 13 09:46:51 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:49:35 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('6' , 'Gestión de Desarrollo Sostenible con Equidad de Género',  '0')
+Wed Feb 13 09:49:35 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:50:44 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('6' , 'Historia',  '0')
+Wed Feb 13 09:51:51 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('7' , 'Gestión de Desarrollo Sostenible ',  '0')
+Wed Feb 13 09:51:51 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:52:43 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('7' , 'Eseñanza de los Estudios Sociales y Educación Cívica',  '0')
+Wed Feb 13 09:52:43 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:53:18 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('7' , 'Sociología',  '0')
+Wed Feb 13 09:53:56 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('8' , 'Planificación Económica y Promoción Social',  '0')
+Wed Feb 13 09:53:56 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 09:54:33 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('8' , 'Administración',  '0')
+Wed Feb 13 10:05:48 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('9' , 'Gestión Desa. Sost. Equidad',  '0')
+Wed Feb 13 10:06:27 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('10' , 'Ense. Estuidios Soc. y Cívica',  '0')
+Wed Feb 13 10:07:48 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('11' , 'Planificación Econ. Prom. Soc. PPS',  '0')
+Wed Feb 13 10:07:48 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 10:08:14 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('11' , 'Planificación Económica (PPS)',  '0')
+Wed Feb 13 10:08:49 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('12' , 'Educación Comercial',  '0')
+Wed Feb 13 10:09:21 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('13' , 'Administración de Oficinas (Secret.)',  '0')
+Wed Feb 13 10:09:21 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 10:09:48 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('13' , 'Admin. Oficinas (Secretariado)',  '0')
+Wed Feb 13 10:10:19 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('14' , 'Relaciones Internacionales',  '0')
+Wed Feb 13 10:10:37 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('15' , 'Economía',  '0')
+Wed Feb 13 10:10:48 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('16' , 'Psicología',  '0')
+Wed Feb 13 10:11:08 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('17' , 'Enseñanza de las Matemáticas',  '0')
+Wed Feb 13 10:11:24 CST 2013		UPDATE CARRERA SET CNOM = 'Enseñanza de la Matemática', SEDE = '0' WHERE CID = '17'
+Wed Feb 13 10:11:48 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('18' , 'Enseñanza de las Ciencias',  '0')
+Wed Feb 13 10:12:02 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('19' , 'Biología',  '0')
+Wed Feb 13 10:12:27 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('20' , 'Química Industrial',  '0')
+Wed Feb 13 10:12:51 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('21' , 'Ingeniería en Topografía y Catastro',  '0')
+Wed Feb 13 10:12:52 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 10:14:53 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('21' , 'Ing. en Topografia y Catastro',  '0')
+Wed Feb 13 10:16:15 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('22' , 'Ing. en Sistemas de Información',  '0')
+Wed Feb 13 10:16:15 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 10:16:55 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('22' , 'Ing. Sist. de información',  '0')
+Wed Feb 13 10:17:40 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('23' , 'Ciencias Geográficas',  '0')
+Wed Feb 13 10:18:01 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('24' , 'Ingeniería en Agronomía',  '0')
+Wed Feb 13 10:18:48 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('25' , 'Ing. Ciencias Forestales',  '0')
+Wed Feb 13 10:19:28 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('26' , 'Cartografía y Diseño Digital',  '0')
+Wed Feb 13 10:19:54 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('27' , 'Medicina Vetarinaria',  '0')
+Wed Feb 13 10:20:45 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('28' , 'Enseñ. de la Educ. Fisíca',  '0')
+Wed Feb 13 10:22:26 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('29' , 'Pedag. Educación Preescolar',  '0')
+Wed Feb 13 10:23:14 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('30' , 'Pedag. I y II Ciclos de Educ Diver.',  '0')
+Wed Feb 13 10:23:14 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 10:23:50 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('30' , 'Pedag. I y II Ciclos ',  '0')
+Wed Feb 13 10:24:33 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('31' , 'Educ. Especial Integración',  '0')
+Wed Feb 13 10:24:53 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('32' , 'Orientación',  '0')
+Wed Feb 13 10:25:09 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('33' , 'Artes Escénicas ',  '0')
+Wed Feb 13 10:25:41 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('34' , 'Arte y Comunicación Visual',  '0')
+Wed Feb 13 10:26:28 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('35' , 'Enseñ. Arte y Comun. Visual',  '0')
+Wed Feb 13 10:26:50 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('36' , 'Danza',  '0')
+Wed Feb 13 10:29:21 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('37' , 'Musica Interp y Enseñ Dirección',  '0')
+Wed Feb 13 10:29:21 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 10:30:05 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('37' , 'Musi. Interp. Enseñ. Direcc. Coral',  '0')
+Wed Feb 13 10:30:05 CST 2013		Data truncation: Data too long for column 'CNOM' at row 1
+Wed Feb 13 10:31:43 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('37' , 'Música Interpre Ense DC',  '0')
+Wed Feb 13 10:32:25 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('38' , 'Música Ejec Enseñ Clarinete',  '0')
+Wed Feb 13 10:33:18 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('39' , 'Música Ejec Enseñ Flauta',  '0')
+Wed Feb 13 10:34:22 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('40' , 'Música Ejec Enseñ Guitarra',  '0')
+Wed Feb 13 10:35:23 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('41' , 'Música Ejec Enseñ Piano',  '0')
+Wed Feb 13 10:36:26 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('42' , 'Música Ejec Enseñ Percusión',  '0')
+Wed Feb 13 10:36:53 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('43' , 'Música Ejec Enseñ Trompeta',  '0')
+Wed Feb 13 10:38:08 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('44' , 'Música Ejec Enseñ Saxofón',  '0')
+Wed Feb 13 10:40:02 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('45' , 'Música Interpre Ense Canto',  '0')
+Wed Feb 13 10:46:00 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('46' , 'Eseñ. Inglés I y II Ciclos',  '0')
+Wed Feb 13 10:49:21 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('47' , 'Prom. de la Salud Física',  '0')
+Wed Feb 13 10:50:00 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('48' , 'Inglés (Diplomado)',  '0')
+Wed Feb 13 10:50:17 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('49' , 'Lengua Francesa',  '0')
+Wed Feb 13 10:50:54 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('50' , 'Comercio y negocios Internac.',  '0')
+Wed Feb 13 10:51:28 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('51' , 'Teología Virtual',  '0')
+Wed Feb 13 10:52:10 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('52' , 'Literat. y Lingüistica Español',  '0')
+Wed Feb 13 10:52:58 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('53' , 'Ing. Bioprocesos Industriales',  '0')
+Wed Feb 13 10:53:51 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('54' , 'Enseñanza Religión (Virt)',  '0')
+Wed Feb 13 10:55:27 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('55' , 'Diplomado en Acuacultura',  '0')
+Wed Feb 13 10:56:31 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('56' , 'Licenciatura en Género',  '0')
+Wed Feb 13 10:57:15 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('57' , 'Ing. Gestión Ambiental',  '0')
+Wed Feb 13 11:01:11 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('58' , 'Ing. Sistemas de Información',  '1')
+Wed Feb 13 11:01:45 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('59' , 'Química Industrial',  '1')
+Wed Feb 13 11:02:03 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('60' , 'Administración',  '1')
+Wed Feb 13 11:02:37 CST 2013		INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('61' , 'Inglés (Bachillerato)',  '1')
+Wed Feb 13 11:58:30 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAX084' , 'Matemática General')
+Wed Feb 13 12:00:27 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAX085' , 'Cálculo Diferencial e Integral')
+Wed Feb 13 12:01:42 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY230' , 'Matemática para Informática 1')
+Wed Feb 13 12:02:30 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY231' , 'Matemática para Informática 2')
+Wed Feb 13 12:03:12 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY232' , 'Matemática para Informática 3')
+Wed Feb 13 12:04:43 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY436' , 'Cálculo 1 para Química')
+Wed Feb 13 12:05:06 CST 2013		UPDATE TUTORIA SET NOM = 'Matemática para Informática I' WHERE COD = 'MAY230'
+Wed Feb 13 12:05:15 CST 2013		UPDATE TUTORIA SET NOM = 'Matemática para Informática II' WHERE COD = 'MAY231'
+Wed Feb 13 12:05:24 CST 2013		UPDATE TUTORIA SET NOM = 'Matemática para Informática III' WHERE COD = 'MAY232'
+Wed Feb 13 12:05:24 CST 2013		Data truncation: Data too long for column 'NOM' at row 1
+Wed Feb 13 12:05:37 CST 2013		UPDATE TUTORIA SET NOM = 'Matemática para Informática III' WHERE COD = 'MAY232'
+Wed Feb 13 12:05:37 CST 2013		Data truncation: Data too long for column 'NOM' at row 1
+Wed Feb 13 12:05:52 CST 2013		UPDATE TUTORIA SET NOM = 'Matemática para Informática 2' WHERE COD = 'MAY231'
+Wed Feb 13 12:06:00 CST 2013		UPDATE TUTORIA SET NOM = 'Matemática para Informática 1' WHERE COD = 'MAY230'
+Wed Feb 13 12:06:26 CST 2013		UPDATE TUTORIA SET NOM = 'Cálculo I para Química' WHERE COD = 'MAY436'
+Wed Feb 13 12:08:03 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY441' , 'Matemática para Economía 1')
+Wed Feb 13 12:09:10 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY432' , 'Matemática para Economía 2')
+Wed Feb 13 12:12:07 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY452' , 'Matemática Planificación y Promoción Social')
+Wed Feb 13 12:12:07 CST 2013		Data truncation: Data too long for column 'NOM' at row 1
+Wed Feb 13 12:13:12 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY452' , 'Matemática para PPS')
+Wed Feb 13 12:13:56 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAY440' , 'Matemática para Topografía 1')
+Wed Feb 13 12:19:03 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAB300' , 'Matemática Fundamental 1')
+Wed Feb 13 12:19:59 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAB303' , 'Geometría Euclídea 2')
+Wed Feb 13 12:20:49 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAB304' , 'Lógica y Teoría de Conjuntos')
+Wed Feb 13 12:26:05 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('LIX410' , 'Inglés Integrado 1')
+Wed Feb 13 12:26:35 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('LIX411' , 'Inglés Integrado 2')
+Wed Feb 13 12:27:01 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('LIX101' , 'Inglés Instrumental 1')
+Wed Feb 13 12:27:39 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('LIX103' , 'Inglés Instrumental Intensivo 1 y 2')
+Wed Feb 13 12:27:39 CST 2013		Data truncation: Data too long for column 'NOM' at row 1
+Wed Feb 13 12:28:06 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('LIX103' , 'Inglés Instrumental 1y2')
+Wed Feb 13 13:42:19 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX101' 
+Wed Feb 13 13:43:55 CST 2013		No se encontró el tutor con el id 1
+Wed Feb 13 13:43:56 CST 2013		Id erronea 1 
+Wed Feb 13 13:43:56 CST 2013		No se encontró el tutor con el id 1 
+Wed Feb 13 13:43:56 CST 2013		Id erronea 1 0
+Wed Feb 13 13:43:56 CST 2013		No se encontró el tutor con el id 1 0
+Wed Feb 13 13:43:56 CST 2013		Id erronea 1 00
+Wed Feb 13 13:43:56 CST 2013		No se encontró el tutor con el id 1 00
+Wed Feb 13 13:43:57 CST 2013		Id erronea 1 000
+Wed Feb 13 13:43:57 CST 2013		No se encontró el tutor con el id 1 000
+Wed Feb 13 13:43:57 CST 2013		Id erronea 1 00
+Wed Feb 13 13:43:57 CST 2013		No se encontró el tutor con el id 1 00
+Wed Feb 13 13:43:57 CST 2013		Id erronea 1 0
+Wed Feb 13 13:43:57 CST 2013		No se encontró el tutor con el id 1 0
+Wed Feb 13 13:43:58 CST 2013		Id erronea 1 
+Wed Feb 13 13:43:58 CST 2013		No se encontró el tutor con el id 1 
+Wed Feb 13 13:43:58 CST 2013		No se encontró el tutor con el id 1
+Wed Feb 13 13:43:59 CST 2013		No se encontró el tutor con el id 10
+Wed Feb 13 13:43:59 CST 2013		No se encontró el tutor con el id 100
+Wed Feb 13 13:43:59 CST 2013		No se encontró el tutor con el id 1000
+Wed Feb 13 13:44:00 CST 2013		No se encontró el tutor con el id 10000
+Wed Feb 13 13:44:00 CST 2013		No se encontró el tutor con el id 100000
+Wed Feb 13 13:44:00 CST 2013		No se encontró el tutor con el id 1000000
+Wed Feb 13 13:44:58 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('1000000' , 'Carlos', 'Carlos', 'Carlos', '1', '22222222', 'carlos.sachez@hotmail.com')
+Wed Feb 13 13:46:50 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX101' 
+Wed Feb 13 13:47:36 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX101' 
+Wed Feb 13 13:48:05 CST 2013		INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('LIX101-I13-01' , '1000000', 'LIX101','Aula 4 Casa Exito Académico', '2013', '0', 'V10', 'Abierto')
+Wed Feb 13 13:48:05 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX101' 
+Wed Feb 13 13:48:27 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX103' 
+Wed Feb 13 13:49:48 CST 2013		INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('LIX103-I13-01' , '1000000', 'LIX103','Aula 4 Casa Éxito Académico', '2013', '0', 'J17', 'Abierto')
+Wed Feb 13 13:49:48 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX103' 
+Wed Feb 13 13:50:36 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX410' 
+Wed Feb 13 13:51:58 CST 2013		INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('LIX410-I13-01' , '1000000', 'LIX410','Aula 4 Casa Éxito Académico', '2013', '0', 'L13', 'Abierto')
+Wed Feb 13 13:51:58 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX410' 
+Wed Feb 13 14:01:58 CST 2013		INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('LIX410-I13-02' , '1000000', 'LIX410','Aula 4 Casa Éxito Académico', '2013', '0', 'M8', 'Abierto')
+Wed Feb 13 14:01:58 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX410' 

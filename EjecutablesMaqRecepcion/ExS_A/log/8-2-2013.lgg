@@ -1,0 +1,5 @@
+Fri Feb 08 11:41:03 CST 2013		Access denied for user 'root'@'10.0.18.51' (using password: YES)
+Fri Feb 08 11:41:03 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Fri Feb 08 11:44:18 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('MAX 108' , 'Mate General')
+Fri Feb 08 11:46:46 CST 2013		DELETE FROM TUTORIA WHERE COD = 'MAX 108'
+Fri Feb 08 11:50:26 CST 2013		INSERT INTO TUTORIA  (COD , NOM) VALUES ('460528' , 'calculo I quimica')

@@ -1,0 +1,25 @@
+Mon Jul 22 11:37:29 CST 2013		No se encontró el tutor con el id 2
+Mon Jul 22 11:37:30 CST 2013		No se encontró el tutor con el id 20
+Mon Jul 22 11:37:30 CST 2013		No se encontró el tutor con el id 207
+Mon Jul 22 11:37:31 CST 2013		No se encontró el tutor con el id 2070
+Mon Jul 22 11:37:32 CST 2013		No se encontró el tutor con el id 20707
+Mon Jul 22 11:37:33 CST 2013		No se encontró el tutor con el id 207070
+Mon Jul 22 11:37:33 CST 2013		No se encontró el tutor con el id 2070700
+Mon Jul 22 11:37:34 CST 2013		No se encontró el tutor con el id 20707001
+Mon Jul 22 11:37:34 CST 2013		No se encontró el tutor con el id 207070013
+Mon Jul 22 11:39:34 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('207070013' , 'Nícida', 'Rojas', 'Esquivel', '2', '89893550', 'nrjss_@hotmail.com')
+Mon Jul 22 15:36:40 CST 2013		INSERT INTO ESTUDIANTE  (ID , NOM, PAPE, SAPE, GENERO, TEL, CEL, EMAIL, CID, SEDE, BECA) VALUES ('114930858' , 'mariel', 'quesada', 'chacón', '2','0' ,'86172026', 'marielqch@hotmail.com', '18', '0', '11')
+Mon Jul 22 15:37:08 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'QUC450'  AND CICLO= '1' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Mon Jul 22 15:38:09 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('114930858' , 'QUC450-II13-03',  '2013-07-22' , 'Activo', '0.000000', '51361', '1' )
+Mon Jul 22 15:38:27 CST 2013		UPDATE ESTUDIANTE SET NOM = 'mariel',   PAPE= 'quesada', SAPE= 'chacón', GENERO= '2', TEL= '0', CEL = '86172026',EMAIL= 'marielqch@hotmail.com', CID= '18', SEDE= '0', BECA= '11'  WHERE ID = '114930858'
+Mon Jul 22 15:38:44 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAX085'  AND CICLO= '1' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Mon Jul 22 15:39:03 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('114930858' , 'MAX085-II13-04',  '2013-07-22' , 'Activo', '0.000000', '50760', '1' )
+Mon Jul 22 15:51:16 CST 2013		UPDATE ESTUDIANTE SET NOM = 'isaac',   PAPE= 'corrales', SAPE= 'cruz', GENERO= '1', TEL= '24426982', CEL = '89881077',EMAIL= 'isakucorrales@hotmail.es', CID= '22', SEDE= '0', BECA= '0'  WHERE ID = '207460104'
+Mon Jul 22 15:51:24 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAY231'  AND CICLO= '1' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Mon Jul 22 15:51:47 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('207460104' , 'MAY231-II13-01',  '2013-07-22' , 'Activo', '0.000000', '50792', '1' )
+Mon Jul 22 15:57:18 CST 2013		INSERT INTO ESTUDIANTE  (ID , NOM, PAPE, SAPE, GENERO, TEL, CEL, EMAIL, CID, SEDE, BECA) VALUES ('207320924' , 'Daniela ', 'Madrigal ', 'Tejada', '2','22900703' ,'84551152', 'danymtr@hotmail.com', '19', '0', '7')
+Mon Jul 22 15:57:29 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAX084'  AND CICLO= '1' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Mon Jul 22 15:59:06 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('207320924' , 'MAX084-II13-017',  '2013-07-22' , 'Activo', '0.000000', '50727', '1' )
+Mon Jul 22 16:01:50 CST 2013		INSERT INTO ESTUDIANTE  (ID , NOM, PAPE, SAPE, GENERO, TEL, CEL, EMAIL, CID, SEDE, BECA) VALUES ('207400326' , 'Maria Elena', 'Madrigal ', 'Paniagua ', '2','24454944' ,'85027863', 'elenamp.95@hotmail.com', '19', '0', '0')
+Mon Jul 22 16:01:56 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAX084'  AND CICLO= '1' AND ANIO= '2013' AND ESTADO = 'Abierto' 
+Mon Jul 22 16:02:17 CST 2013		INSERT INTO MATRICULA  (EID , GNUM, FECHA, ESTADO, NOTA, NRC, VECES) VALUES ('207400326' , 'MAX084-II13-017',  '2013-07-22' , 'Activo', '0.000000', '50729', '1' )

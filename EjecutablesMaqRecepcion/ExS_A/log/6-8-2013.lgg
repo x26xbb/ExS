@@ -1,0 +1,19 @@
+Tue Aug 06 08:51:48 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue Aug 06 08:51:48 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Tue Aug 06 08:51:48 CST 2013		No operations allowed after connection closed.
+Tue Aug 06 08:52:10 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue Aug 06 08:52:10 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Tue Aug 06 08:52:10 CST 2013		No operations allowed after connection closed.
+Tue Aug 06 08:53:00 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'EIF200' 
+Tue Aug 06 10:54:47 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue Aug 06 10:54:47 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Tue Aug 06 10:55:08 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue Aug 06 10:55:08 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306

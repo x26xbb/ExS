@@ -122,7 +122,7 @@ public class Gestor extends Observable {
 
     public ArrayList<Estudiante> getEstudiantes_Filter(int tutoria, int grupo) {
         String tutoria_s, grupo_s;
-        false
+        
         tutoria_s = _getTutorias().get(tutoria).getCod();
         grupo_s = (grupo == -1 )? null : grupos.get(grupo).getNum();
         try {

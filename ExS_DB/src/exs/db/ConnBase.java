@@ -7,6 +7,7 @@ import exs.mod.Grupo;
 import exs.mod.Matricula;
 import exs.mod.Tutor;
 import exs.mod.Tutoria;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -32,13 +33,12 @@ public abstract class ConnBase {
     private void readProps(String path) {
         props = null;
         try {
-            FileInputStream fileIn = new FileInputStream(path);
-            ObjectInputStream in = new ObjectInputStream(fileIn);
+                    File arc=new File(path);
+                    FileInputStream fileIn = new FileInputStream(arc);
+                    ObjectInputStream in = new ObjectInputStream(fileIn);                
 
-            props = (ConnProps) in.readObject();
-
-            in.close();
-            fileIn.close();
+                     props = (ConnProps) in.readObject();
+            
         } catch (IOException | ClassNotFoundException e) {
             Log.SendLog(e.getMessage());
             Log.SendLog(path + " erroneo");
@@ -91,7 +91,7 @@ public abstract class ConnBase {
 
 //Tutorias
     public ArrayList<Tutoria> getTutorias(boolean orderanas) {
-        ArrayList<Tutoria> lista = new ArrayList<>();
+        ArrayList<Tutoria> lista = new ArrayList<Tutoria>();
         connect();
         if (conn != null) {
             try {
@@ -132,7 +132,7 @@ public abstract class ConnBase {
 
 //Tutores
     public ArrayList<Tutor> getTutores() {
-        ArrayList<Tutor> lista = new ArrayList<>();
+        ArrayList<Tutor> lista = new ArrayList<Tutor>();
         connect();
         if (conn != null) {
             try {
@@ -183,7 +183,7 @@ public abstract class ConnBase {
     }
 
     public ArrayList<Grupo> getGrupos(String cod, int ciclo, int anio, String estado) {
-        ArrayList<Grupo> lista = new ArrayList<>();
+        ArrayList<Grupo> lista = new ArrayList<Grupo>();
         connect();
         if (conn != null) {
             try {
@@ -211,7 +211,7 @@ public abstract class ConnBase {
     }
 
     public ArrayList<Grupo> getGrupos(String cod) {
-        ArrayList<Grupo> lista = new ArrayList<>();
+        ArrayList<Grupo> lista = new ArrayList<Grupo>();
         connect();
         if (conn != null) {
             try {
@@ -260,7 +260,7 @@ public abstract class ConnBase {
 
     
     public ArrayList<Estudiante> getEstudiantes() {
-        ArrayList<Estudiante> lista = new ArrayList<>();
+        ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
         connect();
         if (conn != null) {
             try {
@@ -294,7 +294,7 @@ public abstract class ConnBase {
     }
     
     public ArrayList<Estudiante> getEstudiantes_fromGrupo(String tutoria, String grupo) {
-        ArrayList<Estudiante> lista = new ArrayList<>();
+        ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
         connect();
         if (conn != null) {
             try {
@@ -380,7 +380,7 @@ public abstract class ConnBase {
 
     //Carreras
     public ArrayList<Carrera> getCarreras(boolean ordenadas) {
-        ArrayList<Carrera> lista = new ArrayList<>();
+        ArrayList<Carrera> lista = new ArrayList<Carrera>();
         connect();
         if (conn != null) {
             try {
@@ -421,7 +421,7 @@ public abstract class ConnBase {
         return getCantidad(String.format(Querys.GET_CANT_MATRICULAS, num));            
     }
     public ArrayList<Matricula> getMatriculas(String grupo) {
-        ArrayList<Matricula> lista = new ArrayList<>();
+        ArrayList<Matricula> lista = new ArrayList<Matricula>();
         connect();
         if (conn != null) {
             try {

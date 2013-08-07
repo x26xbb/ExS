@@ -1,0 +1,20 @@
+Fri Mar 08 11:01:03 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Fri Mar 08 11:01:03 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Fri Mar 08 11:01:14 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Fri Mar 08 11:01:14 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Fri Mar 08 11:06:57 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Fri Mar 08 11:06:57 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Fri Mar 08 11:07:07 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Fri Mar 08 11:07:07 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Fri Mar 08 14:29:10 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'EIF200' 
+Fri Mar 08 14:34:47 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'EIF200' 
+Fri Mar 08 15:54:23 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'QUD400' 
+Fri Mar 08 15:54:54 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'LIX411' 

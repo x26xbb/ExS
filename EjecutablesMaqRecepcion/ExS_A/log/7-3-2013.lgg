@@ -1,0 +1,13 @@
+Thu Mar 07 09:09:20 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Thu Mar 07 09:09:20 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Thu Mar 07 09:09:24 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Thu Mar 07 09:09:24 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Thu Mar 07 09:09:34 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Thu Mar 07 09:09:34 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
+Thu Mar 07 10:17:47 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MAY432' 

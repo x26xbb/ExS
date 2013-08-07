@@ -21,7 +21,6 @@ import exs.mod.Estudiante;
 import exs.mod.Grupo;
 import exs.mod.var.Estudiante_Var;
 import exs.mod.var.Matricula_Var;
-import java.awt.Cursor;
 import java.io.FileOutputStream;
 
 public class PDF_Writer {
