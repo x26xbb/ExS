@@ -311,16 +311,40 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
 
     private void b_grupo_matriculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grupo_matriculasActionPerformed
 
+        ///CON CHECK CONSULTA=SIN CHECK!ERROR
         int i = table_grupos.getSelectedRow();
-        if (i >= 0) {
+        if (i >= 0 && !chk_Mostrar.isSelected()) {
             Grupo u = this.grupos.get(i);
             new Admin_Matriculas(u, tutoria).setVisible(true);
         } else {
+            if(chk_Mostrar.isSelected()){
+                i=getCicloChecked();
+                //FALTA VALORAR SI HAY MAS CURSOS EN CICLO SELECTED
+                Grupo u = this.grupos.get(i);
+                new Admin_Matriculas(u, tutoria).setVisible(true);
+            }else{
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una tutoría de la tabla");
-        }
+            }
+       }
 
     }//GEN-LAST:event_b_grupo_matriculasActionPerformed
 
+    private int  getCicloChecked(){
+        Grupo aux=this.grupos.get(0);
+        int ciclo=this.cb_Ciclo.getSelectedIndex();
+        int cont=0;
+        if(aux!=null){
+            while(aux!=null && aux.getCiclo()!= ciclo){
+                cont++;
+                aux=grupos.get(cont);
+            }
+            if(aux.getCiclo()==ciclo){
+                return cont;
+            }
+        }
+            return 0;
+    }
+    
     private void chk_Change_M() {
         if (chk_Mostrar.isSelected()) {
             grupoMostrar(true);
@@ -360,7 +384,7 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
             grupos = controller.getGrupos(tutoria.getCod());
 
         }
-
+       
         DefaultTableModel modelo = (DefaultTableModel) table_grupos.getModel();
         while (modelo.getRowCount() != 0) {
             modelo.removeRow(0);
@@ -380,7 +404,6 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
                 modelo.addRow(array);
             }
         }
-
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_grupo_add;

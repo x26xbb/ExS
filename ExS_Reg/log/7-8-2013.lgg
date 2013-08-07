@@ -1,0 +1,8 @@
+Wed Aug 07 13:52:24 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Wed Aug 07 13:52:24 CST 2013		com.mysql.jdbc.Driver exsdb root localhost 3306
+Wed Aug 07 13:56:27 CST 2013		Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Wed Aug 07 13:56:27 CST 2013		com.mysql.jdbc.Driver exsdb root 10.0.18.53 3306
