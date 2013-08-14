@@ -3,9 +3,13 @@
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -23,14 +27,16 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
-              <Component id="l_ima" min="-2" pref="600" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tab_pane" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="tab_pane" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="l_ima" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,8 +44,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="l_ima" min="-2" pref="90" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="l_ima" max="32767" attributes="0"/>
+                  <Component id="jLabel1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="tab_pane" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -48,6 +57,11 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="l_ima">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/img/front_admin.jpg"/>
+        </Property>
+      </Properties>
     </Component>
     <Container class="javax.swing.JTabbedPane" name="tab_pane">
       <Events>
@@ -70,21 +84,24 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="scrpane4" pref="725" max="32767" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="scrpane4" pref="543" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="l_est_cant" alignment="1" min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="l_est_carrera" min="-2" max="-2" attributes="0"/>
-                              <Component id="cb_est_carreras" alignment="1" max="32767" attributes="0"/>
-                              <Component id="t_est_cedula" alignment="1" max="32767" attributes="0"/>
-                              <Component id="l_est_nombre" min="-2" max="-2" attributes="0"/>
-                              <Component id="t_est_nombre" alignment="1" max="32767" attributes="0"/>
-                              <Component id="l_est_ced" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="l_est_tcant" alignment="1" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="l_est_cant" alignment="1" min="-2" pref="64" max="-2" attributes="0"/>
+                                  <Component id="l_est_carrera" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cb_est_carreras" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="t_est_cedula" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="l_est_nombre" min="-2" max="-2" attributes="0"/>
+                                  <Component id="t_est_nombre" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="l_est_ced" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="l_est_tcant" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="l_est_sede" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb_est_sedes" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="l_est_sede" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cb_est_sedes" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -113,7 +130,9 @@
                       <Component id="l_est_ced" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="t_est_cedula" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="139" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="62" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -222,6 +241,20 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img/images.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Exportar a Excel"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -238,16 +271,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="scrpane5" pref="725" max="32767" attributes="0"/>
+                      <Component id="scrpane5" pref="662" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="l_tuto_cant" alignment="1" min="-2" pref="64" max="-2" attributes="0"/>
-                          <Component id="l_est_tcant1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="l_est_sede1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cb_tuto" alignment="0" max="32767" attributes="0"/>
-                          <Component id="l_est_carrera1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cb_tuto_grupos" alignment="0" max="32767" attributes="0"/>
-                          <Component id="chk_Mostrar" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="l_tuto_cant" alignment="1" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="l_est_tcant1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="l_est_sede1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb_tuto" alignment="0" max="32767" attributes="0"/>
+                              <Component id="l_est_carrera1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cb_tuto_grupos" alignment="0" max="32767" attributes="0"/>
+                              <Component id="chk_Mostrar" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -270,7 +306,9 @@
                       <Component id="cb_tuto_grupos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="chk_Mostrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="221" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="130" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -367,9 +405,24 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chk_Mostrarchk_Change"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img/images.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Exportar a Excel"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/img/una_logo.png"/>
+        </Property>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

@@ -13,8 +13,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java_to_excel.Excel;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -33,6 +35,7 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
      * Creates new form Main
      */
     public Query_Main() {
+        this.excel = new Excel();
         if (controller.isUsable()) {
             initComponents();
             initCombos();
@@ -195,6 +198,7 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         cb_est_sedes = new javax.swing.JComboBox();
         scrpane4 = new javax.swing.JScrollPane();
         table_estudiantes = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         cb_tuto = new javax.swing.JComboBox();
         l_est_tcant1 = new javax.swing.JLabel();
@@ -205,8 +209,13 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         l_est_carrera1 = new javax.swing.JLabel();
         cb_tuto_grupos = new javax.swing.JComboBox();
         chk_Mostrar = new javax.swing.JCheckBox();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        l_ima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/front_admin.jpg"))); // NOI18N
 
         tab_pane.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -275,26 +284,37 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         table_estudiantes.getTableHeader().setReorderingAllowed(false);
         scrpane4.setViewportView(table_estudiantes);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/images.jpg"))); // NOI18N
+        jButton1.setText("Exportar a Excel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+                .addGap(129, 129, 129)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(l_est_cant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(l_est_carrera)
-                        .addComponent(cb_est_carreras, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(t_est_cedula, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(l_est_nombre)
-                        .addComponent(t_est_nombre, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(l_est_ced)
-                        .addComponent(l_est_tcant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(l_est_sede)
-                    .addComponent(cb_est_sedes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(l_est_cant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(l_est_carrera)
+                            .addComponent(cb_est_carreras, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(t_est_cedula, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(l_est_nombre)
+                            .addComponent(t_est_nombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(l_est_ced)
+                            .addComponent(l_est_tcant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(l_est_sede)
+                        .addComponent(cb_est_sedes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -320,7 +340,9 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(l_est_ced)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(t_est_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrpane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -381,22 +403,27 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/images.jpg"))); // NOI18N
+        jButton2.setText("Exportar a Excel");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(l_tuto_cant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(l_est_tcant1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(l_est_sede1)
-                    .addComponent(cb_tuto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(l_est_carrera1)
-                    .addComponent(cb_tuto_grupos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(chk_Mostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(l_tuto_cant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(l_est_tcant1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(l_est_sede1)
+                        .addComponent(cb_tuto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(l_est_carrera1)
+                        .addComponent(cb_tuto_grupos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chk_Mostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -416,7 +443,9 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(cb_tuto_grupos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(chk_Mostrar)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jButton2)
+                .addContainerGap(130, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrpane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -425,48 +454,37 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
 
         tab_pane.addTab("Tutorías", jPanel2);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/una_logo.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(l_ima, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tab_pane)
+                .addComponent(tab_pane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(l_ima)
+                .addGap(196, 196, 196))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(l_ima, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(l_ima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
                 .addComponent(tab_pane)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cb_est_sedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_est_sedesActionPerformed
-        update_combo_est_carreras();
-        fillTable_Est();
-    }//GEN-LAST:event_cb_est_sedesActionPerformed
-
-    private void cb_est_carrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_est_carrerasActionPerformed
-        fillTable_Est();
-    }//GEN-LAST:event_cb_est_carrerasActionPerformed
-
-    private void t_est_nombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_est_nombreKeyReleased
-        fillTable_Est();
-    }//GEN-LAST:event_t_est_nombreKeyReleased
-
-    private void t_est_cedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_est_cedulaKeyReleased
-        fillTable_Est();
-    }//GEN-LAST:event_t_est_cedulaKeyReleased
 
     private void tab_paneStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tab_paneStateChanged
         update_tables();
@@ -485,12 +503,41 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         chk_Change_M();
     }//GEN-LAST:event_chk_Mostrarchk_Change
 
+    private void cb_est_sedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_est_sedesActionPerformed
+        update_combo_est_carreras();
+        fillTable_Est();
+    }//GEN-LAST:event_cb_est_sedesActionPerformed
+
+    private void t_est_cedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_est_cedulaKeyReleased
+        fillTable_Est();
+    }//GEN-LAST:event_t_est_cedulaKeyReleased
+
+    private void t_est_nombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_est_nombreKeyReleased
+        fillTable_Est();
+    }//GEN-LAST:event_t_est_nombreKeyReleased
+
+    private void cb_est_carrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_est_carrerasActionPerformed
+        fillTable_Est();
+    }//GEN-LAST:event_cb_est_carrerasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//         JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));  
+//         int returnVal = fileChooser.showSaveDialog(null); 
+//         //String path=fileChooser.getSelectedFile().getPath();
+        this.estudiantesExcel("mayyyy");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    
+    Excel excel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cb_est_carreras;
     private javax.swing.JComboBox cb_est_sedes;
     private javax.swing.JComboBox cb_tuto;
     private javax.swing.JComboBox cb_tuto_grupos;
     private javax.swing.JCheckBox chk_Mostrar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel l_est_cant;
@@ -545,5 +592,9 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
 
     private void fixIma() {
         l_ima.setLocation((this.getWidth() / 2) - (l_ima.getWidth() / 2), l_ima.getY());
+    }
+    
+    private void estudiantesExcel(String path){       
+        excel.guardar(table_estudiantes,path);
     }
 }

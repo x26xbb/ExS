@@ -7,6 +7,10 @@ package java_to_excel;
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JTable;
 
 import jxl.CellView;
 import jxl.Workbook;
@@ -22,28 +26,36 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
-public class WriteExcel {
+public class Excel {
 
     private WritableCellFormat timesBoldUnderline;
     private WritableCellFormat times;
     private String inputFile;
 
+    
+    public Excel(){
+    }
+    
     public void setOutputFile(String inputFile) {
         this.inputFile = inputFile;
     }
 
-    public void write() throws IOException, WriteException {
+    public void write(JTable table_estudiantes) throws IOException, WriteException {
         File file = new File(inputFile);
         WorkbookSettings wbSettings = new WorkbookSettings();
-
         wbSettings.setLocale(new Locale("en", "EN"));
-
         WritableWorkbook workbook = Workbook.createWorkbook(file, wbSettings);
         workbook.createSheet("Report", 0);
-        WritableSheet excelSheet = workbook.getSheet(0);
-        createLabel(excelSheet);
-        createContent(excelSheet);
-
+        WritableSheet excelSheet = workbook.getSheet(0);        
+        //createLabel(excelSheet);
+        //createContent(excelSheet);
+        
+        for(int i=0;i< table_estudiantes.getColumnCount();i++){	
+            for(int j=0;j<table_estudiantes.getRowCount();j++){
+		Object objeto=table_estudiantes.getValueAt(j,i);
+			excelSheet.addCell(new Label(j, i, String.valueOf(objeto)));        
+            }
+        }
         workbook.write();
         workbook.close();
     }
@@ -72,6 +84,8 @@ public class WriteExcel {
         // Write a few headers
         addCaption(sheet, 0, 0, "Header 1");
         addCaption(sheet, 1, 0, "This is another header");
+        addCaption(sheet, 7, 0, "la lipe");
+        addCaption(sheet, 12, 0, "man down");
 
 
     }
@@ -98,7 +112,7 @@ public class WriteExcel {
         // Now a bit of text
         for (int i = 12; i < 20; i++) {
             // First column
-            addLabel(sheet, 0, i, "Boring text " + i);
+            addLabel(sheet, 0, i, "Boring text " + (i+1));
             // Second column
             addLabel(sheet, 1, i, "Another text");
         }
@@ -125,11 +139,16 @@ public class WriteExcel {
         sheet.addCell(label);
     }
 
-    public static void main(String[] args) throws WriteException, IOException {
-        WriteExcel test = new WriteExcel();
-        test.setOutputFile("lars.xls");
-        test.write();
-        System.out
-                .println("Please check the result file under c:/temp/lars.xls ");
+    
+    public void guardar(JTable tabla,String path) {
+        try {            
+            this.setOutputFile(path+".xls");
+            this.write(tabla);
+        } catch (IOException ex) {
+            Logger.getLogger(Excel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (WriteException ex) {
+            Logger.getLogger(Excel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
 }
