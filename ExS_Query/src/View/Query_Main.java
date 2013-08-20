@@ -35,7 +35,8 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
      * Creates new form Main
      */
     public Query_Main() {
-        this.excel = new Excel();
+          fc.showSaveDialog(null);
+        this.excel = new Excel();      
         if (controller.isUsable()) {
             initComponents();
             initCombos();
@@ -198,7 +199,7 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         cb_est_sedes = new javax.swing.JComboBox();
         scrpane4 = new javax.swing.JScrollPane();
         table_estudiantes = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         cb_tuto = new javax.swing.JComboBox();
         l_est_tcant1 = new javax.swing.JLabel();
@@ -284,12 +285,11 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         table_estudiantes.getTableHeader().setReorderingAllowed(false);
         scrpane4.setViewportView(table_estudiantes);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/images.jpg"))); // NOI18N
-        jButton1.setText("Exportar a Excel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/images.jpg"))); // NOI18N
+        jButton3.setText("Exportar a Excel");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -301,20 +301,18 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
                 .addGap(129, 129, 129)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(l_est_cant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(l_est_carrera)
-                            .addComponent(cb_est_carreras, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(t_est_cedula, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(l_est_nombre)
-                            .addComponent(t_est_nombre, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(l_est_ced)
-                            .addComponent(l_est_tcant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(l_est_sede)
-                        .addComponent(cb_est_sedes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(l_est_cant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(l_est_carrera)
+                    .addComponent(cb_est_carreras, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(t_est_cedula, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(l_est_nombre)
+                    .addComponent(t_est_nombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(l_est_ced)
+                    .addComponent(l_est_tcant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(l_est_sede)
+                    .addComponent(cb_est_sedes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -340,9 +338,9 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(l_est_ced)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(t_est_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jButton3)
+                .addContainerGap(46, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrpane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -405,6 +403,11 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/images.jpg"))); // NOI18N
         jButton2.setText("Exportar a Excel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -520,23 +523,25 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         fillTable_Est();
     }//GEN-LAST:event_cb_est_carrerasActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//         JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));  
-//         int returnVal = fileChooser.showSaveDialog(null); 
-//         //String path=fileChooser.getSelectedFile().getPath();
-        this.estudiantesExcel("mayyyy");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+            this.guardar();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
     Excel excel;
+    JFileChooser fc=new JFileChooser();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cb_est_carreras;
     private javax.swing.JComboBox cb_est_sedes;
     private javax.swing.JComboBox cb_tuto;
     private javax.swing.JComboBox cb_tuto_grupos;
     private javax.swing.JCheckBox chk_Mostrar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -596,5 +601,10 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
     
     private void estudiantesExcel(String path){       
         excel.guardar(table_estudiantes,path);
+    }
+
+    private void guardar() {
+     Jfc fc=new Jfc();     
+     this.estudiantesExcel(fc.guardar());
     }
 }

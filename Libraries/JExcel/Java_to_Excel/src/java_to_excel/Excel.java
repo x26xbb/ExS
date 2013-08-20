@@ -53,7 +53,7 @@ public class Excel {
         for(int i=0;i< table_estudiantes.getColumnCount();i++){	
             for(int j=0;j<table_estudiantes.getRowCount();j++){
 		Object objeto=table_estudiantes.getValueAt(j,i);
-			excelSheet.addCell(new Label(j, i, String.valueOf(objeto)));        
+			excelSheet.addCell(new Label(i, j, String.valueOf(objeto)));        
             }
         }
         workbook.write();
