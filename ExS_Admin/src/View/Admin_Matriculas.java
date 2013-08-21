@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java_to_excel.Excel;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -31,6 +32,7 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
     private ArrayList<Matricula> matriculas = null;
 
     public Admin_Matriculas(Grupo g, Tutoria t) {
+        excel=new Excel();
         if (g == null) {
             JOptionPane.showMessageDialog(rootPane, "El Grupo seleccionado es incorrecto!");
             Log.SendLog("El Grupo seleccionado es incorrecto!");
@@ -96,6 +98,7 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
         b_matricula_add = new javax.swing.JButton();
         b_matricula_edit = new javax.swing.JButton();
         b_matricula_del = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setLocationByPlatform(true);
@@ -148,6 +151,14 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        jButton1.setToolTipText("Haga Click aqui para exportar la tabla a Excel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,14 +169,15 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(l_tuto)
-                        .addGap(0, 681, Short.MAX_VALUE))
+                        .addGap(0, 734, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(b_matricula_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(b_matricula_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                             .addComponent(b_matricula_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b_matricula_del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(b_matricula_del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -183,10 +195,12 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
                         .addComponent(b_matricula_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(b_matricula_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+                        .addComponent(scrpane1)
                         .addContainerGap())))
         );
 
@@ -230,6 +244,10 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
         }
     }//GEN-LAST:event_fix_Size
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.guardarGrupoExcel();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void del_grupo() {
         int i = table_grupos.getSelectedRow();
         if (i >= 0) {
@@ -272,10 +290,13 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
         }
 
     }
+    
+    Excel excel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_matricula_add;
     private javax.swing.JButton b_matricula_del;
     private javax.swing.JButton b_matricula_edit;
+    private javax.swing.JButton jButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel l_tuto;
     private javax.swing.JScrollPane scrpane1;
@@ -285,5 +306,12 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         update_table(true);
+    }
+    
+     private void guardarGrupoExcel() {
+       Jfc j=new Jfc();
+       String path=j.guardar();
+       if(path!=null)
+        excel.guardar(table_grupos,path);
     }
 }

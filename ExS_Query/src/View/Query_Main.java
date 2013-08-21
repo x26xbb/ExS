@@ -16,7 +16,6 @@ import java.util.Observer;
 import java_to_excel.Excel;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -541,7 +540,6 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
 
     
     Excel excel;
-    JFileChooser fc=new JFileChooser();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cb_est_carreras;
     private javax.swing.JComboBox cb_est_sedes;
@@ -607,18 +605,18 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
         l_ima.setLocation((this.getWidth() / 2) - (l_ima.getWidth() / 2), l_ima.getY());
     }
     
-    private void estudiantesExcel(String path){       
-        excel.guardar(table_estudiantes,path);
-    }
     
     private void guardarTutoriasExcel(){
          Jfc j=new Jfc();
          String path=j.guardar();
-         excel.guardar(table_tutorias,path);
+         if(path!=null)
+            excel.guardar(table_tutorias,path);
     }
 
     private void guardarEstudiantesExcel() {
         Jfc j=new Jfc();
-       this.estudiantesExcel(j.guardar());
+        String path=j.guardar();
+         if(path!=null)
+            excel.guardar(table_estudiantes,path);
     }
 }

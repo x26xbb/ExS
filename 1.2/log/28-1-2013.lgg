@@ -1,0 +1,15 @@
+Mon Jan 28 12:15:28 CST 2013		No se encontró el tutor con el id 2
+Mon Jan 28 12:15:28 CST 2013		No se encontró el tutor con el id 20
+Mon Jan 28 12:15:29 CST 2013		No se encontró el tutor con el id 207
+Mon Jan 28 12:15:30 CST 2013		No se encontró el tutor con el id 2070
+Mon Jan 28 12:15:31 CST 2013		No se encontró el tutor con el id 20701
+Mon Jan 28 12:15:31 CST 2013		No se encontró el tutor con el id 207010
+Mon Jan 28 12:15:32 CST 2013		No se encontró el tutor con el id 2070107
+Mon Jan 28 12:15:32 CST 2013		No se encontró el tutor con el id 20701076
+Mon Jan 28 12:15:32 CST 2013		No se encontró el tutor con el id 207010764
+Mon Jan 28 12:16:17 CST 2013		INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('207010764' , 'Mariana', 'Córdoba ', 'Vargas', '2', '87745497', 'marianna2909@gmail.com')
+Mon Jan 28 12:16:38 CST 2013		UPDATE TUTOR SET NOM = 'Kevin',   PAPE= 'Villalobos', SAPE= 'Alfaro', GENERO= '1', TEL= '83086170', EMAIL= 'kevin.villalobos.a@gmail.com'  WHERE ID = '206910659'
+Mon Jan 28 12:17:12 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MATO' 
+Mon Jan 28 12:17:29 CST 2013		INSERT INTO GRUPO  (NUM , TID, TCOD, ANIO, CICLO, HORARIO, ESTADO) VALUES ('MATO-I13-01' , '207010764', 'MATO', '2013', '0', 'I9', 'Abierto')
+Mon Jan 28 12:17:29 CST 2013		SELECT * FROM GRUPO WHERE TCOD = 'MATO' 
+Mon Jan 28 12:17:51 CST 2013		UPDATE TUTORIA SET NOM = 'Mate Ortografrica' WHERE COD = 'MATO'

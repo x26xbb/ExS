@@ -4,6 +4,7 @@
  */
 package View;
 
+import com.alee.laf.WebLookAndFeel;
 import exs.logs.err.Log;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
@@ -30,9 +31,20 @@ public class Jfc{
         JFileChooser chooser = new JFileChooser();
         int returnVal = chooser.showSaveDialog(null);
         if(returnVal == JFileChooser.APPROVE_OPTION) {
-              System.out.println("You chose to open this file: " +
-              chooser.getSelectedFile().getName());              
+              System.out.println("guardando archivo: " +
+              chooser.getSelectedFile().getName()); 
+              setGUI();
+              return chooser.getSelectedFile().getPath();
         } 
-        return chooser.getSelectedFile().getPath();
+            setGUI();
+            return null;
+     }
+     
+     public void setGUI(){
+          try {
+            javax.swing.UIManager.setLookAndFeel(new WebLookAndFeel());
+        } catch (Exception ex) {
+            Log.SendLog(ex.getMessage());
+        }
      }
 }

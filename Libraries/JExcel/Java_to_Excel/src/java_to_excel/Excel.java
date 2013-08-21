@@ -7,8 +7,7 @@ package java_to_excel;
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
@@ -16,7 +15,6 @@ import javax.swing.table.TableColumnModel;
 import jxl.Workbook;
 import jxl.WorkbookSettings;
 import jxl.write.Label;
-import jxl.write.WritableCellFormat;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
@@ -47,8 +45,7 @@ public class Excel {
         
         for(int fila = 0, y = tcm.getColumnCount(); fila < y; fila++){  
           TableColumn tc = tcm.getColumn(fila);  
-          excelSheet.addCell(new Label(col,0, String.valueOf(tc.getHeaderValue()))); 
-          System.out.println("Column name = "+tc.getHeaderValue()+", width = "+tc.getWidth());  
+          excelSheet.addCell(new Label(col,0, String.valueOf(tc.getHeaderValue())));   
           col++;
         }          
         for(int i=0;i< table_estudiantes.getColumnCount();i++){	
@@ -65,10 +62,11 @@ public class Excel {
         try {            
             this.setOutputFile(path+".xls");
             this.write(tabla);
+             JOptionPane.showMessageDialog(null,"El archivo ha sido guardado");
         } catch (IOException ex) {
-            Logger.getLogger(Excel.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(null, "No se pudo crear el archivo", "Error", JOptionPane.ERROR_MESSAGE);
         } catch (WriteException ex) {
-            Logger.getLogger(Excel.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(null, "No se pudo crear el archivo", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 

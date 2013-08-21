@@ -12,6 +12,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java_to_excel.Excel;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -120,6 +121,7 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
         l_Anio = new javax.swing.JLabel();
         cb_Anio = new javax.swing.JComboBox();
         b_grupo_matriculas = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setLocationByPlatform(true);
@@ -206,6 +208,14 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        jButton1.setToolTipText("Haga Click Aqui para Exportar a Excel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -216,7 +226,7 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(l_tuto)
-                        .addGap(0, 711, Short.MAX_VALUE))
+                        .addContainerGap(764, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -234,8 +244,9 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cb_Ciclo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cb_Anio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(b_grupo_matriculas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                            .addComponent(b_grupo_matriculas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,10 +275,12 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cb_Anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(l_Anio))
+                        .addGap(27, 27, 27)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+                        .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -328,6 +341,10 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
        }
 
     }//GEN-LAST:event_b_grupo_matriculasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.guardarTutoriasExcel();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private int  getCicloChecked(){
         Grupo aux=this.grupos.get(0);
@@ -415,6 +432,7 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private javax.swing.DefaultComboBoxModel cb_CicloModel;
     private javax.swing.JComboBox cb_Ciclo;
     private javax.swing.JCheckBox chk_Mostrar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel l_Anio;
     private javax.swing.JLabel l_Ciclo;
@@ -422,9 +440,17 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private javax.swing.JScrollPane scrpane1;
     private javax.swing.JTable table_grupos;
     // End of variables declaration//GEN-END:variables
-
+    Excel excel=new Excel();
+    
     @Override
     public void update(Observable o, Object arg) {
         update_table(true);
+    }
+    
+      private void guardarTutoriasExcel() {
+       Jfc j=new Jfc();
+       String path=j.guardar();
+       if(path!=null)
+        excel.guardar(table_grupos,path);
     }
 }
