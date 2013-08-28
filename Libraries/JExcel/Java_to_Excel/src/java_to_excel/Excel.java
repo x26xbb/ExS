@@ -6,6 +6,9 @@ package java_to_excel;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -47,13 +50,17 @@ public class Excel {
           TableColumn tc = tcm.getColumn(fila);  
           excelSheet.addCell(new Label(col,0, String.valueOf(tc.getHeaderValue())));   
           col++;
-        }          
-        for(int i=0;i< table_estudiantes.getColumnCount();i++){	
-            for(int j=0;j<table_estudiantes.getRowCount();j++){
+        }    
+        int i,j=0;
+        for(i=0;i< table_estudiantes.getColumnCount();i++){	
+            for(j=0;j<table_estudiantes.getRowCount();j++){
 		Object objeto=table_estudiantes.getValueAt(j,i);
 			excelSheet.addCell(new Label(i, j+1, String.valueOf(objeto)));        
             }
         }
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        excelSheet.addCell(new Label(i,j+1,"Tomado del Sistema de Matricula Exito Academico el:"+dateFormat.format(date)));
         workbook.write();
         workbook.close();
     }

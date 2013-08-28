@@ -31,7 +31,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private static int MIN_W = 975;
 
     public Admin_Main() {
-        this.excel=new Excel();
+        this.excel = new Excel();  
         if (controller.isUsable()) {
             initComponents();
             setImages();
@@ -48,7 +48,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         try {
             img = ImageIO.read(new File("img/elogo.png"));
             this.setIconImage(img);
-            l_ima.setIcon(new ImageIcon("img/front_admin.jpg"));
             b_grupo_editar.setIcon(new ImageIcon("img/g_add.png"));
         } catch (Exception e) {
             Log.SendLog(e.getMessage());
@@ -56,7 +55,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         setImaAdd();
         setImaEdit();
         setImaDel();
-        setMaximumSize(new Dimension(MIN_W, MIN_H));
+       setMaximumSize(new Dimension(MIN_W, MIN_H));
     }
 
     private void setImaAdd() {
@@ -101,9 +100,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         }
     }
 
-    private void fixIma() {
-        l_ima.setLocation((this.getWidth() / 2) - (l_ima.getWidth() / 2), l_ima.getY());
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -114,7 +110,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        l_ima = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         tab_pane = new javax.swing.JTabbedPane();
         p_tutorias = new javax.swing.JPanel();
         scrpane1 = new javax.swing.JScrollPane();
@@ -122,33 +119,37 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         b_tutoria_add = new javax.swing.JButton();
         b_tutoria_edit = new javax.swing.JButton();
         b_tutoria_del = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        buttonExcelTutoria = new javax.swing.JButton();
         p_grupos = new javax.swing.JPanel();
         scrpane2 = new javax.swing.JScrollPane();
         table_grupos = new javax.swing.JTable();
         b_grupo_editar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        buttonExcelGrupos = new javax.swing.JButton();
         p_tutores = new javax.swing.JPanel();
         scrpane3 = new javax.swing.JScrollPane();
         table_tutores = new javax.swing.JTable();
         b_tutor_add = new javax.swing.JButton();
         b_tutor_edit = new javax.swing.JButton();
         b_tutor_del = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ButtonExcelTutores = new javax.swing.JButton();
         p_estudiantes = new javax.swing.JPanel();
         scrpane4 = new javax.swing.JScrollPane();
         table_estudiantes = new javax.swing.JTable();
         b_est_add = new javax.swing.JButton();
         b_est_edit = new javax.swing.JButton();
         b_est_del = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ButtonExcelEst = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         scrpane5 = new javax.swing.JScrollPane();
         table_carreras = new javax.swing.JTable();
         b_carrera_add = new javax.swing.JButton();
         b_carrera_edit = new javax.swing.JButton();
         b_carrera_del = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -205,11 +206,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
-        jButton1.setToolTipText("Haga Click Aqui para exportar la Tabla a Excel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonExcelTutoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        buttonExcelTutoria.setToolTipText("Haga Click Aqui para Expotar a Excel");
+        buttonExcelTutoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonExcelTutoriaActionPerformed(evt);
             }
         });
 
@@ -219,31 +220,31 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoriasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1032, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(b_tutoria_add, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(b_tutoria_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(b_tutoria_del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46))
+                .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(b_tutoria_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(b_tutoria_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(b_tutoria_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonExcelTutoria, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         p_tutoriasLayout.setVerticalGroup(
             p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoriasLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(35, 35, 35)
                 .addComponent(b_tutoria_add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_tutoria_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_tutoria_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(buttonExcelTutoria, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
             .addGroup(p_tutoriasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(scrpane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
 
         tab_pane.addTab("Tutorías", p_tutorias);
@@ -274,11 +275,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
-        jButton2.setToolTipText("Haga Click Aqui para exportar la Tabla a Excel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonExcelGrupos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        buttonExcelGrupos.setToolTipText("Haga Click Aqui para Expotar a Excel");
+        buttonExcelGrupos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonExcelGruposActionPerformed(evt);
             }
         });
 
@@ -288,24 +289,24 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_gruposLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
+                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(b_grupo_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62))
+                    .addComponent(buttonExcelGrupos, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         p_gruposLayout.setVerticalGroup(
             p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_gruposLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(p_gruposLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(b_grupo_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonExcelGrupos, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -352,11 +353,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
-        jButton3.setToolTipText("Haga Click Aqui para exportar la Tabla a Excel");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ButtonExcelTutores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        ButtonExcelTutores.setToolTipText("Haga Click Aqui para Expotar a Excel");
+        ButtonExcelTutores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ButtonExcelTutoresActionPerformed(evt);
             }
         });
 
@@ -366,15 +367,15 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
+                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(b_tutor_add, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                        .addComponent(b_tutor_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(b_tutor_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_tutor_del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46))
+                        .addComponent(b_tutor_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         p_tutoresLayout.setVerticalGroup(
             p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,12 +386,12 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(b_tutor_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_tutor_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(p_tutoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -437,11 +438,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
-        jButton4.setToolTipText("Haga Click Aqui para exportar la Tabla a Excel");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        ButtonExcelEst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        ButtonExcelEst.setToolTipText("Haga Click Aqui para Expotar a Excel");
+        ButtonExcelEst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ButtonExcelEstActionPerformed(evt);
             }
         });
 
@@ -450,33 +451,33 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         p_estudiantesLayout.setHorizontalGroup(
             p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_estudiantesLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(b_est_add, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                        .addComponent(b_est_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(b_est_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_est_del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61))
+                        .addComponent(b_est_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         p_estudiantesLayout.setVerticalGroup(
             p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_estudiantesLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
+                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(p_estudiantesLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addComponent(b_est_add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_est_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_est_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(p_estudiantesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                .addGap(43, 43, 43))
         );
 
         tab_pane.addTab("Estudiantes", p_estudiantes);
@@ -521,11 +522,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
-        jButton5.setToolTipText("Haga Click Aqui para exportar la Tabla a Excel");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        jButton1.setToolTipText("Haga Click Aqui para Expotar a Excel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -534,35 +535,40 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1014, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(b_carrera_add, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(b_carrera_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(b_carrera_del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
+                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(b_carrera_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(b_carrera_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(b_carrera_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addComponent(b_carrera_add, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_carrera_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_carrera_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(151, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(scrpane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
 
         tab_pane.addTab("Carreras", jPanel1);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/una_logo.png"))); // NOI18N
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/front_admin.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -570,19 +576,25 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tab_pane)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addComponent(l_ima, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tab_pane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 127, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel4)
+                        .addGap(56, 56, 56))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(l_ima, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
                 .addComponent(tab_pane)
                 .addContainerGap())
         );
@@ -605,32 +617,13 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_tab_paneStateChanged
 
     private void Fix_Size(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_Fix_Size
-        if (getWidth() < MIN_W) {
-            setSize(MIN_H, getHeight());
-        }
-        if (getHeight() < MIN_H) {
-            setSize(getWidth(), MIN_H);
-        }
-        fixIma();
+//        if (getWidth() < MIN_W) {
+//            setSize(MIN_H, getHeight());
+//        }
+//        if (getHeight() < MIN_H) {
+//            setSize(getWidth(), MIN_H);
+//        }
     }//GEN-LAST:event_Fix_Size
-
-    private void b_tutoria_delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutoria_delActionPerformed
-        del_tutoria();
-    }//GEN-LAST:event_b_tutoria_delActionPerformed
-
-    private void b_tutoria_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutoria_addActionPerformed
-        new Admin_New_Tutoria(null).setVisible(true);
-    }//GEN-LAST:event_b_tutoria_addActionPerformed
-
-    private void b_tutoria_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutoria_editActionPerformed
-        int i = table_tutorias.getSelectedRow();
-        if (i >= 0) {
-            Tutoria t = controller._getTutorias().get(i);
-            new Admin_New_Tutoria(t).setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una tutoría de la tabla");
-        }
-    }//GEN-LAST:event_b_tutoria_editActionPerformed
 
     private void b_tutor_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutor_addActionPerformed
         new Admin_New_Tutor(null).setVisible(true);
@@ -708,24 +701,42 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         }
     }//GEN-LAST:event_b_carrera_delActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        this.guardarCarrerasExcel();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void b_tutoria_delActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutoria_delActionPerformed
+        del_tutoria();
+    }//GEN-LAST:event_b_tutoria_delActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.guardarEstudiantesExcel();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void b_tutoria_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutoria_editActionPerformed
+        int i = table_tutorias.getSelectedRow();
+        if (i >= 0) {
+            Tutoria t = controller._getTutorias().get(i);
+            new Admin_New_Tutoria(t).setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una tutoría de la tabla");
+        }
+    }//GEN-LAST:event_b_tutoria_editActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void b_tutoria_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutoria_addActionPerformed
+        new Admin_New_Tutoria(null).setVisible(true);
+    }//GEN-LAST:event_b_tutoria_addActionPerformed
+
+    private void buttonExcelTutoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcelTutoriaActionPerformed
+       this.guardarTutoriasExcel();
+    }//GEN-LAST:event_buttonExcelTutoriaActionPerformed
+
+    private void buttonExcelGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcelGruposActionPerformed
+        this.guardarGrupoExcel();
+    }//GEN-LAST:event_buttonExcelGruposActionPerformed
+
+    private void ButtonExcelTutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonExcelTutoresActionPerformed
         this.guardarTutoresExcel();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ButtonExcelTutoresActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.guardarGruposExcel();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void ButtonExcelEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonExcelEstActionPerformed
+        this.guardarEstudiantesExcel();
+    }//GEN-LAST:event_ButtonExcelEstActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.guardarTutoriasExcel();
+        this.guardarCarrerasExcel();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void del_tutoria() {
@@ -780,7 +791,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 break;
 
         }
-        fixIma();
     }
 
     private void fillTable_Carreras() {
@@ -851,9 +861,9 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
 
         JOptionPane.showMessageDialog(rootPane, "Se actualiza table OTRO!!");
     }
-    
-    Excel excel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonExcelEst;
+    private javax.swing.JButton ButtonExcelTutores;
     private javax.swing.JButton b_carrera_add;
     private javax.swing.JButton b_carrera_del;
     private javax.swing.JButton b_carrera_edit;
@@ -867,13 +877,14 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton b_tutoria_add;
     private javax.swing.JButton b_tutoria_del;
     private javax.swing.JButton b_tutoria_edit;
+    private javax.swing.JButton buttonExcelGrupos;
+    private javax.swing.JButton buttonExcelTutoria;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel l_ima;
     private javax.swing.JPanel p_estudiantes;
     private javax.swing.JPanel p_grupos;
     private javax.swing.JPanel p_tutores;
@@ -890,45 +901,44 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JTable table_tutores;
     private javax.swing.JTable table_tutorias;
     // End of variables declaration//GEN-END:variables
-
+    private Excel excel;
     @Override
     public void update(Observable o, Object arg) {
         update_tables();
     }
     
-        private void guardarCarrerasExcel() {
-       Jfc j=new Jfc();
-       String path=j.guardar();
-       if(path!=null)
-        excel.guardar(table_carreras,path);
+    private void guardarTutoriasExcel(){
+         Jfc j=new Jfc();
+         String path=j.guardar();
+         if(path!=null)
+            excel.guardar(table_tutorias,path);
     }
-       
-   private void guardarEstudiantesExcel() {
-       Jfc j=new Jfc();
-       String path=j.guardar();
-       if(path!=null)
-        excel.guardar(table_estudiantes,path);
-    }  
-   
-   private void guardarGruposExcel() {
-       Jfc j=new Jfc();
-       String path=j.guardar();
-       if(path!=null)
-        excel.guardar(table_grupos,path);
+    
+    private void guardarGrupoExcel(){
+         Jfc j=new Jfc();
+         String path=j.guardar();
+         if(path!=null)
+            excel.guardar(table_tutorias,path);
     }
-   
-   private void guardarTutoresExcel() {
-       Jfc j=new Jfc();
-       String path=j.guardar();
-       if(path!=null)
-        excel.guardar(table_tutores,path);
+    
+    private void guardarTutoresExcel(){
+         Jfc j=new Jfc();
+         String path=j.guardar();
+         if(path!=null)
+            excel.guardar(table_tutorias,path);
     }
-   
-   private void guardarTutoriasExcel() {
-       Jfc j=new Jfc();
-       String path=j.guardar();
-       if(path!=null)
-        excel.guardar(table_tutorias,path);
+    
+    private void guardarEstudiantesExcel(){
+         Jfc j=new Jfc();
+         String path=j.guardar();
+         if(path!=null)
+            excel.guardar(table_tutorias,path);
+    }
+    
+    private void guardarCarrerasExcel(){
+         Jfc j=new Jfc();
+         String path=j.guardar();
+         if(path!=null)
+            excel.guardar(table_tutorias,path);
     }
 }
-	

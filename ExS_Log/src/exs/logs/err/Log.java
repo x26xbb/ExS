@@ -1,6 +1,5 @@
 package exs.logs.err;
 
-import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,8 +16,8 @@ public class Log {
         h.get(Calendar.MONTH);
         h.get(Calendar.DAY_OF_MONTH);
         h.get(Calendar.YEAR);
-        String path = "log/" + h.get(Calendar.DAY_OF_MONTH) + "-" + (h.get(Calendar.MONTH) + 1) + "-" + h.get(Calendar.YEAR) + ".lgg";
-        System.out.println(path + "\t" + msj);
+        String path = "log/" +(h.get(Calendar.MONTH) + 1)+"-"+ h.get(Calendar.DAY_OF_MONTH) + "-" + h.get(Calendar.YEAR) +"MM/DD/YYYY"+ ".lgg";
+        System.out.println("HOLAAAAAAA"+path + "\t" + msj);
         try {          
             BufferedWriter out = new BufferedWriter(new FileWriter(path, true));            
             out.write(h.getTime().toString() + "\t\t"+ msj+"\n");
