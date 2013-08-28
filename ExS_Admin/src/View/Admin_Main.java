@@ -918,27 +918,27 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
          Jfc j=new Jfc();
          String path=j.guardar();
          if(path!=null)
-            excel.guardar(table_tutorias,path);
+            excel.guardar(table_grupos,path);
     }
     
     private void guardarTutoresExcel(){
          Jfc j=new Jfc();
          String path=j.guardar();
          if(path!=null)
-            excel.guardar(table_tutorias,path);
+            excel.guardar(table_tutores,path);
     }
     
     private void guardarEstudiantesExcel(){
          Jfc j=new Jfc();
          String path=j.guardar();
          if(path!=null)
-            excel.guardar(table_tutorias,path);
+            excel.guardar(table_estudiantes,path);
     }
     
     private void guardarCarrerasExcel(){
          Jfc j=new Jfc();
          String path=j.guardar();
          if(path!=null)
-            excel.guardar(table_tutorias,path);
+            excel.guardar(table_carreras,path);
     }
 }
