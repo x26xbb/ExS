@@ -245,7 +245,7 @@
             </Container>
             <Component class="javax.swing.JButton" name="b_grupo_editar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Editar"/>
+                <Property name="text" type="java.lang.String" value="Ver Grupos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_grupo_editarActionPerformed"/>

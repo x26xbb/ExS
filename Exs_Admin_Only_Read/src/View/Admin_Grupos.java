@@ -4,7 +4,6 @@ import Controller.Gestor;
 import exs.logs.err.Log;
 import exs.mod.Grupo;
 import exs.mod.Tutoria;
-import exs.mod.var.Grupo_Var;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -47,30 +46,10 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
                     close();
                 }
             });
-//            grupoMostrar(false);
-//            fill_combos();
-
             update_table(true);
         }
     }
 
-//    private void fill_combos() {
-//        try {
-//            int anio = Grupo_Var.getAnio();
-//            int ciclo = Grupo_Var.getCiclo();
-//            for (int i = -2; i < 3; i++) {
-//                cb_AnioModel.addElement("" + (anio + i));
-//            }
-//            for (int i = 0; i < Grupo_Var.CICLOS.length; i++) {
-//                cb_CicloModel.addElement("" + Grupo_Var.CICLOS[i]);
-//            }
-//
-//            cb_Anio.setSelectedIndex(2);
-//            cb_Ciclo.setSelectedIndex(ciclo);
-//        } catch (Exception e) {
-//            Log.SendLog(e.getMessage());
-//        }
-//    }
 
     private void close() {
         Gestor.getInstancia().deleteObserver(this);
@@ -84,13 +63,6 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
             this.setIconImage(img);
             l_tuto.setText("Grupos - " + tutoria.toString());
             this.setTitle("Grupos - " + tutoria.toString());
-
-//            b_grupo_add.setIcon(new ImageIcon("img/b_add.png"));
-//
-//            b_grupo_edit.setIcon(new ImageIcon("img/b_up.png"));
-//
-//            b_grupo_del.setIcon(new ImageIcon("img/b_del.png"));
-            
             b_grupo_matriculas.setIcon(new ImageIcon("img/g_add.png"));
 
         } catch (Exception e) {
@@ -217,12 +189,6 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
 //            
             Grupo u = this.grupos.get(i);
             new Admin_Matriculas(u, tutoria).setVisible(true);
-//        } else {
-//            if(chk_Mostrar.isSelected()){
-//                i=getCicloChecked();
-//                //FALTA VALORAR SI HAY MAS CURSOS EN CICLO SELECTED
-//                Grupo u = this.grupos.get(i);
-//                new Admin_Matriculas(u, tutoria).setVisible(true);
            }else{
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una tutoría de la tabla");
             }
@@ -234,51 +200,6 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
         this.guardarTutoriasExcel();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-//    private int  getCicloChecked(){
-//        Grupo aux=this.grupos.get(0);
-//        int ciclo=this.cb_Ciclo.getSelectedIndex();
-//        int cont=0;
-//        if(aux!=null){
-//            while(aux!=null && aux.getCiclo()!= ciclo){
-//                cont++;
-//                aux=grupos.get(cont);
-//            }
-//            if(aux.getCiclo()==ciclo){
-//                return cont;
-//            }
-//        }
-//            return 0;
-//    }
-    
-//    private void chk_Change_M() {
-//        if (chk_Mostrar.isSelected()) {
-//            grupoMostrar(true);
-//        } else {
-//            grupoMostrar(false);
-//        }
-//        update_table(false);
-//    }
-//
-//    private void grupoMostrar(boolean b) {
-//        l_Anio.setVisible(b);
-//        l_Ciclo.setVisible(b);
-//        cb_Anio.setVisible(b);
-//        cb_Ciclo.setVisible(b);
-//    }
-
-//    private void del_grupo() {
-//        int i = table_grupos.getSelectedRow();
-//        if (i >= 0) {
-//            Grupo g = this.grupos.get(i);
-//            String msj = "Seguro que desea borrar el grupo " + g.getNum() + "?";
-//            int r = JOptionPane.showConfirmDialog(rootPane, msj, "Borrar Grupo", JOptionPane.YES_NO_OPTION);
-//            if (r == 0) {
-//                controller.del_grupo(g);
-//            }
-//        } else {
-//            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un grupo de la tabla");
-//        }
-//    }
 
     private void update_table(boolean query) {
         if (query) {
@@ -299,15 +220,7 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
             Object[] array = grupos.get(i).toArray();
             array[1] = controller.getTutor((String) array[1]).toString();
             array[7] = controller.getCantidadMatriculas((String)array[0]);
-//            if (chk_Mostrar.isSelected()) {
-//                int anio = Integer.parseInt((String) cb_AnioModel.getSelectedItem());
-//                String ciclo = (String) cb_CicloModel.getSelectedItem();
-//                if (array[2].equals(anio) && array[3].equals(ciclo)) {
-//                    modelo.addRow(array);
-//                }
-//            } else {
                 modelo.addRow(array);
-//            }
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

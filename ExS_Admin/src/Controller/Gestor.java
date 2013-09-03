@@ -42,7 +42,7 @@ public class Gestor extends Observable {
     }
 //Tutorias
 
-    public ArrayList<Tutoria> getTutorias() {
+    public ArrayList<Tutoria> getTutorias() {      
         return tutorias = db_gestor.getTutorias(false);//Aqui no lo mostramos ordenadas
     }
 

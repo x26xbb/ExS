@@ -62,10 +62,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         try {
             String path = "img/b_add.png";
             ImageIcon ima = new ImageIcon(path);
-//            b_tutor_add.setIcon(ima);
-//            b_tutoria_add.setIcon(ima);
-//            b_est_add.setIcon(ima);
-//            b_carrera_add.setIcon(ima);
 
         } catch (Exception e) {
             Log.SendLog(e.getMessage());
@@ -76,10 +72,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         try {
             String path = "img/b_up.png";
             ImageIcon ima = new ImageIcon(path);
-//            b_tutor_edit.setIcon(ima);
-//            b_tutoria_edit.setIcon(ima);
-//            b_est_edit.setIcon(ima);
-//            b_carrera_edit.setIcon(ima);
 
         } catch (Exception e) {
             Log.SendLog(e.getMessage());
@@ -90,10 +82,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         try {
             String path = "img/b_del.png";
             ImageIcon ima = new ImageIcon(path);
-//            b_tutor_del.setIcon(ima);
-//            b_tutoria_del.setIcon(ima);
-//            b_est_del.setIcon(ima);
-//            b_carrera_del.setIcon(ima);
 
         } catch (Exception e) {
             Log.SendLog(e.getMessage());
@@ -224,7 +212,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         table_grupos.getTableHeader().setReorderingAllowed(false);
         scrpane2.setViewportView(table_grupos);
 
-        b_grupo_editar.setText("Editar");
+        b_grupo_editar.setText("Ver Grupos");
         b_grupo_editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_grupo_editarActionPerformed(evt);

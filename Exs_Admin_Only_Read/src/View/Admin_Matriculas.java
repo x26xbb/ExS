@@ -70,12 +70,6 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             l_tuto.setText("Matrículas - " + grupo.getNum());
             this.setTitle("Matrículas - " + grupo.getNum());
 
-//            b_matricula_add.setIcon(new ImageIcon("img/b_add.png"));
-//
-//            b_matricula_edit.setIcon(new ImageIcon("img/b_up.png"));
-//
-//            b_matricula_del.setIcon(new ImageIcon("img/b_del.png"));
-
         } catch (Exception e) {
             Log.SendLog(e.getMessage());
         }
@@ -247,4 +241,5 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
        if(path!=null)
         excel.guardar(table_grupos,path);
     }
+
 }
