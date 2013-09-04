@@ -139,6 +139,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         b_est_edit = new javax.swing.JButton();
         b_est_del = new javax.swing.JButton();
         ButtonExcelEst = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         scrpane5 = new javax.swing.JScrollPane();
         table_carreras = new javax.swing.JTable();
@@ -220,7 +221,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoriasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -289,7 +290,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_gruposLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(b_grupo_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -367,7 +368,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -446,20 +447,28 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton2.setText("Ver Historial");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p_estudiantesLayout = new javax.swing.GroupLayout(p_estudiantes);
         p_estudiantes.setLayout(p_estudiantesLayout);
         p_estudiantesLayout.setHorizontalGroup(
             p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_estudiantesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(b_est_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(b_est_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_est_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(b_est_del, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                    .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
                 .addContainerGap())
         );
         p_estudiantesLayout.setVerticalGroup(
@@ -475,7 +484,9 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(b_est_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_est_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -535,7 +546,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
+                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -581,7 +592,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                         .addComponent(tab_pane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 127, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(60, 60, 60)
                         .addComponent(jLabel4)
@@ -739,6 +750,23 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         this.guardarCarrerasExcel();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int i = table_estudiantes.getSelectedRow();
+        if (i >= 0) {
+            Estudiante estudiante = controller._getEstudiantes().get(i);
+            ArrayList a=getHistoricoEstudiante(estudiante.getId());
+            if(a!=null){
+                new Admin_Historico_Est(a).setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "ERROR NO SE PUDO LEER EL HISTORIAL DEL ESTUDIANTE");}
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un estudiante de la tabla");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    public ArrayList getHistoricoEstudiante(int id){
+        return controller.getHistorico(id);
+    }
     public void del_tutoria() {
         int i = table_tutorias.getSelectedRow();
         if (i >= 0) {
@@ -881,6 +909,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton buttonExcelTutoria;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

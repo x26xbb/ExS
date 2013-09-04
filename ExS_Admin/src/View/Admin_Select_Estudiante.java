@@ -3,7 +3,6 @@ package View;
 import Controller.Gestor;
 import exs.logs.err.Log;
 import exs.mod.Estudiante;
-import exs.mod.Tutor;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package Controller;
 
 import exs.db.ConnBase;
+import exs.db.Historico;
 import exs.db.MySql_ConnGestor;
 import exs.logs.err.Log;
 import exs.mail.SendEmail;
@@ -297,4 +298,8 @@ public class Gestor extends Observable {
     private ArrayList<Tutor> tutores = null;
     private ArrayList<Estudiante> estudiantes = null;
     private ArrayList<Carrera> carrreras = null;
+
+    public ArrayList<Historico> getHistorico(int id) {
+        return db_gestor.getHistorico(id);
+    }
 }

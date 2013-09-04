@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class Admin_New_Tutoria extends javax.swing.JFrame {
 
     Tutoria update = null;
+    int contNom=30;
 
     public Admin_New_Tutoria(Tutoria t) {
         initComponents();        
@@ -70,6 +71,8 @@ public class Admin_New_Tutoria extends javax.swing.JFrame {
         t_cod = new javax.swing.JTextField();
         t_nom = new javax.swing.JTextField();
         l_av = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
@@ -104,8 +107,20 @@ public class Admin_New_Tutoria extends javax.swing.JFrame {
             }
         });
 
+        t_nom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                t_nomKeyTyped(evt);
+            }
+        });
+
         l_av.setForeground(new java.awt.Color(153, 0, 0));
         l_av.setText("Código no disponible");
+
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setText("Maximo 15 caracteres");
+
+        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setText("Maximo 30 caracteres");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,9 +140,12 @@ public class Admin_New_Tutoria extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(t_cod)
-                            .addComponent(t_nom, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(t_cod)
+                                .addComponent(t_nom, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addComponent(l_av)))
                 .addContainerGap(119, Short.MAX_VALUE))
@@ -152,11 +170,15 @@ public class Admin_New_Tutoria extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(t_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(l_av))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(t_nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_add)
                     .addComponent(b_can))
@@ -177,6 +199,10 @@ public class Admin_New_Tutoria extends javax.swing.JFrame {
     private void look_cod(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_look_cod
         l_av.setVisible(Gestor.getInstancia().is_Cod_Used(t_cod.getText()));
     }//GEN-LAST:event_look_cod
+
+    private void t_nomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_nomKeyTyped
+       
+    }//GEN-LAST:event_t_nomKeyTyped
 
     private void close() {
         dispose();
@@ -203,8 +229,10 @@ public class Admin_New_Tutoria extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_add;
     private javax.swing.JButton b_can;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel l_av;
     private javax.swing.JLabel l_text;

@@ -364,6 +364,39 @@ public abstract class ConnBase {
         }
         return estudiante;
     }
+    
+    public ArrayList<Historico> getHistorico(int id) {
+        ArrayList<Historico> lista = new ArrayList<>();
+        connect();        
+        String query=String.format(Querys.GET_HISTORICO, id);
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                rset = stmt.executeQuery(String.format(Querys.GET_HISTORICO, id));
+                if (rset.next()) {
+                    String nomCurso, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa;
+                    nomCurso = rset.getString(1);
+                    num = rset.getString(2);
+                    tcod = rset.getString(3);
+                    anio = rset.getString(4);
+                    ciclo = rset.getString(5);
+                    horario = rset.getString(6);
+                    ced = rset.getString(7);
+                    nombre = rset.getString(8);
+                    pa = rset.getString(9);
+                    sa = rset.getString(10);
+                    lista.add(new Historico(nomCurso, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa));                 
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+                return null;
+            }
+        }
+        return lista;
+    }
 
     public boolean update_estudiante(Estudiante t) {
         return execute_update(String.format(Querys.UPDATE_ESTUDIANTE, t.getNombre(),
