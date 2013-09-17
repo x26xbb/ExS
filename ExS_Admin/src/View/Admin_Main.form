@@ -304,8 +304,8 @@
         <Container class="javax.swing.JPanel" name="p_tutores">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Tutores">
-                <Property name="tabTitle" type="java.lang.String" value="Tutores"/>
+              <JTabbedPaneConstraints tabName="Tutoras(es)">
+                <Property name="tabTitle" type="java.lang.String" value="Tutoras(es)"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -318,12 +318,16 @@
                       <Component id="scrpane3" pref="650" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="b_tutor_add" alignment="1" max="32767" attributes="0"/>
                               <Component id="b_tutor_edit" alignment="1" max="32767" attributes="0"/>
-                              <Component id="b_tutor_del" alignment="1" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="b_tutor_del" alignment="1" pref="125" max="32767" attributes="0"/>
+                              <Component id="jButton3" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="ButtonExcelTutores" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="ButtonExcelTutores" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -338,8 +342,10 @@
                       <Component id="b_tutor_edit" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="b_tutor_del" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ButtonExcelTutores" min="-2" pref="119" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="ButtonExcelTutores" min="-2" pref="120" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -438,6 +444,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonExcelTutoresActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="jButton3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver Historial"/>
+                <Property name="toolTipText" type="java.lang.String" value="Ver Cursos en los que la persona ha sido tutora"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="p_estudiantes">
@@ -457,11 +472,9 @@
                       <Component id="scrpane4" pref="650" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="b_est_add" alignment="1" max="32767" attributes="0"/>
-                              <Component id="b_est_edit" alignment="1" max="32767" attributes="0"/>
-                              <Component id="b_est_del" pref="125" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="b_est_add" alignment="1" max="32767" attributes="0"/>
+                          <Component id="b_est_edit" alignment="1" max="32767" attributes="0"/>
+                          <Component id="b_est_del" alignment="1" pref="125" max="32767" attributes="0"/>
                           <Component id="ButtonExcelEst" min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="jButton2" pref="125" max="32767" attributes="0"/>
                       </Group>

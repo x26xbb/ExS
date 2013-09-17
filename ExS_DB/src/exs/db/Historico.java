@@ -10,7 +10,8 @@ package exs.db;
  */
 public class Historico {
     String nomCurso, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa;
-
+    int tipo;//1 est 2 tutor
+    
     public Historico(String nomCurso, String num, String tcod, String anio, String ciclo, String horario, String ced, String nombre,String pa,String sa) {
         this.nomCurso = nomCurso;
         this.num = num;
@@ -26,10 +27,11 @@ public class Historico {
             }
         }
         this.horario = horario;
-        this.ced = ced;
+        this.ced = " de Estudiante: "+ced;
         this.nombre = nombre;
         this.pa=pa;
         this.sa=sa;
+        tipo=1;
     }
 
     

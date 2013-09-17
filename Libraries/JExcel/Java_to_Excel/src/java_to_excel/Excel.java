@@ -25,6 +25,7 @@ import jxl.write.WriteException;
 public class Excel {
 
     private String inputFile;
+    private String historico=null;
 
     
     public Excel(){
@@ -45,22 +46,25 @@ public class Excel {
         TableColumnModel tcm = th.getColumnModel();  
         int col=0;
         excelSheet.getSettings().setDefaultColumnWidth(20);
-        
+        if(historico!=null){
+            excelSheet.addCell(new Label(0,0, historico));
+        }        
         for(int fila = 0, y = tcm.getColumnCount(); fila < y; fila++){  
           TableColumn tc = tcm.getColumn(fila);  
-          excelSheet.addCell(new Label(col,0, String.valueOf(tc.getHeaderValue())));   
+          excelSheet.addCell(new Label(col,2, String.valueOf(tc.getHeaderValue())));   
           col++;
         }    
         int i,j=0;
         for(i=0;i< table_estudiantes.getColumnCount();i++){	
             for(j=0;j<table_estudiantes.getRowCount();j++){
 		Object objeto=table_estudiantes.getValueAt(j,i);
-			excelSheet.addCell(new Label(i, j+1, String.valueOf(objeto)));        
+			excelSheet.addCell(new Label(i, j+3, String.valueOf(objeto)));        
             }
         }
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        excelSheet.addCell(new Label(i,j+1,"Tomado del Sistema de Matricula Exito Academico el:"+dateFormat.format(date)));
+        
+        excelSheet.addCell(new Label(i,j+3,"Tomado del Sistema de Matricula Exito Academico el:"+dateFormat.format(date)));
         workbook.write();
         workbook.close();
     }
@@ -77,4 +81,8 @@ public class Excel {
         }
     }
 
+    public void guardar(JTable table_historico, String path, String title) {
+        historico=title;
+        guardar(table_historico,path);
+    }
 }

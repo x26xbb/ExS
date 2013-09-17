@@ -365,15 +365,19 @@ public abstract class ConnBase {
         return estudiante;
     }
     
-    public ArrayList<Historico> getHistorico(int id) {
+    public ArrayList<Historico> getHistorico(int id,int tipo) {
         ArrayList<Historico> lista = new ArrayList<>();
-        connect();        
-        String query=String.format(Querys.GET_HISTORICO, id);
+        connect();  
         if (conn != null) {
             try {
                 stmt = conn.createStatement();
-                rset = stmt.executeQuery(String.format(Querys.GET_HISTORICO, id));
-                if (rset.next()) {
+                if(tipo==1){
+                 rset = stmt.executeQuery(String.format(Querys.GET_HISTORICO, id));
+                }
+                if(tipo==2){
+                 rset = stmt.executeQuery(String.format(Querys.GET_CANT_GRUPO, id));
+                }
+                while (rset.next()) {
                     String nomCurso, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa;
                     nomCurso = rset.getString(1);
                     num = rset.getString(2);

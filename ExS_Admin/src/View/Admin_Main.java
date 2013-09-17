@@ -132,6 +132,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         b_tutor_edit = new javax.swing.JButton();
         b_tutor_del = new javax.swing.JButton();
         ButtonExcelTutores = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         p_estudiantes = new javax.swing.JPanel();
         scrpane4 = new javax.swing.JScrollPane();
         table_estudiantes = new javax.swing.JTable();
@@ -362,6 +363,14 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton3.setText("Ver Historial");
+        jButton3.setToolTipText("Ver Cursos en los que la persona ha sido tutora");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p_tutoresLayout = new javax.swing.GroupLayout(p_tutores);
         p_tutores.setLayout(p_tutoresLayout);
         p_tutoresLayout.setHorizontalGroup(
@@ -371,11 +380,14 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(b_tutor_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_tutor_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_tutor_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(b_tutor_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(b_tutor_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(b_tutor_del, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(p_tutoresLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         p_tutoresLayout.setVerticalGroup(
@@ -387,8 +399,10 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(b_tutor_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_tutor_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(p_tutoresLayout.createSequentialGroup()
                 .addContainerGap()
@@ -396,7 +410,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addContainerGap())
         );
 
-        tab_pane.addTab("Tutores", p_tutores);
+        tab_pane.addTab("Tutoras(es)", p_tutores);
 
         table_estudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -463,10 +477,9 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(b_est_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_est_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_est_del, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                    .addComponent(b_est_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(b_est_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(b_est_del, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                     .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
                 .addContainerGap())
@@ -754,7 +767,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         int i = table_estudiantes.getSelectedRow();
         if (i >= 0) {
             Estudiante estudiante = controller._getEstudiantes().get(i);
-            ArrayList a=getHistoricoEstudiante(estudiante.getId());
+            ArrayList a=getHistorico(estudiante.getId(),1);
             if(a!=null){
                 new Admin_Historico_Est(a).setVisible(true);
             }else{
@@ -764,9 +777,24 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    public ArrayList getHistoricoEstudiante(int id){
-        return controller.getHistorico(id);
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         int i = table_tutores.getSelectedRow();
+            if (i >= 0) {
+            Tutor tutor = controller._getTutores().get(i);
+            ArrayList a=getHistorico(tutor.getId(),1);
+            if(a!=null){
+                new Admin_Historico_Est(a).setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "ERROR NO SE PUDO LEER EL HISTORIAL DEL TUTOR");}
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un tutor de la tabla");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public ArrayList getHistorico(int id,int tipo){
+        return controller.getHistorico(id,tipo);
     }
+    
     public void del_tutoria() {
         int i = table_tutorias.getSelectedRow();
         if (i >= 0) {
@@ -910,6 +938,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

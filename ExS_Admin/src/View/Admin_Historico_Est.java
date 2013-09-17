@@ -6,6 +6,7 @@ package View;
 
 import exs.db.Historico;
 import java.util.ArrayList;
+import java_to_excel.Excel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,8 +31,8 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
     }
 
     private void fillTableHistorico(ArrayList<Historico> datos) {
-        this.setTitle("Historial de Matricula de Estudiante: "+datos.get(0).getCed()+","+datos.get(0).getNombre()+datos.get(0).getPa()+datos.get(0).getSa()+" -  ExS");
-        this.labelEstudiante.setText(datos.get(0).getCed()+", "+datos.get(0).getNombre()+" "+datos.get(0).getPa()+" "+datos.get(0).getSa());
+        this.setTitle("Historial de Matricula de "+datos.get(0).getCed()+","+datos.get(0).getNombre()+datos.get(0).getPa()+datos.get(0).getSa()+" -  ExS");
+        this.labelhistorialde_tipo.setText(datos.get(0).getCed()+", "+datos.get(0).getNombre()+" "+datos.get(0).getPa()+" "+datos.get(0).getSa());
         limpiaTabla(table_historico);
         DefaultTableModel modelo = (DefaultTableModel) table_historico.getModel();
         for (int i = 0; i < datos.size(); i++) {
@@ -49,16 +50,17 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        labelEstudiante = new javax.swing.JLabel();
+        labelhistorialde_tipo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_historico = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Historial de Matricula de Estudiante:");
+        jLabel1.setText("Historial de Matricula ");
 
-        labelEstudiante.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelhistorialde_tipo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         table_historico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,6 +80,13 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(table_historico);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/page_white_excel.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,27 +94,40 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 92, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelhistorialde_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(labelEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelhistorialde_tipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 14, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.guardarHistorial();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,9 +165,19 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
 //    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelEstudiante;
+    private javax.swing.JLabel labelhistorialde_tipo;
     private javax.swing.JTable table_historico;
     // End of variables declaration//GEN-END:variables
+    private Excel excel;
+    
+    private void guardarHistorial() {
+         Jfc j=new Jfc();
+         excel=new Excel();
+         String path=j.guardar();
+         if(path!=null)
+            excel.guardar(table_historico,path,this.jLabel1.getText()+this.labelhistorialde_tipo.getText());
+    }
 }

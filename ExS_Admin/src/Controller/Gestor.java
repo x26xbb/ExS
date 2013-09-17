@@ -299,7 +299,8 @@ public class Gestor extends Observable {
     private ArrayList<Estudiante> estudiantes = null;
     private ArrayList<Carrera> carrreras = null;
 
-    public ArrayList<Historico> getHistorico(int id) {
-        return db_gestor.getHistorico(id);
+    public ArrayList<Historico> getHistorico(int id,int tipo) {
+        return db_gestor.getHistorico(id,tipo);
     }
+ 
 }
