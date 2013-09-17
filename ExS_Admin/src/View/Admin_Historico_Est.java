@@ -7,6 +7,7 @@ package View;
 import exs.db.Historico;
 import java.util.ArrayList;
 import java_to_excel.Excel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,13 +32,16 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
     }
 
     private void fillTableHistorico(ArrayList<Historico> datos) {
-        this.setTitle("Historial de Matricula de "+datos.get(0).getCed()+","+datos.get(0).getNombre()+datos.get(0).getPa()+datos.get(0).getSa()+" -  ExS");
-        this.labelhistorialde_tipo.setText(datos.get(0).getCed()+", "+datos.get(0).getNombre()+" "+datos.get(0).getPa()+" "+datos.get(0).getSa());
-        limpiaTabla(table_historico);
-        DefaultTableModel modelo = (DefaultTableModel) table_historico.getModel();
-        for (int i = 0; i < datos.size(); i++) {
-            Object[] array = datos.get(i).toArray();
-            modelo.addRow(array);
+        if(datos==null){ JOptionPane.showMessageDialog(null, "No existen registros para esta persona");return;}
+        else{
+            this.setTitle("Historial de Matricula de "+datos.get(0).getCed()+","+datos.get(0).getNombre()+datos.get(0).getPa()+datos.get(0).getSa()+" -  ExS");
+            this.labelhistorialde_tipo.setText(datos.get(0).getCed()+", "+datos.get(0).getNombre()+" "+datos.get(0).getPa()+" "+datos.get(0).getSa());
+            limpiaTabla(table_historico);
+            DefaultTableModel modelo = (DefaultTableModel) table_historico.getModel();
+            for (int i = 0; i < datos.size(); i++) {
+                Object[] array = datos.get(i).toArray();
+                modelo.addRow(array);
+            }
         }
     }
     /**
@@ -67,11 +71,11 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Curso", "Numero", "Horario", "Ciclo", "Anio"
+                "Codigo", "Curso", "Numero", "Horario", "Ciclo", "Anio", "Estado", "Lugar"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -95,14 +99,15 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelhistorialde_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(labelhistorialde_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 277, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,13 +118,13 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 14, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
         );
 
         pack();

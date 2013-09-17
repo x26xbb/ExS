@@ -367,7 +367,8 @@ public abstract class ConnBase {
     
     public ArrayList<Historico> getHistorico(int id,int tipo) {
         ArrayList<Historico> lista = new ArrayList<>();
-        connect();  
+        connect(); 
+        int cont=0;
         if (conn != null) {
             try {
                 stmt = conn.createStatement();
@@ -375,21 +376,24 @@ public abstract class ConnBase {
                  rset = stmt.executeQuery(String.format(Querys.GET_HISTORICO, id));
                 }
                 if(tipo==2){
-                 rset = stmt.executeQuery(String.format(Querys.GET_CANT_GRUPO, id));
+                 rset = stmt.executeQuery(String.format(Querys.VER_CURSOS_TUTOR, id));
                 }
                 while (rset.next()) {
-                    String nomCurso, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa;
+                    String lugar,ced,nomCurso, num, tcod, anio,ciclo,horario,estado,nombre,pa,sa;
                     nomCurso = rset.getString(1);
                     num = rset.getString(2);
                     tcod = rset.getString(3);
                     anio = rset.getString(4);
                     ciclo = rset.getString(5);
                     horario = rset.getString(6);
-                    ced = rset.getString(7);
-                    nombre = rset.getString(8);
-                    pa = rset.getString(9);
-                    sa = rset.getString(10);
-                    lista.add(new Historico(nomCurso, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa));                 
+                    estado = rset.getString(7);
+                    ced = rset.getString(8);
+                    nombre = rset.getString(9);
+                    pa = rset.getString(10);
+                    sa = rset.getString(11);
+                    lugar = rset.getString(12);
+                    cont++;
+                    lista.add(new Historico(nomCurso, num, tcod, anio,ciclo,horario,estado,ced,nombre,pa,sa,tipo,lugar));                 
                 }
                 rset.close();
                 stmt.close();
@@ -399,6 +403,8 @@ public abstract class ConnBase {
                 return null;
             }
         }
+        if(cont==0) return null;
+        
         return lista;
     }
 

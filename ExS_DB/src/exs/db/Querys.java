@@ -23,14 +23,15 @@ public class Querys {
     public static String DEL_TUTOR = "DELETE FROM TUTOR WHERE ID = '%s'";
     public static String UPDATE_TUTOR = "UPDATE TUTOR SET NOM = '%s',   PAPE= '%s', SAPE= '%s', GENERO= '%d', TEL= '%d', EMAIL= '%s'  WHERE ID = '%s'";
     public static String INSERT_TUTOR = "INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('%s' , '%s', '%s', '%s', '%d', '%d', '%s')";
-    public static String VER_CURSOS_TUTOR = "select grupo.num,grupo.tcod,grupo.lugar,"
-            + "grupo.anio,grupo.ciclo,grupo.horario,grupo.estado "
-            + "from grupo where tid='%d'";
+    public static String VER_CURSOS_TUTOR = "select tutoria.nom,grupo.num,grupo.tcod,"
+            + "grupo.anio,grupo.ciclo,grupo.horario,grupo.estado,tutor.id,tutor.nom,pape,sape,grupo.lugar "
+            + "from grupo,tutor,tutoria where tid='%d' "
+            + "and tutoria.cod=grupo.tcod";
     //
     //Grupos
     public static String GET_HISTORICO= "select tutoria.nom,grupo.num,grupo.tcod,"
-        + "grupo.anio,grupo.ciclo,grupo.horario,matricula.eid,estudiante.nom,"
-        + "estudiante.pape,estudiante.sape"
+        + "grupo.anio,grupo.ciclo,grupo.horario,grupo.estado,matricula.eid,estudiante.nom,"
+        + "estudiante.pape,estudiante.sape,grupo.lugar"
         + " from tutoria,matricula,grupo,estudiante "
         + "where matricula.eid='%d'and grupo.num=matricula.gnum "
         + "and estudiante.id=matricula.eid and tutoria.cod=grupo.tcod";  

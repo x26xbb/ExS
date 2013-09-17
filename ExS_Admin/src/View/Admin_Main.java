@@ -771,7 +771,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             if(a!=null){
                 new Admin_Historico_Est(a).setVisible(true);
             }else{
-                JOptionPane.showMessageDialog(null, "ERROR NO SE PUDO LEER EL HISTORIAL DEL ESTUDIANTE");}
+                JOptionPane.showMessageDialog(null, "Error,No se pudo leer el historial,puede que esta persona no tenga ninguna matricula");}
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un estudiante de la tabla");
         }
@@ -781,11 +781,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
          int i = table_tutores.getSelectedRow();
             if (i >= 0) {
             Tutor tutor = controller._getTutores().get(i);
-            ArrayList a=getHistorico(tutor.getId(),1);
+            ArrayList a=getHistorico(tutor.getId(),2);
             if(a!=null){
                 new Admin_Historico_Est(a).setVisible(true);
             }else{
-                JOptionPane.showMessageDialog(null, "ERROR NO SE PUDO LEER EL HISTORIAL DEL TUTOR");}
+                JOptionPane.showMessageDialog(null, "Error,No se pudo leer el historial,puede que esta persona no tenga ninguna matricula");}
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un tutor de la tabla");
         }

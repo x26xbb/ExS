@@ -9,10 +9,27 @@ package exs.db;
  * @author Administrator
  */
 public class Historico {
-    String nomCurso, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa;
+    String lugar,nomCurso,estado, num, tcod, anio,ciclo,horario,ced,nombre,pa,sa;
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
     int tipo;//1 est 2 tutor
+
     
-    public Historico(String nomCurso, String num, String tcod, String anio, String ciclo, String horario, String ced, String nombre,String pa,String sa) {
+     public Historico( String num,String nomCurso, String tcod, String anio, String ciclo, String horario,String estado,String ced, String nombre,String pa,String sa,int tipo,String lugar) {
         this.nomCurso = nomCurso;
         this.num = num;
         this.tcod = tcod;
@@ -27,16 +44,19 @@ public class Historico {
             }
         }
         this.horario = horario;
-        this.ced = " de Estudiante: "+ced;
+        if(tipo==1) this.ced = " de Estudiante: "+ced;
+        else this.ced = " de Tutor: "+ced;
         this.nombre = nombre;
         this.pa=pa;
         this.sa=sa;
-        tipo=1;
+        this.estado=estado;
+        this.tipo=tipo;
+        this.lugar=lugar;
     }
 
     
       public Object[] toArray() {
-        Object[] array = {nomCurso, num,tcod,horario,ciclo,anio};
+        Object[] array = {nomCurso, num,tcod,horario,ciclo,anio,estado,lugar};
         return array;
     }
 
