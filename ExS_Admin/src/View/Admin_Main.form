@@ -620,6 +620,7 @@
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Historial"/>
+                <Property name="toolTipText" type="java.lang.String" value="Ver cursos en lo que ha matriculado esta persona"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>

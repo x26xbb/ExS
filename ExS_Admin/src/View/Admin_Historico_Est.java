@@ -10,18 +10,22 @@ import java_to_excel.Excel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
  * @author Administrator
  */
 public class Admin_Historico_Est extends javax.swing.JFrame {
+    private TableRowSorter sorterHistorico;
 
     /**
      * Creates new form Admin_Historico_Est
      */
     public Admin_Historico_Est(ArrayList datos) {
-        initComponents();fillTableHistorico(datos);        
+        initComponents();fillTableHistorico(datos); 
+         sorterHistorico = new TableRowSorter(table_historico.getModel());
+         table_historico.setRowSorter(sorterHistorico);
     }
     
       private void limpiaTabla(JTable tabla) {

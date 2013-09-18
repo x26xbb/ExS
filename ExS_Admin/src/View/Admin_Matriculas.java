@@ -5,7 +5,6 @@ import exs.logs.err.Log;
 import exs.mod.Grupo;
 import exs.mod.Matricula;
 import exs.mod.Tutoria;
-import exs.mod.var.Grupo_Var;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -18,6 +17,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -30,6 +30,7 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
     private Tutoria tutoria = null;
     private Gestor controller = null;
     private ArrayList<Matricula> matriculas = null;
+    private TableRowSorter sorterGrupo;
 
     public Admin_Matriculas(Grupo g, Tutoria t) {
         excel=new Excel();
@@ -42,6 +43,8 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             this.tutoria = t;
             this.controller = Gestor.getInstancia();
             initComponents();
+            sorterGrupo = new TableRowSorter(table_grupos.getModel());
+           table_grupos.setRowSorter(sorterGrupo);
             setImages();
             Gestor.getInstancia().addObserver(this);
             this.addWindowListener(new WindowAdapter() {

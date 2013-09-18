@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -22,9 +23,12 @@ public class Admin_Select_Estudiante extends javax.swing.JFrame {
      */
     private int seleccion = -1;
     private boolean change = false;
+    private TableRowSorter sorterEst;
 
     public Admin_Select_Estudiante() {
         initComponents();
+        sorterEst = new TableRowSorter(table_estudiante.getModel());
+        table_estudiante.setRowSorter(sorterEst);
         setImages();
     }
 

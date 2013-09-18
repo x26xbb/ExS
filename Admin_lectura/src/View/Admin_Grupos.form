@@ -38,9 +38,22 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="scrpane1" pref="695" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="b_grupo_matriculas" min="-2" pref="129" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="94" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="chk_Mostrar" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="l_Anio" min="-2" max="-2" attributes="0"/>
+                                  <Component id="l_Ciclo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cb_Ciclo" max="32767" attributes="0"/>
+                                  <Component id="cb_Anio" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="b_grupo_matriculas" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jButton1" alignment="1" min="-2" pref="94" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
@@ -59,7 +72,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="b_grupo_matriculas" min="-2" pref="36" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="chk_Mostrar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="l_Ciclo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cb_Ciclo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cb_Anio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="l_Anio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="119" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -150,6 +175,50 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JCheckBox" name="chk_Mostrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#xf3;lo mostrar del ciclo:"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chk_Change"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="l_Ciclo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ciclo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cb_Ciclo">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="cb_CicloModel = new javax.swing.DefaultComboBoxModel();">
+          <Connection code="cb_CicloModel" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listenerCombos"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPre" type="java.lang.String" value="private javax.swing.DefaultComboBoxModel cb_CicloModel;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="l_Anio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cb_Anio">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" preCode="cb_AnioModel = new javax.swing.DefaultComboBoxModel();">
+          <Connection code="cb_AnioModel" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listenerCombos"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPre" type="java.lang.String" value="private javax.swing.DefaultComboBoxModel cb_AnioModel;"/>
+      </AuxValues>
+    </Component>
     <Component class="javax.swing.JButton" name="b_grupo_matriculas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Matr&#xed;culas"/>

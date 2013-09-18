@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -28,6 +29,7 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private Tutoria tutoria = null;
     private Gestor controller = null;
     private ArrayList<Grupo> grupos = null;
+    private TableRowSorter sorterGrupos;
 
     public Admin_Grupos(Tutoria tuto) {
         if (tuto == null) {
@@ -38,6 +40,8 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
             this.tutoria = tuto;
             this.controller = Gestor.getInstancia();
             initComponents();
+            sorterGrupos = new TableRowSorter(table_grupos.getModel());
+            table_grupos.setRowSorter(sorterGrupos);
             setImages();
             Gestor.getInstancia().addObserver(this);
             this.addWindowListener(new WindowAdapter() {
@@ -323,20 +327,14 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_chk_Change
 
     private void b_grupo_matriculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grupo_matriculasActionPerformed
-
-        ///CON CHECK CONSULTA=SIN CHECK!ERROR
-        int i = table_grupos.getSelectedRow();
-        if (i >= 0 && !chk_Mostrar.isSelected()) {
-            Grupo u = this.grupos.get(i);
-            new Admin_Matriculas(u, tutoria).setVisible(true);
-        } else {
-            if(chk_Mostrar.isSelected()){
-                i=getCicloChecked();
-                //FALTA VALORAR SI HAY MAS CURSOS EN CICLO SELECTED
-                Grupo u = this.grupos.get(i);
+        int i = table_grupos.getSelectedRow();      
+        if (i >= 0) {
+            String o=(String) table_grupos.getModel().getValueAt(i, 0);
+            Grupo u= getGrupo(this.grupos,o);
+            if(u!=null){
                 new Admin_Matriculas(u, tutoria).setVisible(true);
             }else{
-            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una tutoría de la tabla");
+                            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un grupo de la tabla");
             }
        }
 
@@ -345,22 +343,6 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.guardarTutoriasExcel();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private int  getCicloChecked(){
-        Grupo aux=this.grupos.get(0);
-        int ciclo=this.cb_Ciclo.getSelectedIndex();
-        int cont=0;
-        if(aux!=null){
-            while(aux!=null && aux.getCiclo()!= ciclo){
-                cont++;
-                aux=grupos.get(cont);
-            }
-            if(aux.getCiclo()==ciclo){
-                return cont;
-            }
-        }
-            return 0;
-    }
     
     private void chk_Change_M() {
         if (chk_Mostrar.isSelected()) {
@@ -452,5 +434,19 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
        String path=j.guardar();
        if(path!=null)
         excel.guardar(table_grupos,path);
+    }
+
+    private Grupo getGrupo(ArrayList<Grupo> grupos, String o) {
+        int cont=0;
+        Grupo aux=grupos.get(cont);
+        while(aux!=null){
+            if(o.equals(aux.getNum())){
+                return aux;
+            }else{
+                cont++;
+                aux=grupos.get(cont);
+            }
+        }
+        return null;
     }
 }

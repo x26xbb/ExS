@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -29,12 +30,14 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private Gestor controller = Gestor.getInstancia();
     private static int MIN_H = 600;
     private static int MIN_W = 975;
+    
 
     public Admin_Main() {
         this.excel = new Excel();  
         if (controller.isUsable()) {
             initComponents();
             setImages();
+            setOrdenadoresTablas();            
             controller.addObserver(this);
         } else {
             setVisible(false);
@@ -462,6 +465,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         });
 
         jButton2.setText("Ver Historial");
+        jButton2.setToolTipText("Ver cursos en lo que ha matriculado esta persona");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -960,6 +964,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JTable table_tutorias;
     // End of variables declaration//GEN-END:variables
     private Excel excel;
+    private TableRowSorter sorterTutorias;
+    private TableRowSorter sorterTutores;
+    private TableRowSorter sorterEstudiantes;
+    private TableRowSorter sorterCarreras;
+    private TableRowSorter sorterGrupos;
     @Override
     public void update(Observable o, Object arg) {
         update_tables();
@@ -998,5 +1007,18 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
          String path=j.guardar();
          if(path!=null)
             excel.guardar(table_carreras,path);
+    }
+
+    private void setOrdenadoresTablas() {
+        sorterTutorias = new TableRowSorter(table_tutorias.getModel());
+        table_tutorias.setRowSorter(sorterTutorias);
+        sorterTutores = new TableRowSorter(table_tutores.getModel());
+        table_tutores.setRowSorter(sorterTutores);
+        sorterEstudiantes = new TableRowSorter(table_estudiantes.getModel());
+        table_estudiantes.setRowSorter(sorterEstudiantes);
+        sorterCarreras = new TableRowSorter(table_carreras.getModel());
+        table_carreras.setRowSorter(sorterCarreras);
+        sorterGrupos = new TableRowSorter(table_grupos.getModel());
+        table_grupos.setRowSorter(sorterGrupos);
     }
 }
