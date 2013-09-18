@@ -301,6 +301,5 @@ public class Gestor extends Observable {
 
     public ArrayList<Historico> getHistorico(int id,int tipo) {
         return db_gestor.getHistorico(id,tipo);
-    }
- 
+    } 
 }

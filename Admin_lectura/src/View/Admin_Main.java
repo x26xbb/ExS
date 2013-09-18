@@ -114,10 +114,12 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         scrpane3 = new javax.swing.JScrollPane();
         table_tutores = new javax.swing.JTable();
         ButtonExcelTutores = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         p_estudiantes = new javax.swing.JPanel();
         scrpane4 = new javax.swing.JScrollPane();
         table_estudiantes = new javax.swing.JTable();
         ButtonExcelEst = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         scrpane5 = new javax.swing.JScrollPane();
         table_carreras = new javax.swing.JTable();
@@ -283,6 +285,14 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton2.setText("Ver Historial");
+        jButton2.setToolTipText("Ver en cuales cursos ha dado tutorias");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p_tutoresLayout = new javax.swing.GroupLayout(p_tutores);
         p_tutores.setLayout(p_tutoresLayout);
         p_tutoresLayout.setHorizontalGroup(
@@ -291,22 +301,26 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         p_tutoresLayout.setVerticalGroup(
             p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(p_tutoresLayout.createSequentialGroup()
-                        .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
+                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(p_tutoresLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tab_pane.addTab("Tutores", p_tutores);
+        tab_pane.addTab("Tutoras(es)", p_tutores);
 
         table_estudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -335,6 +349,14 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton3.setText("Ver Historial");
+        jButton3.setToolTipText("Ver cursos en los que ha estado esta persona");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p_estudiantesLayout = new javax.swing.GroupLayout(p_estudiantes);
         p_estudiantes.setLayout(p_estudiantesLayout);
         p_estudiantesLayout.setHorizontalGroup(
@@ -343,18 +365,23 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         p_estudiantesLayout.setVerticalGroup(
             p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_estudiantesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                     .addGroup(p_estudiantesLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -489,6 +516,34 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         this.guardarCarrerasExcel();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         int i = table_tutores.getSelectedRow();
+            if (i >= 0) {
+            Tutor tutor = controller._getTutores().get(i);
+            ArrayList a=getHistorico(tutor.getId(),2);
+            if(a!=null){
+                new Admin_Historico_Est(a).setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "Error,No se pudo leer el historial,puede que esta persona no tenga ninguna matricula");}
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un tutor de la tabla");
+        }                       
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       int i = table_estudiantes.getSelectedRow();
+        if (i >= 0) {
+            Estudiante estudiante = controller._getEstudiantes().get(i);
+            ArrayList a=getHistorico(estudiante.getId(),1);
+            if(a!=null){
+                new Admin_Historico_Est(a).setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "Error,No se pudo leer el historial,puede que esta persona no tenga ninguna matricula");}
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un estudiante de la tabla");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     public void del_tutoria() {
         int i = table_tutorias.getSelectedRow();
         if (i >= 0) {
@@ -608,9 +663,9 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     }
 
     private void fillTable_() {
-
         JOptionPane.showMessageDialog(rootPane, "Se actualiza table OTRO!!");
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonExcelEst;
     private javax.swing.JButton ButtonExcelTutores;
@@ -619,6 +674,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton buttonExcelTutoria;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -678,5 +735,9 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
          String path=j.guardar();
          if(path!=null)
             excel.guardar(table_carreras,path);
+    }
+    
+     public ArrayList getHistorico(int id,int tipo){
+        return controller.getHistorico(id,tipo);
     }
 }
