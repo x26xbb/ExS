@@ -245,6 +245,7 @@ public abstract class ConnBase {
         return lista;
     }
 
+     
     public boolean update_grupo(Grupo g) {
         return execute_update(String.format(Querys.UPDATE_GRUPO, g.getTid(),
                 g.getTcod(), g.getLugar(), g.getAnio(), g.getCiclo(), g.getHorario(), g.getEstado(), g.getNum()));
@@ -584,4 +585,8 @@ public abstract class ConnBase {
     protected PreparedStatement pSt = null;
     protected ResultSet rset = null;
     protected CallableStatement cstm = null;
+
+    public void getTutoria(String s) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -17,7 +17,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -29,7 +28,7 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private Tutoria tutoria = null;
     private Gestor controller = null;
     private ArrayList<Grupo> grupos = null;
-    private TableRowSorter sorterGrupos;
+//    private TableRowSorter sorterGrupos;
 
     public Admin_Grupos(Tutoria tuto) {
         if (tuto == null) {
@@ -40,8 +39,8 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
             this.tutoria = tuto;
             this.controller = Gestor.getInstancia();
             initComponents();
-            sorterGrupos = new TableRowSorter(table_grupos.getModel());
-            table_grupos.setRowSorter(sorterGrupos);
+//            sorterGrupos = new TableRowSorter(table_grupos.getModel());
+//            table_grupos.setRowSorter(sorterGrupos);
             setImages();
             Gestor.getInstancia().addObserver(this);
             this.addWindowListener(new WindowAdapter() {

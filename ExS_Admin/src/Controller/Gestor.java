@@ -302,4 +302,20 @@ public class Gestor extends Observable {
     public ArrayList<Historico> getHistorico(int id,int tipo) {
         return db_gestor.getHistorico(id,tipo);
     } 
+
+    public Tutoria getTutorias(String s) {
+        int cont=1;
+        if(tutorias!=null){
+            Tutoria aux=tutorias.get(0);
+            while(aux!=null){
+                if(aux.getCod().equals(s)) {
+                    return aux;
+                }else{
+                   aux=tutorias.get(cont);
+                   cont++;
+                }
+            }
+        }
+        return null;        
+    }
 }

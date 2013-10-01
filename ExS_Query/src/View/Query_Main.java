@@ -19,7 +19,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -30,8 +29,8 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
     private Gestor controller = Gestor.getInstancia();
     private static int MIN_H = 600;
     private static int MIN_W = 975;
-    private TableRowSorter sorterTutorias;
-    private TableRowSorter sorterEstudiantes;
+//    private TableRowSorter sorterTutorias;
+//    private TableRowSorter sorterEstudiantes;
 
     /**
      * Creates new form Main
@@ -623,10 +622,10 @@ public class Query_Main extends javax.swing.JFrame implements Observer {
             excel.guardar(table_estudiantes,path);
     }
     
-    private void setOrdenadoresTablas() {
-        sorterTutorias = new TableRowSorter(table_tutorias.getModel());
-        table_tutorias.setRowSorter(sorterTutorias);
-        sorterEstudiantes = new TableRowSorter(table_estudiantes.getModel());
-        table_estudiantes.setRowSorter(sorterEstudiantes);
-    }
+//    private void setOrdenadoresTablas() {
+//        sorterTutorias = new TableRowSorter(table_tutorias.getModel());
+//        table_tutorias.setRowSorter(sorterTutorias);
+//        sorterEstudiantes = new TableRowSorter(table_estudiantes.getModel());
+//        table_estudiantes.setRowSorter(sorterEstudiantes);
+//    }
 }
