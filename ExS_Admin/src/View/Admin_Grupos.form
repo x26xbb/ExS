@@ -31,36 +31,38 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Component id="l_tuto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="764" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="scrpane1" pref="695" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="b_grupo_add" alignment="1" max="32767" attributes="0"/>
-                          <Component id="b_grupo_edit" alignment="1" max="32767" attributes="0"/>
-                          <Component id="b_grupo_del" alignment="0" max="32767" attributes="0"/>
-                          <Component id="chk_Mostrar" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="l_Anio" min="-2" max="-2" attributes="0"/>
-                                  <Component id="l_Ciclo" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="scrpane1" min="-2" pref="752" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="b_grupo_add" alignment="1" max="32767" attributes="0"/>
+                              <Component id="b_grupo_edit" alignment="1" max="32767" attributes="0"/>
+                              <Component id="b_grupo_del" alignment="0" max="32767" attributes="0"/>
+                              <Component id="chk_Mostrar" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="l_Anio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="l_Ciclo" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cb_Ciclo" max="32767" attributes="0"/>
+                                      <Component id="cb_Anio" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cb_Ciclo" max="32767" attributes="0"/>
-                                  <Component id="cb_Anio" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="b_grupo_matriculas" alignment="1" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="b_grupo_matriculas" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jButton1" alignment="1" min="-2" pref="94" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,16 +95,15 @@
                           <Component id="cb_Anio" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="l_Anio" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="119" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jButton1" min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="scrpane1" pref="444" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

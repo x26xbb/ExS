@@ -586,7 +586,23 @@ public abstract class ConnBase {
     protected ResultSet rset = null;
     protected CallableStatement cstm = null;
 
-    public void getTutoria(String s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean existenTutorias(int anio,int ciclo,String cod){
+        connect();
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                String g=String.format(Querys.EXISTETUTORIA,cod, ciclo,anio ) ;
+                rset = stmt.executeQuery( String.format(Querys.EXISTETUTORIA,cod, ciclo,anio ) );
+                while (rset.next()) {
+                    return true;
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return false;
     }
 }

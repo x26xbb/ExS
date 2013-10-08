@@ -318,4 +318,18 @@ public class Gestor extends Observable {
         }
         return null;        
     }
+    
+    public boolean existenTutorias(int anio,String ciclo,String cod){
+        int numciclo;
+        if(ciclo.equals("I")){
+            numciclo=0;
+        }else{
+            if(ciclo.equals("II")){
+                numciclo=1;
+            }else{
+                numciclo=2; 
+            }
+        }
+        return db_gestor.existenTutorias(anio,numciclo,cod);
+    }
 }

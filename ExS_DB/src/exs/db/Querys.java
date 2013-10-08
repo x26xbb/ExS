@@ -16,6 +16,8 @@ public class Querys {
     public static String DEL_TUTORIA = "DELETE FROM TUTORIA WHERE COD = '%s'";
     public static String UPDATE_TUTORIA = "UPDATE TUTORIA SET NOM = '%s' WHERE COD = '%s'";
     public static String INSERT_TUTORIA = "INSERT INTO TUTORIA  (COD , NOM) VALUES ('%s' , '%s')";
+    public static String EXISTETUTORIA="SELECT TCOD FROM GRUPO,TUTORIA WHERE GRUPO.TCOD='%s' AND GRUPO.TCOD=TUTORIA.COD"
+            + " AND CICLO=%d AND ANIO=%d";
     //
     //Tutores
     public static String GET_TUTORES = "SELECT * FROM TUTOR ORDER BY NOM";
