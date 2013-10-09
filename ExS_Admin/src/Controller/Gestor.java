@@ -51,8 +51,7 @@ public class Gestor extends Observable {
         return (tutorias == null) ? getTutorias() : tutorias;
     }
 
-    public void del_tutoria(int i) {
-        Tutoria t = tutorias.get(i);
+    public void del_tutoria(Tutoria t) {
         db_gestor.det_tutoria(t);
         _notify();
     }
@@ -332,4 +331,5 @@ public class Gestor extends Observable {
         }
         return db_gestor.existenTutorias(anio,numciclo,cod);
     }
+    
 }
