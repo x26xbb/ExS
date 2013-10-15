@@ -318,6 +318,23 @@ public class Gestor extends Observable {
         return null;        
     }
     
+    public Tutor getTutorPorCed(String ced){
+        int cont=1;
+        int cedula=Integer.parseInt(ced);
+        if(tutores!=null){
+            Tutor aux=tutores.get(0);
+            while(aux!=null){
+                if(aux.getId()==cedula) {
+                    return aux;
+                }else{
+                   aux=tutores.get(cont);
+                   cont++;
+                }
+            }
+        }
+        return null; 
+    }
+    
     public boolean existenTutorias(int anio,String ciclo,String cod){
         int numciclo;
         if(ciclo.equals("I")){
@@ -330,6 +347,20 @@ public class Gestor extends Observable {
             }
         }
         return db_gestor.existenTutorias(anio,numciclo,cod);
+    }
+    
+    public boolean esTutora(int anio,String ciclo,String cedula){
+        int numciclo;
+            if(ciclo.equals("I")){
+                numciclo=0;
+            }else{
+                if(ciclo.equals("II")){
+                    numciclo=1;
+                }else{
+                    numciclo=2; 
+                }
+            }
+            return db_gestor.esTutora(anio,numciclo,cedula);
     }
     
 }

@@ -18,6 +18,9 @@ public class Querys {
     public static String INSERT_TUTORIA = "INSERT INTO TUTORIA  (COD , NOM) VALUES ('%s' , '%s')";
     public static String EXISTETUTORIA="SELECT TCOD FROM GRUPO,TUTORIA WHERE GRUPO.TCOD='%s' AND GRUPO.TCOD=TUTORIA.COD"
             + " AND CICLO=%d AND ANIO=%d";
+    
+    public static String EXISTETUTORA="SELECT num FROM GRUPO WHERE GRUPO.TID='%s' "
+            + " AND CICLO=%d AND ANIO=%d";
     //
     //Tutores
     public static String GET_TUTORES = "SELECT * FROM TUTOR ORDER BY NOM";

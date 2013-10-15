@@ -18,10 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -593,6 +590,26 @@ public abstract class ConnBase {
                 stmt = conn.createStatement();
                 String g=String.format(Querys.EXISTETUTORIA,cod, ciclo,anio ) ;
                 rset = stmt.executeQuery( String.format(Querys.EXISTETUTORIA,cod, ciclo,anio ) );
+                while (rset.next()) {
+                    return true;
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return false;
+    }
+    
+    public boolean esTutora(int anio,int ciclo,String cedula){
+        connect();
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+//                String g=String.format(Querys.EXISTETUTORA,cedula, ciclo,anio ) ;
+                rset = stmt.executeQuery( String.format(Querys.EXISTETUTORA,cedula, ciclo,anio ) );
                 while (rset.next()) {
                     return true;
                 }

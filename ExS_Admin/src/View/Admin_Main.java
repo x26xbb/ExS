@@ -33,18 +33,18 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private static int MIN_W = 975;
     
 
-    public Admin_Main() {
+    public Admin_Main() {       
         this.excel = new Excel();  
         if (controller.isUsable()) {
             initComponents();
-            setImages(); 
-            fill_combos();
+             fill_combos();
+            setImages();             
             controller.addObserver(this);
         } else {
             setVisible(false);
             JOptionPane.showMessageDialog(null, "No se puede continuar con la ejecucion del programa...", "DB Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
-        }
+        }        
     }
 
     private void setImages() {
@@ -147,6 +147,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         b_tutor_del = new javax.swing.JButton();
         ButtonExcelTutores = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        cbCicloTutores = new javax.swing.JComboBox();
+        cbAnioTutores = new javax.swing.JComboBox();
+        checkTutores = new javax.swing.JCheckBox();
         p_estudiantes = new javax.swing.JPanel();
         scrpane4 = new javax.swing.JScrollPane();
         table_estudiantes = new javax.swing.JTable();
@@ -354,7 +359,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
-        cbCicloGrupo.setModel(cbCicloModel);
         cbCicloGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbCicloGrupoActionPerformed(evt);
@@ -479,6 +483,31 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jLabel9.setText("Ciclo:");
+
+        jLabel10.setText("Año:");
+
+        cbCicloTutores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbCicloTutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbCicloTutoresActionPerformed(evt);
+            }
+        });
+
+        cbAnioTutores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbAnioTutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAnioTutoresActionPerformed(evt);
+            }
+        });
+
+        checkTutores.setText("Ver Solo del:");
+        checkTutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTutoresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p_tutoresLayout = new javax.swing.GroupLayout(p_tutores);
         p_tutores.setLayout(p_tutoresLayout);
         p_tutoresLayout.setHorizontalGroup(
@@ -487,15 +516,29 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(p_tutoresLayout.createSequentialGroup()
+                            .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(b_tutor_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(b_tutor_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(b_tutor_del, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addContainerGap())
+                        .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(p_tutoresLayout.createSequentialGroup()
-                        .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(b_tutor_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b_tutor_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b_tutor_del, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(p_tutoresLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbCicloTutores, 0, 85, Short.MAX_VALUE)
+                                    .addComponent(cbAnioTutores, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(checkTutores))
+                        .addContainerGap())))
         );
         p_tutoresLayout.setVerticalGroup(
             p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,6 +555,16 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(b_tutor_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(checkTutores)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(cbCicloTutores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(cbAnioTutores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonExcelTutores, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -762,9 +815,12 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_b_tutor_addActionPerformed
 
     private void b_tutor_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_tutor_editActionPerformed
-        int i = table_tutores.getSelectedRow();
+        String ced;
+        int i = table_tutores.getSelectedRow();       
+        
         if (i >= 0) {
-            Tutor t = controller._getTutores().get(i);
+            ced=(String) table_tutores.getModel().getValueAt(table_tutores.getSelectedRow(),0);
+            Tutor t= buscarTutora(ced);
             new Admin_New_Tutor(t).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un tutor de la tabla");
@@ -902,7 +958,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void checkTutoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTutoriasActionPerformed
-        checkTutoriaCambio();
+        update_tableTutoria(false);
     }//GEN-LAST:event_checkTutoriasActionPerformed
 
     private void cbCicloTutoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCicloTutoriaActionPerformed
@@ -918,12 +974,24 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_checkGruposActionPerformed
 
     private void cbCicloGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCicloGrupoActionPerformed
-        //update_tableGrupo(false);
+        update_tableGrupo(false);
     }//GEN-LAST:event_cbCicloGrupoActionPerformed
 
     private void cbAnioGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAnioGrupoActionPerformed
-        //update_tableGrupo(false);
+        update_tableGrupo(false);
     }//GEN-LAST:event_cbAnioGrupoActionPerformed
+
+    private void checkTutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTutoresActionPerformed
+        update_tableTutores(false);
+    }//GEN-LAST:event_checkTutoresActionPerformed
+
+    private void cbCicloTutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCicloTutoresActionPerformed
+        update_tableTutores(false);
+    }//GEN-LAST:event_cbCicloTutoresActionPerformed
+
+    private void cbAnioTutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAnioTutoresActionPerformed
+        update_tableTutores(false);
+    }//GEN-LAST:event_cbAnioTutoresActionPerformed
 
     public ArrayList getHistorico(int id,int tipo){
         return controller.getHistorico(id,tipo);
@@ -1067,23 +1135,28 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton buttonExcelTutoria;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cbAnioGrupo;
+    private javax.swing.JComboBox cbAnioTutores;
     private javax.swing.JComboBox cbAnioTutoria;
     private javax.swing.DefaultComboBoxModel cbAnioModel;
     private javax.swing.JComboBox cbCicloGrupo;
+    private javax.swing.JComboBox cbCicloTutores;
     private javax.swing.JComboBox cbCicloTutoria;
     private javax.swing.DefaultComboBoxModel cbCicloModel;
     private javax.swing.JCheckBox checkGrupos;
+    private javax.swing.JCheckBox checkTutores;
     private javax.swing.JCheckBox checkTutorias;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel p_estudiantes;
     private javax.swing.JPanel p_grupos;
@@ -1152,9 +1225,19 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             for (int i = 0; i < Grupo_Var.CICLOS.length; i++) {
                 cbCicloModel.addElement("" + Grupo_Var.CICLOS[i]);
             }
-
+            
+            
             cbAnioTutoria.setSelectedIndex(2);
             cbCicloTutoria.setSelectedIndex(ciclo);
+            
+            cbAnioGrupo.setSelectedIndex(2);
+            cbCicloGrupo.setModel(cbCicloModel);
+            cbCicloGrupo.setSelectedIndex(ciclo);
+            
+            cbCicloTutores.setModel(cbCicloModel);
+            cbAnioTutores.setModel(cbAnioModel);
+            cbAnioTutores.setSelectedIndex(2);
+            cbCicloTutores.setSelectedIndex(ciclo);
         } catch (Exception e) {
             Log.SendLog(e.getMessage());
         }
@@ -1174,73 +1257,115 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
 //        update_table(false);
 //    }
      
-     private void checkTutoriaCambio() {
-         update_tableTutoria(false);
-    }
+
      
      
      private void update_tableGrupo(boolean query) {
-         String cod=(String) table_tutorias.getModel().getValueAt(table_grupos.getSelectedRow(),0);
-         ArrayList<Grupo> grupos = controller.getGrupos(cod);
-         
-         if (query) {
-            if (grupos != null) {
-                grupos.clear();
-            }
-        }
-       
-        DefaultTableModel modelo = (DefaultTableModel) table_grupos.getModel();
-        
-        while (modelo.getRowCount() != 0) {
-            modelo.removeRow(0);
-        }
+         if(this.checkGrupos.isSelected()){
+            
+            String cod=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0);
+            ArrayList<Grupo> grupos = controller.getGrupos(cod);
 
-        for (int i = 0; grupos != null && i < grupos.size(); i++) {
-            Object[] array = grupos.get(i).toArray();
-//            array[1] = controller.getTutor((String) array[1]).toString();
-//            array[7] = controller.getCantidadMatriculas((String)array[0]);
-            if (checkGrupos.isSelected()) {
-                int anio = Integer.parseInt((String) cbAnioTutoria.getSelectedItem());
-                String ciclo = (String) cbCicloTutoria.getSelectedItem();
-                if (existenTutorias(anio,ciclo,array[0])) {
-                    modelo.addRow(array);
-                }
-            } else {
-                modelo.addRow(array);
-            }
-        }
+            if (query) {
+               if (grupos != null) {
+                   grupos.clear();
+               }
+           }
+
+           DefaultTableModel modelo = (DefaultTableModel) table_grupos.getModel();
+
+           while (modelo.getRowCount() != 0) {
+               modelo.removeRow(0);
+           }
+
+           for (int i = 0; grupos != null && i < grupos.size(); i++) {
+               Object[] array = grupos.get(i).toArray();
+   //            array[1] = controller.getTutor((String) array[1]).toString();
+   //            array[7] = controller.getCantidadMatriculas((String)array[0]);
+               if (checkGrupos.isSelected()) {
+                   int anio = Integer.parseInt((String) cbAnioGrupo.getSelectedItem());
+                   String ciclo = (String) cbCicloGrupo.getSelectedItem();
+                   if (existenTutorias(anio,ciclo,array[0])) {
+                       modelo.addRow(array);
+                   }
+               } else {
+                   modelo.addRow(array);
+               }
+           }
+         }
      }
      
      private void update_tableTutoria(boolean query) {
-         ArrayList<Tutoria> tutorias = controller.getTutorias();
-         
-         if (query) {
-            if (tutorias != null) {
-                tutorias.clear();
-            }
-        }
-       
-        DefaultTableModel modelo = (DefaultTableModel) table_tutorias.getModel();
-        
-        while (modelo.getRowCount() != 0) {
-            modelo.removeRow(0);
-        }
+         if(this.checkTutorias.isSelected()){
+            ArrayList<Tutoria> tutorias = controller.getTutorias();
 
-        for (int i = 0; tutorias != null && i < tutorias.size(); i++) {
-            Object[] array = tutorias.get(i).toArray();
-            if (checkTutorias.isSelected()) {
-                int anio = Integer.parseInt((String) cbAnioTutoria.getSelectedItem());
-                String ciclo = (String) cbCicloTutoria.getSelectedItem();
-                if (existenTutorias(anio,ciclo,array[0])) {
-                    modelo.addRow(array);
-                }
-            } else {
-                modelo.addRow(array);
-            }
-        }
+            if (query) {
+               if (tutorias != null) {
+                   tutorias.clear();
+               }
+           }
+
+           DefaultTableModel modelo = (DefaultTableModel) table_tutorias.getModel();
+
+           while (modelo.getRowCount() != 0) {
+               modelo.removeRow(0);
+           }
+
+           for (int i = 0; tutorias != null && i < tutorias.size(); i++) {
+               Object[] array = tutorias.get(i).toArray();
+               if (checkTutorias.isSelected()) {
+                   int anio = Integer.parseInt((String) cbAnioTutoria.getSelectedItem());
+                   String ciclo = (String) cbCicloTutoria.getSelectedItem();
+                   if (existenTutorias(anio,ciclo,array[0])) {
+                       modelo.addRow(array);
+                   }
+               } else {
+                   modelo.addRow(array);
+               }
+           }
+         }
      }
 
     private boolean existenTutorias(int anio, String ciclo,Object cod) {
         return controller.existenTutorias(anio,ciclo,(String) cod);
+    }
+    
+     private boolean esTutora(int anio, String ciclo,Object cedula) {
+        return controller.esTutora(anio,ciclo,(String) cedula);
+    }
+    
+    private void update_tableTutores(boolean query) {
+         if(this.checkTutores.isSelected()){
+            ArrayList<Tutor> tutoras = controller.getTutores();
+
+            if (query) {
+               if (tutoras != null) {
+                   tutoras.clear();
+               }
+           }
+
+           DefaultTableModel modelo = (DefaultTableModel) table_tutores.getModel();
+
+           while (modelo.getRowCount() != 0) {
+               modelo.removeRow(0);
+           }
+
+           for (int i = 0; tutoras != null && i < tutoras.size(); i++) {
+               Object[] array = tutoras.get(i).toArray();
+               if (checkTutores.isSelected()) {
+                   int anio = Integer.parseInt((String) cbAnioTutores.getSelectedItem());
+                   String ciclo = (String) cbCicloTutores.getSelectedItem();
+                   if (esTutora(anio,ciclo,array[0]+"")) {
+                       modelo.addRow(array);
+                   }
+               } else {
+                   modelo.addRow(array);
+               }
+           }
+         }
+     }
+
+    private Tutor buscarTutora(String ced) {
+        return controller.getTutorPorCed(ced);
     }
 }
