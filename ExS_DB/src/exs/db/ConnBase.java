@@ -622,4 +622,24 @@ public abstract class ConnBase {
         }
         return false;
     }
+    
+    public boolean esEstudiante(int anio,int ciclo,String cedula){
+        connect();
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+//                String g=String.format(Querys.EXISTETUTORA,cedula, ciclo,anio ) ;
+                rset = stmt.executeQuery( String.format(Querys.EXISTEESTUDIANTE,cedula, ciclo,anio ) );
+                while (rset.next()) {
+                    return true;
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return false;
+    }
 }

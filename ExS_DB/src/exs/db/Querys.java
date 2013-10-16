@@ -21,6 +21,8 @@ public class Querys {
     
     public static String EXISTETUTORA="SELECT num FROM GRUPO WHERE GRUPO.TID='%s' "
             + " AND CICLO=%d AND ANIO=%d";
+     public static String EXISTEESTUDIANTE="SELECT num FROM Matricula,GRUPO WHERE "
+            + " MATRICULA.EID='%s' AND CICLO=%d AND ANIO=%d  AND matricula.gnum=grupo.num";
     //
     //Tutores
     public static String GET_TUTORES = "SELECT * FROM TUTOR ORDER BY NOM";
