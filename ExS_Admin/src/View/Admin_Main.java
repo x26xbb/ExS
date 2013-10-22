@@ -19,7 +19,10 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowSorter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -38,7 +41,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         if (controller.isUsable()) {
             initComponents();
              fill_combos();
-            setImages();             
+            setImages();    
+            sorters();
             controller.addObserver(this);
         } else {
             setVisible(false);
@@ -274,7 +278,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoriasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
+                .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_tutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p_tutoriasLayout.createSequentialGroup()
@@ -387,10 +391,9 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_gruposLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                .addComponent(scrpane2, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonExcelGrupos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(p_gruposLayout.createSequentialGroup()
                         .addGroup(p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(b_grupo_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -404,7 +407,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                                 .addGroup(p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cbCicloGrupo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cbAnioGrupo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addComponent(buttonExcelGrupos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         p_gruposLayout.setVerticalGroup(
             p_gruposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -521,7 +525,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_tutoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                .addComponent(scrpane3, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_tutoresLayout.createSequentialGroup()
@@ -666,13 +670,13 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_estudiantesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                .addComponent(scrpane4, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_estudiantesLayout.createSequentialGroup()
+                    .addGroup(p_estudiantesLayout.createSequentialGroup()
                         .addComponent(totalEstudiantes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(p_estudiantesLayout.createSequentialGroup()
                         .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cbAnioEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -770,7 +774,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
+                .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
@@ -792,8 +796,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(b_carrera_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_carrera_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrpane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -813,7 +817,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tab_pane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(tab_pane)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -1482,5 +1486,22 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
 
     private Tutor buscarTutora(int ced) {
         return controller.getTutorPorCed(ced);
+    }
+
+    private void sorters() {
+         RowSorter<TableModel> sorterCarreras = new TableRowSorter<>(this.table_carreras.getModel());
+         table_carreras.setRowSorter(sorterCarreras);
+         
+         RowSorter<TableModel> sorterEstudiante = new TableRowSorter<>(this.table_estudiantes.getModel());
+         table_estudiantes.setRowSorter(sorterEstudiante);
+         
+         RowSorter<TableModel> sorterGrupos = new TableRowSorter<>(this.table_grupos.getModel());
+         table_grupos.setRowSorter(sorterGrupos);
+         
+         RowSorter<TableModel> sorterTutores = new TableRowSorter<>(this.table_tutores.getModel());
+         table_tutores.setRowSorter(sorterTutores);
+         
+         RowSorter<TableModel> sorterTutorias = new TableRowSorter<>(this.table_tutorias.getModel());
+         table_tutorias.setRowSorter(sorterTutorias);
     }
 }
