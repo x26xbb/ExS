@@ -4,7 +4,6 @@ import Controller.Gestor;
 import exs.logs.err.Log;
 import exs.mod.Carrera;
 import exs.mod.Estudiante;
-import exs.mod.Grupo;
 import exs.mod.Tutor;
 import exs.mod.Tutoria;
 import exs.mod.var.Grupo_Var;
@@ -19,10 +18,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.RowSorter;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -42,7 +38,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             initComponents();
              fill_combos();
             setImages();    
-            sorters();
+//            sorters();
             controller.addObserver(this);
         } else {
             setVisible(false);
@@ -844,7 +840,10 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private void b_grupo_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grupo_editarActionPerformed
         int i = table_grupos.getSelectedRow();
         if (i >= 0) {
-            Tutoria t = controller.getTutorias().get(i);
+            String cod=null;
+            cod=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0);
+            String nombre=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),1);
+            Tutoria t= new Tutoria(cod,nombre);
             new Admin_Grupos(t).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una tutoría de la tabla");
@@ -1342,19 +1341,18 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
      
      private void update_tableGrupo(boolean query) {     
          
-         
-         if(this.checkGrupos.isSelected()){
-            
-            String cod=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0);
-            ArrayList<Grupo> grupos = controller.getGrupos(cod);
 
-            if (query) {
-               if (grupos != null) {
-                   grupos.clear();
-               }
-           }
             
-          ArrayList<Tutoria> list = controller.getTutorias();
+//            String cod=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0);
+//            ArrayList<Grupo> grupos = controller.getGrupos(cod);
+
+//            if (query) {
+//               if (grupos != null) {
+//                   grupos.clear();
+//               }
+//           }
+            
+          ArrayList<Tutoria> grupos = controller.getTutorias();
           DefaultTableModel modelo = (DefaultTableModel) table_grupos.getModel();
         
 
@@ -1376,7 +1374,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                    modelo.addRow(array);
                }
            }
-         }
      }
      
      private void update_tableTutoria(boolean query) {
@@ -1488,20 +1485,20 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         return controller.getTutorPorCed(ced);
     }
 
-    private void sorters() {
-         RowSorter<TableModel> sorterCarreras = new TableRowSorter<>(this.table_carreras.getModel());
-         table_carreras.setRowSorter(sorterCarreras);
-         
-         RowSorter<TableModel> sorterEstudiante = new TableRowSorter<>(this.table_estudiantes.getModel());
-         table_estudiantes.setRowSorter(sorterEstudiante);
-         
-         RowSorter<TableModel> sorterGrupos = new TableRowSorter<>(this.table_grupos.getModel());
-         table_grupos.setRowSorter(sorterGrupos);
-         
-         RowSorter<TableModel> sorterTutores = new TableRowSorter<>(this.table_tutores.getModel());
-         table_tutores.setRowSorter(sorterTutores);
-         
-         RowSorter<TableModel> sorterTutorias = new TableRowSorter<>(this.table_tutorias.getModel());
-         table_tutorias.setRowSorter(sorterTutorias);
-    }
+//    private void sorters() {
+//         RowSorter<TableModel> sorterCarreras = new TableRowSorter<>(this.table_carreras.getModel());
+//         table_carreras.setRowSorter(sorterCarreras);
+//         
+//         RowSorter<TableModel> sorterEstudiante = new TableRowSorter<>(this.table_estudiantes.getModel());
+//         table_estudiantes.setRowSorter(sorterEstudiante);
+//         
+//         RowSorter<TableModel> sorterGrupos = new TableRowSorter<>(this.table_grupos.getModel());
+//         table_grupos.setRowSorter(sorterGrupos);
+//         
+//         RowSorter<TableModel> sorterTutores = new TableRowSorter<>(this.table_tutores.getModel());
+//         table_tutores.setRowSorter(sorterTutores);
+//         
+//         RowSorter<TableModel> sorterTutorias = new TableRowSorter<>(this.table_tutorias.getModel());
+//         table_tutorias.setRowSorter(sorterTutorias);
+//    }
 }
