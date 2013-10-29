@@ -50,6 +50,7 @@ public class Querys {
     public static String DEL_GRUPO = "DELETE FROM GRUPO WHERE NUM = '%s'";
     public static String UPDATE_GRUPO = "UPDATE GRUPO SET TID = '%s',   TCOD= '%s', LUGAR = '%s', ANIO= '%d', CICLO= '%d', HORARIO= '%s', ESTADO= '%s'  WHERE NUM = '%s'";
     public static String INSERT_GRUPO = "INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('%s' , '%s', '%s','%s', '%d', '%d', '%s', '%s')";
+    public static String GET_GRUPO= "SELECT * FROM GRUPO WHERE NUM= '%s' ";
     //
     //Estudiantes 
     public static String GET_ESTUDIANTES = "SELECT * FROM ESTUDIANTE ORDER BY NOM";

@@ -296,7 +296,9 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private void b_grupo_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grupo_editActionPerformed
         int i = table_grupos.getSelectedRow();
         if (i >= 0) {
-            Grupo u = this.grupos.get(i);
+            String cod=null;
+            cod=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0);
+            Grupo u = getGrupo(cod);
             new Admin_New_Grupo(tutoria, u, grupos).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una tutoría de la tabla");
@@ -327,8 +329,9 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private void b_grupo_matriculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grupo_matriculasActionPerformed
         int i = table_grupos.getSelectedRow();      
         if (i >= 0) {
-            String o=(String) table_grupos.getModel().getValueAt(i, 0);
-            Grupo u= getGrupo(this.grupos,o);
+            String cod=null;
+            cod=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0);
+            Grupo u = getGrupo(cod);
             if(u!=null){
                 new Admin_Matriculas(u, tutoria).setVisible(true);
             }else{
@@ -361,11 +364,13 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
     private void del_grupo() {
         int i = table_grupos.getSelectedRow();
         if (i >= 0) {
-            Grupo g = this.grupos.get(i);
-            String msj = "Seguro que desea borrar el grupo " + g.getNum() + "?";
+            String cod=null;
+            cod=(String) table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0);
+            Grupo u = getGrupo(cod);
+            String msj = "Seguro que desea borrar el grupo " + u.getNum() + "?";
             int r = JOptionPane.showConfirmDialog(rootPane, msj, "Borrar Grupo", JOptionPane.YES_NO_OPTION);
             if (r == 0) {
-                controller.del_grupo(g);
+                controller.del_grupo(u);
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un grupo de la tabla");
@@ -446,5 +451,9 @@ public class Admin_Grupos extends javax.swing.JFrame implements Observer {
             }
         }
         return null;
+    }
+
+    private Grupo getGrupo(String cod) {
+        return controller.getGrupo(cod);
     }
 }

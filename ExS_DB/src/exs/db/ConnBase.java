@@ -642,4 +642,35 @@ public abstract class ConnBase {
         }
         return false;
     }
+    
+    public Grupo getGrupo(String cod){
+        connect();
+        Grupo grupo=null;
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                String sql = String.format(Querys.GET_GRUPO, cod);
+                Log.SendLog(sql);
+                rset = stmt.executeQuery(sql);                
+                while (rset.next()) {
+                    int anio, ciclo;
+                    String num, tid, tcod, horario, estado, lugar;
+                    num = rset.getString(1);
+                    tid = rset.getString(2);
+                    tcod = rset.getString(3);
+                    lugar = rset.getString(4);
+                    anio = rset.getInt(5);
+                    ciclo = rset.getInt(6);
+                    horario = rset.getString(7);
+                    estado = rset.getString(8);
+                    grupo=new Grupo(num, tid, tcod, lugar, anio, ciclo, horario, estado);                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return grupo;
+    }
 }

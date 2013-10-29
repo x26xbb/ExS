@@ -362,6 +362,7 @@ public class Gestor extends Observable {
             return db_gestor.esTutora(anio,numciclo,cedula);
     }
     
+    
      public boolean esEstudiante(int anio,String ciclo,String cedula){
         int numciclo;
             if(ciclo.equals("I")){
@@ -375,5 +376,9 @@ public class Gestor extends Observable {
             }
             return db_gestor.esEstudiante(anio,numciclo,cedula);
     }
+     
+     public Grupo getGrupo(String cod){
+         return db_gestor.getGrupo(cod);
+     }
     
 }

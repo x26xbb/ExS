@@ -290,22 +290,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="b_grupo_editar" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <Component id="checkGrupos" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="cbCicloGrupo" max="32767" attributes="0"/>
-                                          <Component id="cbAnioGrupo" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
+                              <Component id="b_grupo_editar" min="-2" pref="125" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Component id="buttonExcelGrupos" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
@@ -323,18 +308,6 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="b_grupo_editar" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="checkGrupos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cbCicloGrupo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbAnioGrupo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="buttonExcelGrupos" min="-2" pref="63" max="-2" attributes="0"/>
                   </Group>
@@ -400,39 +373,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonExcelGruposActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="checkGrupos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ver solo de:"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkGruposActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cbCicloGrupo">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbCicloGrupoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ciclo:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cbAnioGrupo">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="cbAnioModel" type="code"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbAnioGrupoActionPerformed"/>
-              </Events>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="p_tutores">
@@ -451,12 +391,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="scrpane3" pref="674" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="totalTutores" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="ButtonExcelTutores" min="-2" pref="50" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ButtonExcelTutores" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -472,7 +408,7 @@
                                           <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="cbCicloTutores" pref="85" max="32767" attributes="0"/>
                                           <Component id="cbAnioTutores" max="32767" attributes="0"/>
                                       </Group>
@@ -514,10 +450,7 @@
                           <Component id="cbAnioTutores" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ButtonExcelTutores" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="totalTutores" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="ButtonExcelTutores" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -667,11 +600,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkTutoresActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="totalTutores">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Total:"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="p_estudiantes">
@@ -690,12 +618,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="scrpane4" pref="674" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="totalEstudiantes" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="ButtonExcelEst" min="-2" pref="52" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ButtonExcelEst" alignment="1" min="-2" pref="52" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="cbAnioEstudiante" alignment="1" min="-2" pref="104" max="-2" attributes="0"/>
@@ -742,10 +666,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="cbAnioEstudiante" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ButtonExcelEst" alignment="1" min="-2" pref="62" max="-2" attributes="0"/>
-                          <Component id="totalEstudiantes" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="ButtonExcelEst" min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -908,11 +829,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbAnioEstudianteActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="totalEstudiantes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Total:"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
