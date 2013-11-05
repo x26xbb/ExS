@@ -1,9 +1,12 @@
 package View;
 
 import Controller.Gestor;
+import static View.Admin_Main.controller;
 import exs.logs.err.Log;
+import exs.mod.Estudiante;
 import exs.mod.Grupo;
 import exs.mod.Matricula;
+import exs.mod.Tutor;
 import exs.mod.Tutoria;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -102,6 +105,8 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
         b_matricula_edit = new javax.swing.JButton();
         b_matricula_del = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setLocationByPlatform(true);
@@ -162,26 +167,41 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton2.setText("Ver Estudiante");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Ver Tutor(a)");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(l_tuto)
-                        .addGap(0, 734, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
+                        .addComponent(scrpane1, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(b_matricula_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                             .addComponent(b_matricula_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b_matricula_del, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,12 +218,15 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
                         .addComponent(b_matricula_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(b_matricula_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(scrpane1)
+                        .addComponent(scrpane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -251,6 +274,31 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
         this.guardarGrupoExcel();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int i = this.table_grupos.getSelectedRow();        
+        if (i >= 0) {
+            String cedu=table_grupos.getModel().getValueAt(table_grupos.getSelectedRow(),0)+"";
+             String[] splited = cedu.split(" ");
+            String ced=splited[0];
+            Estudiante estudiante = controller.getEstudiante(ced);
+            new Admin_New_Est(estudiante).setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un estudiante de la tabla");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       String[] aux= this.l_tuto.getText().split("Matrículas - ");
+       String cod=aux[1];
+       int ced=Admin_Main.controller.getTutorPorCurso(cod);
+       Tutor t= buscarTutora(ced);
+       new Admin_New_Tutor(t).setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private Tutor buscarTutora(int ced) {
+        return controller.getTutorPorCed(ced);
+    }
+    
     private void del_grupo() {
         int i = table_grupos.getSelectedRow();
         if (i >= 0) {
@@ -300,6 +348,8 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton b_matricula_del;
     private javax.swing.JButton b_matricula_edit;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel l_tuto;
     private javax.swing.JScrollPane scrpane1;

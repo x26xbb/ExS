@@ -380,5 +380,9 @@ public class Gestor extends Observable {
      public Grupo getGrupo(String cod){
          return db_gestor.getGrupo(cod);
      }
+
+    public int getTutorPorCurso(String cod) {
+         return db_gestor.getTutorPorCurso(cod);
+    }
     
 }

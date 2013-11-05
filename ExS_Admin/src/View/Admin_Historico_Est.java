@@ -5,6 +5,7 @@
 package View;
 
 import exs.db.Historico;
+import exs.mod.Grupo;
 import java.util.ArrayList;
 import java_to_excel.Excel;
 import javax.swing.JOptionPane;
@@ -62,6 +63,7 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         table_historico = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -95,6 +97,13 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Ver Curso");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,8 +113,12 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -123,7 +136,9 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(63, 63, 63)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -134,6 +149,23 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
         this.guardarHistorial();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         int i = this.table_historico.getSelectedRow();      
+        if (i >= 0) {
+            String cod=null;
+            cod=(String) table_historico.getModel().getValueAt(table_historico.getSelectedRow(),0);
+            Grupo u = getGrupo(cod);
+            if(u!=null){
+                new Admin_Matriculas(u, Admin_Grupos.tutoria).setVisible(true);
+            }else{
+                            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un grupo de la tabla");
+            }
+       }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private Grupo getGrupo(String cod) {
+        return Admin_Main.controller.getGrupo(cod);
+    }
     /**
      * @param args the command line arguments
      */
@@ -171,6 +203,7 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelhistorialde_tipo;

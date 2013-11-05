@@ -27,7 +27,7 @@ import javax.swing.table.DefaultTableModel;
 public class Admin_Main extends javax.swing.JFrame implements Observer {
 
     //Gestor
-    private Gestor controller = Gestor.getInstancia();
+    public static Gestor controller = Gestor.getInstancia();
     private static int MIN_H = 600;
     private static int MIN_W = 975;
     
@@ -1274,7 +1274,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
      }
      
      private void update_tableTutoria(boolean query) {
-         if(this.checkTutorias.isSelected()){
             ArrayList<Tutoria> tutorias = controller.getTutorias();
 
             if (query) {
@@ -1301,7 +1300,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                    modelo.addRow(array);
                }
            }
-         }
      }
 
     private boolean existenTutorias(int anio, String ciclo,Object cod) {

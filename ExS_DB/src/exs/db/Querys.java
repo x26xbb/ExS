@@ -36,6 +36,8 @@ public class Querys {
     "grupo.lugar from grupo,tutoria,tutor " +
     "where tid='%d' " +
     "and grupo.tcod=tutoria.cod and tutor.id=tid";
+    public static String GET_TUTOR_CURSO="SELECT TID FROM GRUPO "
+            + "WHERE NUM='%s'";
     //
     //Grupos
     public static String GET_HISTORICO= "select tutoria.nom,grupo.num,grupo.tcod,"

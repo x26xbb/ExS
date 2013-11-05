@@ -643,6 +643,29 @@ public abstract class ConnBase {
         return false;
     }
     
+    
+    public int getTutorPorCurso(String cod){
+        connect();
+        String num="";
+        if (conn != null) {
+            try {                
+                stmt = conn.createStatement();
+                String sql = String.format(Querys.GET_TUTOR_CURSO, cod);
+                Log.SendLog(sql);
+                rset = stmt.executeQuery(sql);                
+                while (rset.next()) {                    
+                    num = rset.getString(1);           
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return Integer.parseInt(num);
+    }
+    
     public Grupo getGrupo(String cod){
         connect();
         Grupo grupo=null;

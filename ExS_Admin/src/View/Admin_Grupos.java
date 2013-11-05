@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 public class Admin_Grupos extends javax.swing.JFrame implements Observer {
 
     //Attributes
-    private Tutoria tutoria = null;
+    public static Tutoria tutoria = null;
     private Gestor controller = null;
     private ArrayList<Grupo> grupos = null;
 
