@@ -384,5 +384,18 @@ public class Gestor extends Observable {
     public int getTutorPorCurso(String cod) {
          return db_gestor.getTutorPorCurso(cod);
     }
+
+    public int getCarreras(Object valueAt) {
+       return db_gestor.getCarrera(valueAt+"");
+
+        }
+
+    public boolean esEstudiante(Object carrera,Object ced) {
+        return db_gestor.esEstudiante(carrera,ced); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ArrayList<Estudiante> getEstudiantes(int anio, String ciclo, int carrera) {
+        return db_gestor.getEstudiantesFiltrados(anio,ciclo,carrera); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -158,6 +158,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         checkEstudiantes = new javax.swing.JCheckBox();
         cbCicloEstudiante = new javax.swing.JComboBox();
         cbAnioEstudiante = new javax.swing.JComboBox();
+        carreracbEstudiante = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
         scrpane5 = new javax.swing.JScrollPane();
         table_carreras = new javax.swing.JTable();
@@ -599,6 +600,13 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        carreracbEstudiante.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        carreracbEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                carreracbEstudianteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p_estudiantesLayout = new javax.swing.GroupLayout(p_estudiantes);
         p_estudiantes.setLayout(p_estudiantesLayout);
         p_estudiantesLayout.setHorizontalGroup(
@@ -610,18 +618,18 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ButtonExcelEst, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(p_estudiantesLayout.createSequentialGroup()
-                        .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbAnioEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(b_est_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(b_est_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(b_est_del, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
-                                .addComponent(checkEstudiantes)
-                                .addGroup(p_estudiantesLayout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addComponent(cbCicloEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(b_est_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(b_est_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(b_est_del, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(checkEstudiantes, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, p_estudiantesLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(p_estudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(carreracbEstudiante, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbAnioEstudiante, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbCicloEstudiante, 0, 104, Short.MAX_VALUE))))
                         .addContainerGap())))
         );
         p_estudiantesLayout.setVerticalGroup(
@@ -645,6 +653,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(cbCicloEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbAnioEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(carreracbEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonExcelEst, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -706,16 +716,16 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(scrpane5, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(b_carrera_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b_carrera_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b_carrera_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -988,6 +998,10 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         new Admin_New_Est(null).setVisible(true);
     }//GEN-LAST:event_b_est_addActionPerformed
 
+    private void carreracbEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carreracbEstudianteActionPerformed
+       update_tableEstudiantes(false); 
+    }//GEN-LAST:event_carreracbEstudianteActionPerformed
+
     public ArrayList getHistorico(int id,int tipo){
         return controller.getHistorico(id,tipo);
     }
@@ -1131,6 +1145,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton buttonExcelGrupos;
     private javax.swing.JButton buttonExcelTutoria;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox carreracbEstudiante;
     private javax.swing.JComboBox cbAnioEstudiante;
     private javax.swing.JComboBox cbAnioTutores;
     private javax.swing.JComboBox cbAnioTutoria;
@@ -1232,9 +1247,19 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             cbCicloTutores.setSelectedIndex(ciclo);
             
             cbCicloEstudiante.setModel(cbCicloModel);
+            cbCicloEstudiante.addItem("--");
             cbAnioEstudiante.setModel(cbAnioModel);
+            cbAnioEstudiante.addItem("--");
             cbAnioEstudiante.setSelectedIndex(2);
             cbCicloEstudiante.setSelectedIndex(ciclo);
+            
+            ArrayList<Carrera> carreras_sede = null;
+            carreras_sede = controller.getCarreras_Sede(0);
+            carreracbEstudiante.removeAllItems();
+            carreracbEstudiante.addItem("--");
+            for (int i = 0; i < carreras_sede.size(); i++) {
+                carreracbEstudiante.addItem(carreras_sede.get(i).getNombre());
+            }
         } catch (Exception e) {
             Log.SendLog(e.getMessage());
         }
@@ -1313,6 +1338,13 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
      private boolean esEstudiante(int anio, String ciclo,Object cedula) {
         return controller.esEstudiante(anio,ciclo,(String) cedula);
     }
+     
+    private boolean esEstudianteCarreras(int anio, String ciclo,Object cedula,Object carrera) {
+        if(controller.esEstudiante(anio,ciclo,(String) cedula)){
+            return controller.esEstudiante(carrera,cedula);
+        }
+        return false;
+    }
     
     private void update_tableTutores(boolean query) {
             ArrayList<Tutor> tutoras = controller.getTutores();
@@ -1345,7 +1377,6 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     
      private void update_tableEstudiantes(boolean query) {
             ArrayList<Estudiante> estudiantes = controller.getEstudiantes();
-
             if (query) {
                if (estudiantes != null) {
                    estudiantes.clear();
@@ -1357,14 +1388,24 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
            while (modelo.getRowCount() != 0) {
                modelo.removeRow(0);
            }
-
+                      
+         
+//CAMBIAR LA CONSULTA A RETORNAR LISTA DE ESTUDIANTES ANIo CICLO CARRERA
            for (int i = 0; estudiantes != null && i < estudiantes.size(); i++) {
                Object[] array = estudiantes.get(i).toArray();
                if (checkEstudiantes.isSelected()) {
                    int anio = Integer.parseInt((String) cbAnioEstudiante.getSelectedItem());
                    String ciclo = (String) cbCicloEstudiante.getSelectedItem();
-                   if (esEstudiante(anio,ciclo,array[0]+"")) {
-                       modelo.addRow(array);
+                   String carrera=carreracbEstudiante.getSelectedItem()+"";
+                   if(carrera.equals("--")){
+                        if (esEstudiante(anio,ciclo,array[0]+"")) {                 
+                                modelo.addRow(array);
+                            }
+                   }else{
+                     ArrayList<Estudiante> filtrados = controller.getEstudiantes(anio,ciclo,controller.getCarreras(carrera));
+                     if(esEstudianteCarreras(anio,ciclo,array[0]+"",array[8]+"")){
+                                modelo.addRow(array);
+                     }
                    }
                } else {
                    modelo.addRow(array);

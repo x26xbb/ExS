@@ -61,6 +61,7 @@ public class Querys {
     public static String DEL_ESTUDIANTE = "DELETE FROM ESTUDIANTE WHERE ID = '%s'";
     public static String UPDATE_ESTUDIANTE = "UPDATE ESTUDIANTE SET NOM = '%s',   PAPE= '%s', SAPE= '%s', GENERO= '%d', TEL= '%d', CEL = '%d',EMAIL= '%s', CID= '%d', SEDE= '%d', BECA= '%d'  WHERE ID = '%s'";
     public static String INSERT_ESTUDIANTE = "INSERT INTO ESTUDIANTE  (ID , NOM, PAPE, SAPE, GENERO, TEL, CEL, EMAIL, CID, SEDE, BECA) VALUES ('%s' , '%s', '%s', '%s', '%d','%d' ,'%d', '%s', '%d', '%d', '%d')";
+    public static String ESTUDIANTE_CARRERA="SELECT * FROM ESTUDIANTE WHERE ID='%s' AND CID='%d'";
     //
     //Carreras
     public static String GET_CARRERAS = "SELECT * FROM CARRERA";
@@ -69,6 +70,7 @@ public class Querys {
     public static String DEL_CARRERA = "DELETE FROM CARRERA WHERE CID = '%d'";
     public static String UPDATE_CARRERA = "UPDATE CARRERA SET CNOM = '%s', SEDE = '%d' WHERE CID = '%d'";
     public static String INSERT_CARRERA = "INSERT INTO CARRERA  (CID , CNOM, SEDE) VALUES ('%d' , '%s',  '%d')";
+    public static String GET_CARRERA_NOMBRE="SELECT CID FROM CARRERA WHERE CNOM='%s'";
     //Matriculas
     public static String GET_CANT_MATRICULAS = "SELECT COUNT(*) FROM MATRICULA WHERE GNUM = '%s' ";
     public static String GET_MATRICULAS = "SELECT * FROM MATRICULA  WHERE GNUM = '%s'";
