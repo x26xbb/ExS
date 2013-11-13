@@ -398,4 +398,12 @@ public class Gestor extends Observable {
         return db_gestor.getEstudiantesFiltrados(anio,ciclo,carrera); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public ArrayList<Estudiante> getEstudiantes(int anio, String ciclo) {
+        return db_gestor.getEstudiantesFiltrados(anio,ciclo); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public ArrayList<Estudiante> getEstudiantesPorCarrera(String carrera) {
+        return db_gestor.getEstudiantesFiltradosCarrera(carrera); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

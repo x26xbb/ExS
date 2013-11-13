@@ -40,6 +40,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             setImages();    
 //            sorters();
             controller.addObserver(this);
+            cbAnioEstudiante.setEnabled(false);
+            carreracbEstudiante.setEnabled(false);
         } else {
             setVisible(false);
             JOptionPane.showMessageDialog(null, "No se puede continuar con la ejecucion del programa...", "DB Error", JOptionPane.ERROR_MESSAGE);
@@ -166,6 +168,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         b_carrera_edit = new javax.swing.JButton();
         b_carrera_del = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -709,6 +712,8 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jButton4.setText("Ver Estudiantes");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -720,11 +725,16 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(b_carrera_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b_carrera_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b_carrera_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(b_carrera_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(b_carrera_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(b_carrera_del, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -736,7 +746,9 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                 .addComponent(b_carrera_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b_carrera_del, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -933,11 +945,13 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_cbAnioTutoresActionPerformed
 
     private void cbAnioEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAnioEstudianteActionPerformed
-        update_tableEstudiantes(false);
+        update_tableEstudiantes(false);        
+        carreracbEstudiante.setEnabled(true);
     }//GEN-LAST:event_cbAnioEstudianteActionPerformed
 
     private void cbCicloEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCicloEstudianteActionPerformed
         update_tableEstudiantes(false);
+        cbAnioEstudiante.setEnabled(true);
     }//GEN-LAST:event_cbCicloEstudianteActionPerformed
 
     private void checkEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkEstudiantesActionPerformed
@@ -1160,6 +1174,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -1387,25 +1402,39 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
 
            while (modelo.getRowCount() != 0) {
                modelo.removeRow(0);
-           }
-                      
+           }                     
          
 //CAMBIAR LA CONSULTA A RETORNAR LISTA DE ESTUDIANTES ANIo CICLO CARRERA
            for (int i = 0; estudiantes != null && i < estudiantes.size(); i++) {
                Object[] array = estudiantes.get(i).toArray();
+               array[8] = controller.getCarrera(Integer.parseInt((String) array[8]));
                if (checkEstudiantes.isSelected()) {
-                   int anio = Integer.parseInt((String) cbAnioEstudiante.getSelectedItem());
+                   String anio = (String) cbAnioEstudiante.getSelectedItem();
                    String ciclo = (String) cbCicloEstudiante.getSelectedItem();
                    String carrera=carreracbEstudiante.getSelectedItem()+"";
                    if(carrera.equals("--")){
-                        if (esEstudiante(anio,ciclo,array[0]+"")) {                 
-                                modelo.addRow(array);
-                            }
+                       ArrayList<Estudiante> filtrados = controller.getEstudiantes(Integer.parseInt(anio),ciclo,controller.getCarreras(carrera));
+                        Object[] array1;String nomCarrera="";
+                        if(filtrados!=null && filtrados.size()>0){
+                             for (int j = 0; j < filtrados.size(); j++) {
+                                   array1 = filtrados.get(j).toArray();
+                                   nomCarrera=controller.getCarrera(Integer.parseInt((String) array1[8]));
+                                   modelo.addRow(array1);
+                             }
+                        }
                    }else{
-                     ArrayList<Estudiante> filtrados = controller.getEstudiantes(anio,ciclo,controller.getCarreras(carrera));
-                     if(esEstudianteCarreras(anio,ciclo,array[0]+"",array[8]+"")){
-                                modelo.addRow(array);
+                     ArrayList<Estudiante> filtrados = controller.getEstudiantes(Integer.parseInt(anio),ciclo,controller.getCarreras(carrera));
+                     Object[] array1;String nomCarrera="";
+                     if(filtrados!=null && filtrados.size()>0){
+                        array1 = filtrados.get(0).toArray();
+                        nomCarrera=controller.getCarrera(Integer.parseInt((String) array1[8]));
                      }
+                     for (int j = 0; filtrados != null && j < filtrados.size(); j++) {
+                         array1 = filtrados.get(j).toArray();
+                         array1[8] = nomCarrera;
+                         modelo.addRow(array1);                                
+                     }
+                     i= estudiantes.size();
                    }
                } else {
                    modelo.addRow(array);
@@ -1413,8 +1442,59 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
            }
      }
 
+     
+     public void update_Table2(){
+         ArrayList<Estudiante> estudiantes = controller.getEstudiantes();
+
+         DefaultTableModel modelo = (DefaultTableModel) table_estudiantes.getModel();
+
+         while (modelo.getRowCount() != 0) {
+               modelo.removeRow(0);
+          }                    
+          for (int i = 0; estudiantes != null && i < estudiantes.size(); i++) {
+               Object[] array = estudiantes.get(i).toArray();
+               array[8] = controller.getCarrera(Integer.parseInt((String) array[8]));
+               if (checkEstudiantes.isSelected()) {
+                   String anio = (String) cbAnioEstudiante.getSelectedItem();
+                   String ciclo = (String) cbCicloEstudiante.getSelectedItem();
+                   String carrera=carreracbEstudiante.getSelectedItem()+"";
+                   tipoConsulta(ciclo,anio,carrera);
+                   
+               }else{
+                    modelo.addRow(array);    
+               }
+          }
+    }
+         
     private Tutor buscarTutora(int ced) {
         return controller.getTutorPorCed(ced);
-    }
+    } 
 
+    private void tipoConsulta(String ciclo, String anio, String carrera) {
+        DefaultTableModel modelo = (DefaultTableModel) table_estudiantes.getModel();
+
+        if(ciclo.equals("--") && anio.equals("--") && carrera.equals("--") ){
+             ArrayList<Estudiante> estudiantes = controller.getEstudiantes();
+             for (int i = 0; estudiantes != null && i < estudiantes.size(); i++) {
+                Object[] array = estudiantes.get(i).toArray();
+                array[8] = controller.getCarrera(Integer.parseInt((String) array[8]));
+                modelo.addRow(array);   
+             }
+        }
+        else{
+            if(ciclo.equals("--") && anio.equals("--") && !carrera.equals("--") ){
+                ArrayList<Estudiante> filtrados = controller.getEstudiantes(controller.getCarreras(carrera));
+                     Object[] array1;String nomCarrera="";
+                     if(filtrados!=null && filtrados.size()>0){
+                        array1 = filtrados.get(0).toArray();
+                        nomCarrera=controller.getCarrera(Integer.parseInt((String) array1[8]));
+                     }
+                     for (int j = 0; filtrados != null && j < filtrados.size(); j++) {
+                         array1 = filtrados.get(j).toArray();
+                         array1[8] = nomCarrera;
+                         modelo.addRow(array1);                                
+                     }
+            }
+        }
+    }
 }

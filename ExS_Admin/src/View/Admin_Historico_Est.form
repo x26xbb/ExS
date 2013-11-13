@@ -93,7 +93,7 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="8" rowCount="0">
                 <Column editable="false" title="Codigo" type="java.lang.Object"/>
-                <Column editable="false" title="Curso" type="java.lang.Object"/>
+                <Column editable="false" title="Tutoria" type="java.lang.Object"/>
                 <Column editable="false" title="Numero" type="java.lang.Object"/>
                 <Column editable="false" title="Horario" type="java.lang.Object"/>
                 <Column editable="false" title="Ciclo" type="java.lang.Object"/>

@@ -77,7 +77,7 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Curso", "Numero", "Horario", "Ciclo", "Anio", "Estado", "Lugar"
+                "Codigo", "Tutoria", "Numero", "Horario", "Ciclo", "Anio", "Estado", "Lugar"
             }
         ) {
             boolean[] canEdit = new boolean [] {
