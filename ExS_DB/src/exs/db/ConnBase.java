@@ -719,47 +719,56 @@ public abstract class ConnBase {
         return num;
     }
 
-    public boolean esEstudiante(Object carrera ,Object ced) {
-        connect();
-        if (conn != null) {
-            try {
-                stmt = conn.createStatement();
-//                String g=String.format(Querys.EXISTETUTORA,cedula, ciclo,anio ) ;
-                String s=String.format(Querys.ESTUDIANTE_CARRERA,ced,carrera ) ;
-                rset = stmt.executeQuery( String.format(Querys.ESTUDIANTE_CARRERA,ced,carrera ) );
-                while (rset.next()) {
-                    return true;
-                }
-                rset.close();
-                stmt.close();
-                disconnect();
-            } catch (Exception ex) {
-                Log.SendLog(ex.getMessage());
-            }
-        }
-        return false;
-    }
 
-    public ArrayList<Estudiante> getEstudiantesFiltrados(int anio, String ciclo, int carrera) {
-         ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
-        connect();
-        int num;
-        switch(ciclo){
-            case "I": num=0;   break;
-            case "II": num=1;  break;
-            case "III":num=2;  break;
-            default: num=0;break;             
-        }
-        
-        if (conn != null) {
-            try {
-                stmt = conn.createStatement();
-                String query="Select * from estudiante,matricula,grupo "
+    public ArrayList<Estudiante> getEstudiantesFiltradosCicloCarreraAnio(int anio, String ciclo, int carrera) {
+        String query="Select * from estudiante,matricula,grupo "
                     + " where matricula.eid=estudiante.id and "
                     + " estudiante.cid="+carrera+" and "
                     + " matricula.gnum=grupo.num and"
-                    + " grupo.ciclo="+num+" and "
-                    + " grupo.anio="+anio;
+                    + " grupo.ciclo="+getCiclo(ciclo)+" and "
+                    + " grupo.anio="+anio;     
+        return getEstudiantesFiltradosPor(query);     
+                
+    }
+    
+    public ArrayList<Estudiante> getEstudiantesFiltradosAnioCiclo(int anio, String ciclo) {
+        
+        String query="Select * from estudiante,matricula,grupo "
+                    + " where matricula.eid=estudiante.id and "
+                    + " matricula.gnum=grupo.num and"
+                    + " grupo.ciclo="+getCiclo(ciclo)+" and "
+                    + " grupo.anio="+anio;        
+        return getEstudiantesFiltradosPor(query);         
+    }
+    
+    
+    public ArrayList<Estudiante> getEstudiantesFiltradosCarrera(int carrera) {
+        String query="Select * from estudiante where cid="+carrera; 
+        return getEstudiantesFiltradosPor(query); 
+    }
+
+    public ArrayList<Estudiante> getEstudiantesFiltradosAnio(String anio) {
+         String query="Select * from estudiante,matricula"
+                  + " where year(fecha)="+anio
+                  + " and id=eid";
+        return getEstudiantesFiltradosPor(query);        
+    }
+
+    public ArrayList<Estudiante> getEstudiantesFiltradosPorCarreraYanio(String anio, int carreras) {
+        String query="select distinct id,nom,pape,sape,genero,tel,cel,"
+         + "email,cid,sede,beca from " +
+         "estudiante,matricula where "
+         + "year(fecha)="+anio+" and cid="+carreras;
+        return getEstudiantesFiltradosPor(query);
+    }
+    
+     public ArrayList<Estudiante> getEstudiantesFiltradosPor(String query) {
+        ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
+        connect();
+        
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
                 rset = stmt.executeQuery(query);
                 while (rset.next()) {
                     String id;
@@ -787,10 +796,8 @@ public abstract class ConnBase {
         }
         return lista;
     }
-    
-    public ArrayList<Estudiante> getEstudiantesFiltrados(int anio, String ciclo) {
-         ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
-        connect();
+
+    private int getCiclo(String ciclo) {
         int num;
         switch(ciclo){
             case "I": num=0;   break;
@@ -798,82 +805,41 @@ public abstract class ConnBase {
             case "III":num=2;  break;
             default: num=0;break;             
         }
-        
-        if (conn != null) {
-            try {
-                stmt = conn.createStatement();
-                String query="Select * from estudiante,matricula,grupo "
-                    + " where matricula.eid=estudiante.id and "
-                    + " matricula.gnum=grupo.num and"
-                    + " grupo.ciclo="+num+" and "
-                    + " grupo.anio="+anio;
-                rset = stmt.executeQuery(query);
-                while (rset.next()) {
-                    String id;
-                    String nom, pape, sape, mail;
-                    int gen, cel, tel, carrrera, sede, beca;
-                    id = rset.getString(1);
-                    nom = rset.getString(2);
-                    pape = rset.getString(3);
-                    sape = rset.getString(4);
-                    gen = rset.getInt(5);
-                    tel = rset.getInt(6);
-                    cel = rset.getInt(7);
-                    mail = rset.getString(8);
-                    carrrera = rset.getInt(9);
-                    sede = rset.getInt(10);
-                    beca = rset.getInt(11);
-                    lista.add(new Estudiante(nom, pape, sape, Integer.parseInt(id), cel, tel, mail, gen, beca, sede, carrrera));
-                }
-                rset.close();
-                stmt.close();
-                disconnect();
-            } catch (Exception ex) {
-                Log.SendLog(ex.getMessage());
-            }
-        }
-        return lista;
+        return num;
     }
-    
-    
-    public ArrayList<Estudiante> getEstudiantesFiltradosCarrera(String carrera) {
-         ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
-        connect();
-        int num=Integer.parseInt(carrera);
-        
-        if (conn != null) {
-            try {
-                stmt = conn.createStatement();
-                String query="Select * from estudiante,matricula,grupo "
-                    + " where matricula.eid=estudiante.id and "
-                    + " matricula.gnum=grupo.num and"
-                    + " grupo.ciclo="+num+" and "
-                    + " grupo.anio="+anio;
-                rset = stmt.executeQuery(query);
-                while (rset.next()) {
-                    String id;
-                    String nom, pape, sape, mail;
-                    int gen, cel, tel, carrrera, sede, beca;
-                    id = rset.getString(1);
-                    nom = rset.getString(2);
-                    pape = rset.getString(3);
-                    sape = rset.getString(4);
-                    gen = rset.getInt(5);
-                    tel = rset.getInt(6);
-                    cel = rset.getInt(7);
-                    mail = rset.getString(8);
-                    carrrera = rset.getInt(9);
-                    sede = rset.getInt(10);
-                    beca = rset.getInt(11);
-                    lista.add(new Estudiante(nom, pape, sape, Integer.parseInt(id), cel, tel, mail, gen, beca, sede, carrrera));
-                }
-                rset.close();
-                stmt.close();
-                disconnect();
-            } catch (Exception ex) {
-                Log.SendLog(ex.getMessage());
-            }
-        }
-        return lista;
+
+    public ArrayList<Estudiante> getEstudiantesFiltradosPorCiclo(String ciclo) {
+        String query="select distinct id,nom,pape,sape,genero,tel,cel,"
+                + "email,cid,sede,beca from"+
+            " estudiante,matricula,grupo where ciclo="+getCiclo(ciclo)
+                + " and id=eid";
+        return getEstudiantesFiltradosPor(query);
     }
+
+    public ArrayList<Estudiante> getEstudiantesFiltradosPorCicloCarrera(String ciclo, int carreras) {
+        String query="select distinct id,nom,pape,sape,genero,tel,cel,"
+        + "email,cid,sede,beca from"+
+        " estudiante,grupo where ciclo="+getCiclo(ciclo)+
+        " and cid="+carreras;
+        return getEstudiantesFiltradosPor(query);    
+    }
+
+    public ArrayList<Estudiante> getEstudiantesFiltradosPorCicloAnio(String ciclo, String anio) {
+        String query="select distinct id,nom,pape,sape,genero,tel,"
+                + "cel,email,cid,sede,beca from " +
+        "estudiante,matricula,grupo where ciclo="+getCiclo(ciclo)
+                + " and eid=id and year(fecha)="+anio;
+        return getEstudiantesFiltradosPor(query);     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

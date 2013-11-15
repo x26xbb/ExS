@@ -390,20 +390,39 @@ public class Gestor extends Observable {
 
         }
 
-    public boolean esEstudiante(Object carrera,Object ced) {
-        return db_gestor.esEstudiante(carrera,ced); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    public ArrayList<Estudiante> getEstudiantes(int anio, String ciclo, int carrera) {
-        return db_gestor.getEstudiantesFiltrados(anio,ciclo,carrera); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Estudiante> getEstudiantesPorPorCicloCarreraAnio(String ciclo,int carrera,int anio ) {
+        return db_gestor.getEstudiantesFiltradosCicloCarreraAnio(anio,ciclo,carrera); //To change body of generated methods, choose Tools | Templates.
     }
     
     public ArrayList<Estudiante> getEstudiantes(int anio, String ciclo) {
-        return db_gestor.getEstudiantesFiltrados(anio,ciclo); //To change body of generated methods, choose Tools | Templates.
+        return db_gestor.getEstudiantesFiltradosAnioCiclo(anio,ciclo); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public ArrayList<Estudiante> getEstudiantesPorCarrera(String carrera) {
+    public ArrayList<Estudiante> getEstudiantesPorCarrera(int carrera) {
         return db_gestor.getEstudiantesFiltradosCarrera(carrera); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public ArrayList<Estudiante> getEstudiantesPorAnio(String anio) {
+        return db_gestor.getEstudiantesFiltradosAnio(anio);
+    }
+
+    public ArrayList<Estudiante> getEstudiantesPorCarreraYanio(int carreras, String anio) {
+        return db_gestor.getEstudiantesFiltradosPorCarreraYanio(anio,carreras);
+    }
+
+    public ArrayList<Estudiante> getEstudiantesPorCiclo(String ciclo) {
+        return db_gestor.getEstudiantesFiltradosPorCiclo(ciclo);
+    }
+
+    public ArrayList<Estudiante> getEstudiantesPorCicloCarrera(String ciclo, int carreras) {
+        return db_gestor.getEstudiantesFiltradosPorCicloCarrera(ciclo,carreras);
+    }
+
+    public ArrayList<Estudiante> getEstudiantesPorCicloAnio(String ciclo, String anio) {
+        return db_gestor.getEstudiantesFiltradosPorCicloAnio(ciclo,anio);
+    }
+
+ 
     
 }
