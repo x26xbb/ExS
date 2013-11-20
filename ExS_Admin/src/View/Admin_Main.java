@@ -173,7 +173,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         jLabel2.setText("jLabel2");
 
@@ -533,11 +533,11 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
 
             },
             new String [] {
-                "ID", "Genero", "Nombre", "Télefono", "Celular", "E-Mail", "Beca", "Sede", "Carrera"
+                "ID", "Nombre", "Télefono", "Celular", "E-Mail", "Curso", "Horario", "Ciclo", "Carrera", "Sede"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -765,9 +765,19 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/front_admin.jpg"))); // NOI18N
 
         jMenu1.setText("Informes");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem1.setText("Estudiantes por Carrera en cursos...");
-        jMenu1.add(jMenuItem1);
+        jMenuItem2.setText("Estudiantes que han retirado un curso...");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
@@ -1028,6 +1038,14 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
        update_tableEstudiantes(false); 
     }//GEN-LAST:event_carreracbEstudianteActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+            JOptionPane.showMessageDialog(rootPane,"Aun se encuentra en desarrollo");
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+         JOptionPane.showMessageDialog(rootPane,"Aun se encuentra en desarrollo");
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
     public ArrayList getHistorico(int id,int tipo){
         return controller.getHistorico(id,tipo);
     }
@@ -1104,7 +1122,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         ArrayList<Estudiante> list = controller.getEstudiantes();
         DefaultTableModel modelo = (DefaultTableModel) table_estudiantes.getModel();
         for (int i = 0; i < list.size(); i++) {
-            Object[] array = list.get(i).toArray();
+            Object[] array = list.get(i).toArray2();
             array[8] = controller.getCarrera(Integer.parseInt((String) array[8]));
             modelo.addRow(array);
         }
@@ -1196,7 +1214,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel p_estudiantes;
     private javax.swing.JPanel p_grupos;
@@ -1458,7 +1476,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
                modelo.removeRow(0);
           }                    
           for (int i = 0; estudiantes != null && i < estudiantes.size(); i++) {
-               Object[] array = estudiantes.get(i).toArray();
+               Object[] array = estudiantes.get(i).toArray2();
                array[8] = controller.getCarrera(Integer.parseInt((String) array[8]));
                if (checkEstudiantes.isSelected()) {
                    String anio = (String) cbAnioEstudiante.getSelectedItem();
@@ -1482,7 +1500,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
         if (ciclo.equals("--") && anio.equals("--") && carrera.equals("--")) {
             ArrayList<Estudiante> estudiantes = controller.getEstudiantes();
             for (int i = 0; estudiantes != null && i < estudiantes.size(); i++) {
-                Object[] array = estudiantes.get(i).toArray();
+                Object[] array = estudiantes.get(i).toArray2();
                 array[8] = controller.getCarrera(Integer.parseInt((String) array[8]));
                 modelo.addRow(array);
             }
@@ -1519,7 +1537,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             Object[] array1;
             String nomCarrera = "";
             for (int j = 0; filtrados != null && j < filtrados.size(); j++) {
-                array1 = filtrados.get(j).toArray();
+                array1 = filtrados.get(j).toArray2();
                 nomCarrera = controller.getCarrera(Integer.parseInt((String) array1[8]));
                 array1[8] = nomCarrera;
                 modelo.addRow(array1);

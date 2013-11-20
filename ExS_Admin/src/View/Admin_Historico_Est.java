@@ -215,7 +215,9 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
          Jfc j=new Jfc();
          excel=new Excel();
          String path=j.guardar();
-         if(path!=null)
-            excel.guardar(table_historico,path,this.jLabel1.getText()+this.labelhistorialde_tipo.getText());
+         if(path!=null){           
+             excel.guardar(table_historico,path,this.jLabel1.getText()+this.labelhistorialde_tipo.getText());
+    
+         }
     }
 }

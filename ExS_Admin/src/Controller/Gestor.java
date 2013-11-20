@@ -423,6 +423,10 @@ public class Gestor extends Observable {
         return db_gestor.getEstudiantesFiltradosPorCicloAnio(ciclo,anio);
     }
 
+    public Object getCelular(String estudiante) {
+        return db_gestor.getCelular(estudiante);
+    }
+
  
     
 }

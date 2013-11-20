@@ -81,4 +81,10 @@ public class Matricula {
     private float nota;
     private int nrc;
     private int veces;
+    
+    private int celular;
+
+    public int getCelular() {
+        return celular;
+    }
 }

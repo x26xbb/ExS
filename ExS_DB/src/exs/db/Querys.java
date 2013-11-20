@@ -28,8 +28,8 @@ public class Querys {
     public static String GET_TUTORES = "SELECT * FROM TUTOR ORDER BY NOM";
     public static String GET_TUTORES_COD = "SELECT * FROM TUTOR WHERE ID = '%s'";
     public static String DEL_TUTOR = "DELETE FROM TUTOR WHERE ID = '%s'";
-    public static String UPDATE_TUTOR = "UPDATE TUTOR SET NOM = '%s',   PAPE= '%s', SAPE= '%s', GENERO= '%d', TEL= '%d', EMAIL= '%s'  WHERE ID = '%s'";
-    public static String INSERT_TUTOR = "INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('%s' , '%s', '%s', '%s', '%d', '%d', '%s')";
+    public static String UPDATE_TUTOR = "UPDATE TUTOR SET NOM = '%s',   PAPE= '%s', SAPE= '%s', GENERO= 3, TEL= '%d', EMAIL= '%s'  WHERE ID = '%s'";
+    public static String INSERT_TUTOR = "INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('%s' , '%s', '%s', '%s', 3, '%d', '%s')";
     public static String VER_CURSOS_TUTOR = 
     "select tutoria.nom,grupo.num,grupo.tcod,grupo.anio,grupo.ciclo," +
     "grupo.horario,grupo.estado,tid,tutor.nom,tutor.pape,tutor.sape," +
@@ -55,7 +55,10 @@ public class Querys {
     public static String GET_GRUPO= "SELECT * FROM GRUPO WHERE NUM= '%s' ";
     //
     //Estudiantes 
-    public static String GET_ESTUDIANTES = "SELECT * FROM ESTUDIANTE ORDER BY NOM";
+    public static String GET_ESTUDIANTES = "select id,estudiante.nom,pape,"
+    + "sape,tel,cel,email,cid,tutoria.nom,horario,sede,genero,beca,ciclo"
+    +" from estudiante,grupo,matricula,tutoria where id=eid and gnum=num"
+    + " and tcod=cod ORDER BY estudiante.cid,estudiante.nom";
     public static String GET_ESTUDIANTE = "SELECT * FROM ESTUDIANTE WHERE ID = '%d'";
     // public static String GET_TUTORES_COD = "SELECT * FROM TUTOR WHERE ID = '%s'";
     public static String DEL_ESTUDIANTE = "DELETE FROM ESTUDIANTE WHERE ID = '%s'";

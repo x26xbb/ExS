@@ -46,8 +46,6 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             this.tutoria = t;
             this.controller = Gestor.getInstancia();
             initComponents();
-            sorterGrupo = new TableRowSorter(table_grupos.getModel());
-           table_grupos.setRowSorter(sorterGrupo);
             setImages();
             Gestor.getInstancia().addObserver(this);
             this.addWindowListener(new WindowAdapter() {
@@ -124,7 +122,7 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
 
             },
             new String [] {
-                "Estudiante", "Fecha", "Estado", "NRC", "Veces Matrículado", "Nota"
+                "Estudiante", "Fecha", "Estado", "NRC", "Veces Matrículado", "Celular"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -335,7 +333,7 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             array[2] = m.getEstado();
             array[3] = m.getNrc();
             array[4] = m.getVeces();
-            array[5] = m.getNota();
+            array[5] = controller.getCelular(m.getEstudiante()).toString();
             modelo.addRow(array);
 
         }

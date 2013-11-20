@@ -77,7 +77,12 @@ public abstract class Persona {
     }
 
     public String _getGenero() {
-        return (genero == 1) ? "Masculino" : "Femenino";
+        switch(genero){
+            case 1: return "Masculino"; 
+            case 2: return "Femenino"; 
+            case 3: return "Otro"; 
+            default: return "Otro"; 
+        }
     }
 
     @Override
