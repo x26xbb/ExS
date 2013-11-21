@@ -325,6 +325,7 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             modelo.removeRow(0);
         }
 
+      
         for (int i = 0; matriculas != null && i < matriculas.size(); i++) {
             Matricula m = matriculas.get(i);
             Object[] array = new Object[6];

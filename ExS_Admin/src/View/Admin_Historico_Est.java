@@ -63,7 +63,7 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         table_historico = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -97,10 +97,10 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Ver Curso");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Ver Curso");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -117,7 +117,7 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -133,13 +133,14 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
                     .addComponent(labelhistorialde_tipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -149,8 +150,8 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
         this.guardarHistorial();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         int i = this.table_historico.getSelectedRow();      
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+     int i = this.table_historico.getSelectedRow();      
         if (i >= 0) {
             String cod=null;
             cod=(String) table_historico.getModel().getValueAt(table_historico.getSelectedRow(),0);
@@ -160,8 +161,10 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
             }else{
                             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un grupo de la tabla");
             }
-       }
-    }//GEN-LAST:event_jButton2ActionPerformed
+       }else{
+              JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero un grupo de la tabla");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private Grupo getGrupo(String cod) {
         return Admin_Main.controller.getGrupo(cod);
@@ -203,7 +206,7 @@ public class Admin_Historico_Est extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelhistorialde_tipo;
