@@ -446,6 +446,7 @@ public class Admin_New_Est extends javax.swing.JFrame {
                         id = Integer.parseInt(t_id.getText());
                         Gestor.getInstancia().insert_estudiante(new Estudiante(t_name.getText(), t_pname.getText(), t_sname.getText(),
                                 id, cel, tel, t_email.getText(), gen, beca, sede, carrera));
+                        
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "La identificación indicada ya se encuentra utilizada por otro tutor.");
                         return;

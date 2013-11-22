@@ -999,7 +999,7 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
             String msj = "Seguro que desea borrar ";
             msj += (estudiante.getGenero() == 1) ? "el estudiante " : "la estudiante ";
             msj += estudiante.getId() + " - " + estudiante.getNombre() + " " + estudiante.getPriApellido() + " " + estudiante.getSegApellido() + "?";
-            int r = JOptionPane.showConfirmDialog(rootPane, msj, "Borrar Estudiante", JOptionPane.YES_NO_OPTION);
+            int r = JOptionPane.showConfirmDialog(rootPane, msj+",Tome en cuenta que está opcion borrará el estudiante del sistema,\n para eliminar a un estudiante de un grupo vaya a Grupos-Seleccione el grupo, click en matricula y luego borrá a el/la estudiante", "Borrar Estudiante", JOptionPane.YES_NO_OPTION);
             if (r == 0) {
                 controller.del_estudiante(i);
             }

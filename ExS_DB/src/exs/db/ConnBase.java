@@ -891,6 +891,87 @@ public abstract class ConnBase {
         }
         return num;
     }
+
+    public boolean addToRetirados(Matricula g,String motivo) {    
+        boolean yaExiste=false;
+        if (conn != null) {
+            try {
+                String tutoria=getCodTutoria(g.getGrupo());
+                connect(); 
+                stmt = conn.createStatement();
+                String sql = "Select * from retiraron where eid='"+g.getEstudiante()+
+                        "' and TUTORIACOD='"+tutoria+"'";
+                Log.SendLog(sql);
+                rset = stmt.executeQuery(sql);                 
+                while (rset.next()) {     
+                    yaExiste=true;
+                }
+                if(!yaExiste){
+                    addTORetiradosTable(g,tutoria,motivo);
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+                return yaExiste;
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return yaExiste;
+    }
+
+    private String getCodTutoria(String grupo) {
+     connect();        
+         String num="";
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                String sql = "Select tcod from grupo where num='"+grupo+"'";
+                Log.SendLog(sql);
+                rset = stmt.executeQuery(sql);                
+                while (rset.next()) {                    
+                    num = rset.getString(1);
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return num;
+    }
+
+    private void addTORetiradosTable(Matricula g, String tutoria, String motivo) {
+        String sql = "Insert into Retiraron values"
+                        + "('" + g.getEstudiante() + "','" + g.getFecha() + "',sysdate(),'"
+                        + tutoria + "','" + motivo+"'"
+                        + ")";
+        execute_update(sql);    
+    }
+
+    public void revisarSiRetiro(int id, String tcod) {
+        if (conn != null) {
+            try {
+                connect(); 
+                stmt = conn.createStatement();
+                String sql = "Select * from retiraron where eid='"+id+
+                        "' and TUTORIACOD='"+tcod+"'";
+                Log.SendLog(sql);
+                rset = stmt.executeQuery(sql);                 
+                while (rset.next()) {
+                    sql="Delete from retiraron where eid='"+id+
+                             "' and TUTORIACOD='"+tcod+"'";
+                    execute_update(sql);    
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+    }
 }
 
 

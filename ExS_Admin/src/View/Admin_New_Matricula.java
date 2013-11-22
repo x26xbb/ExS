@@ -163,6 +163,7 @@ public class Admin_New_Matricula extends javax.swing.JFrame {
                     new Matricula(grupo.getNum(), estudiante.getId() + "", null, 
                     (String)cb_estado.getSelectedItem(), 0.0f, Integer.parseInt(t_nrc.getText()), (Integer) sp_cant.getValue()),
                     estudiante, grupo, tutoria);
+                    Gestor.getInstancia().revisarSiRetiro(estudiante.getId(),grupo.getTcod());
                 } else {
                     matricula.setEstado((String)cb_estado.getSelectedItem());
                     matricula.setNota(Float.parseFloat(t_nota.getText()));

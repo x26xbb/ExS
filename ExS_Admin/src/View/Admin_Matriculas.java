@@ -253,6 +253,10 @@ public class Admin_Matriculas extends javax.swing.JFrame implements Observer {
             int r = JOptionPane.showConfirmDialog(rootPane, msj, "Borrar matrícula", JOptionPane.YES_NO_OPTION);
             if (r == 0) {
                 controller.del_matricula(g);
+                String motivo = JOptionPane.showInputDialog(
+                this, "Razon para retirar el curso:",
+                                JOptionPane.QUESTION_MESSAGE); 
+                controller.addToRetirados(g,motivo);
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar primero una matrícula de la tabla");

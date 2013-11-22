@@ -427,6 +427,11 @@ public class Gestor extends Observable {
         return db_gestor.getCelular(estudiante);
     }
 
- 
-    
+    public boolean addToRetirados(Matricula g,String motivo) {
+        return db_gestor.addToRetirados(g,motivo);
+    }
+
+    public void revisarSiRetiro(int id, String tcod) {
+        db_gestor.revisarSiRetiro(id,tcod);
+    }
 }
