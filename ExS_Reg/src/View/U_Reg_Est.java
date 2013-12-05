@@ -183,7 +183,7 @@ public class U_Reg_Est extends javax.swing.JFrame {
 
         l_text.setText("Ingrese los datos para agregar un Estudiante y luego presione el botón de Agregar.");
 
-        b_add.setText("Coninuar");
+        b_add.setText("Continuar");
         b_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_addActionPerformed(evt);

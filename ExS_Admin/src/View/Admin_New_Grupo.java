@@ -287,6 +287,11 @@ public class Admin_New_Grupo extends javax.swing.JFrame {
         jLabel3.setText("Estado");
 
         cb_Estado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
+        cb_Estado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_EstadoActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Lugar");
 
@@ -449,6 +454,10 @@ public class Admin_New_Grupo extends javax.swing.JFrame {
         update_num();
     }//GEN-LAST:event_change_num
 
+    private void cb_EstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_EstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_EstadoActionPerformed
+
     private void change_numero() {
         num = (num < 255) ? num + 1 : 1;
     }
@@ -563,8 +572,8 @@ public class Admin_New_Grupo extends javax.swing.JFrame {
                 //Sets
                 update.setTid(tutor.getId() + "");
                 update.setHorario(getHorario());
-                update.setAnio(Integer.parseInt((String) cb_Anio.getSelectedItem()));
-                update.setCiclo(cb_Ciclo.getSelectedIndex());
+                //update.setAnio(Integer.parseInt((String) cb_Anio.getSelectedItem()));
+               // update.setCiclo(0);
                 update.setEstado((String) cb_Estado.getSelectedItem());
                 update.setLugar(t_lugar.getText());
 

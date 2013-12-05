@@ -29,8 +29,8 @@ public class Estudiante extends Persona{
         this.ciclo=ciclo;
     }
 
-    public Estudiante(String nom, String pape, String sape, int parseInt, int cel, int tel, String mail, int gen, int beca, int sede, int carrera) {
-        super(nom, pape, sape, parseInt, cel, mail, gen);
+    public Estudiante(String nom, String pape, String sape, int id, int cel, int tel, String mail, int gen, int beca, int sede, int carrera) {
+        super(nom, pape, sape, id, cel, mail, gen);
        
         this.celular = cel;        
         this.beca = beca;

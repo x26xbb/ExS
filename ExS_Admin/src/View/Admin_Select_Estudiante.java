@@ -54,7 +54,7 @@ public class Admin_Select_Estudiante extends javax.swing.JFrame {
 
     public void update_table() {
         limpiaTabla(table_estudiante);
-        ArrayList<Estudiante> list = Gestor.getInstancia().getEstudiantes();
+        ArrayList<Estudiante> list = Gestor.getInstancia().getEstudiantesIndividual();
         DefaultTableModel modelo = (DefaultTableModel) table_estudiante.getModel();
         for (int i = 0; i < list.size(); i++) {
             Estudiante e = list.get(i);

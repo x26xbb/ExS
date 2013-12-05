@@ -1029,11 +1029,10 @@ public class Admin_Main extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_carreracbEstudianteActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-            JOptionPane.showMessageDialog(rootPane,"Aun se encuentra en desarrollo");
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        new Retiraron();    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-         JOptionPane.showMessageDialog(rootPane,"Aun se encuentra en desarrollo");
+            
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     public ArrayList getHistorico(int id,int tipo){

@@ -9,6 +9,7 @@ import exs.mod.Carrera;
 import exs.mod.Estudiante;
 import exs.mod.Grupo;
 import exs.mod.Matricula;
+import exs.mod.Retirado;
 import exs.mod.Persona;
 import exs.mod.Tutor;
 import exs.mod.Tutoria;
@@ -145,6 +146,10 @@ public class Gestor extends Observable {
     //Estudiantes
     public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes = db_gestor.getEstudiantes();
+    }
+    
+    public ArrayList<Estudiante> getEstudiantesIndividual() {
+        return estudiantes = db_gestor.getEstudiantesIndividual();
     }
 
     public ArrayList<Estudiante> _getEstudiantes() {
@@ -433,5 +438,9 @@ public class Gestor extends Observable {
 
     public void revisarSiRetiro(int id, String tcod) {
         db_gestor.revisarSiRetiro(id,tcod);
+    }
+
+    public ArrayList<Retirado> getRetiraron() {
+        return db_gestor.getRetirados();
     }
 }

@@ -5,6 +5,7 @@ import exs.mod.Carrera;
 import exs.mod.Estudiante;
 import exs.mod.Grupo;
 import exs.mod.Matricula;
+import exs.mod.Retirado;
 import exs.mod.Tutor;
 import exs.mod.Tutoria;
 import java.io.File;
@@ -259,7 +260,40 @@ public abstract class ConnBase {
     }
 //Estudiantes
 
-    
+   public ArrayList<Estudiante> getEstudiantesIndividual(){
+        ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
+        connect();
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                rset = stmt.executeQuery("select * from estudiante order by nom");
+                while (rset.next()) {
+                    String id;
+                    String nom, pape, sape, mail;
+                    int gen,sede,beca, cel, tel, carrera;
+                    id = rset.getString(1);
+                    nom = rset.getString(2);
+                    pape = rset.getString(3);
+                    sape = rset.getString(4);
+                    tel = rset.getInt(6);
+                    cel = rset.getInt(7);
+                    mail = rset.getString(8);
+                    carrera = rset.getInt(9);
+                    sede = rset.getInt(10);
+                    gen= rset.getInt(5);
+                    beca= rset.getInt(11);
+                    lista.add(new Estudiante(nom, pape, sape, Integer.parseInt(id), cel, tel, mail,gen,beca, sede,carrera));
+                }
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return lista;
+    }
+            
     public ArrayList<Estudiante> getEstudiantes() {
         ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
         connect();
@@ -342,22 +376,19 @@ public abstract class ConnBase {
                 stmt = conn.createStatement();
                 rset = stmt.executeQuery(String.format(Querys.GET_ESTUDIANTE, id));
                 if (rset.next()) {
-                    String nom, pape, sape, mail, tutoria, horario,ciclo;
+                    String nom, pape, sape, mail;
                     int gen,sede,beca, cel, tel, carrera;
                     nom = rset.getString(2);
                     pape = rset.getString(3);
                     sape = rset.getString(4);
-                    tel = rset.getInt(5);
-                    cel = rset.getInt(6);
-                    mail = rset.getString(7);
-                    carrera = rset.getInt(8);
-                    tutoria = rset.getString(9);
-                    horario = rset.getString(10);
-                    sede = rset.getInt(11);
-                    gen= rset.getInt(12);
-                    beca= rset.getInt(13);
-                    ciclo=getCicloRomano(rset.getInt(14));
-                    estudiante=new Estudiante(nom, pape, sape, id, cel, tel, mail, sede,carrera,tutoria,horario,gen,beca,ciclo);
+                    gen= rset.getInt(5);
+                    tel = rset.getInt(6);
+                    cel = rset.getInt(7);
+                    mail = rset.getString(8);
+                    carrera = rset.getInt(9);
+                    sede = rset.getInt(10);                    
+                    beca= rset.getInt(11);
+                    estudiante=new Estudiante(nom, pape, sape, id, cel, tel, mail,gen,beca ,sede,carrera);
                 }
                 rset.close();
                 stmt.close();
@@ -413,9 +444,11 @@ public abstract class ConnBase {
     }
 
     public boolean update_estudiante(Estudiante t) {
+
         return execute_update(String.format(Querys.UPDATE_ESTUDIANTE, t.getNombre(),
-                t.getPriApellido(), t.getSegApellido()
-                , t.getTelefono(), t.getCelular(), t.getEmail(), t.getCarrera(), t.getSede(), t.getBeca(), t.getId()));
+                t.getPriApellido(), t.getSegApellido(),t.getGenero()
+                , t.getTelefono(), t.getCelular(), t.getEmail(), 
+                t.getCarrera(), t.getSede(), t.getBeca(), t.getId()));
     }
 
     public boolean det_estudiante(Estudiante t) {
@@ -972,6 +1005,39 @@ public abstract class ConnBase {
             }
         }
     }
+
+    public ArrayList<Retirado> getRetirados() {
+        ArrayList<Retirado> lista = new ArrayList<Retirado>();
+        connect();
+        
+        if (conn != null) {
+            try {
+                stmt = conn.createStatement();
+                rset = stmt.executeQuery(
+                        "select eid,nom,pape,sape,fechamatricula,fecharetiro,"
+                         + "tutoriacod,motivo,cel from retiraron , estudiante "
+                         + "where eid=id");
+                while (rset.next()) {
+                    String eid;
+                    String fechaMatricula, fechaRetiro, tutoriaCod, motivo,telefono;
+                    
+                    eid = rset.getString(1);
+                    String nombre=rset.getString(2)+" "+rset.getString(3)+" "+rset.getString(4);
+                    fechaMatricula = rset.getString(5);
+                    fechaRetiro = rset.getString(6);
+                    tutoriaCod = rset.getString(7);
+                    motivo = rset.getString(8);
+                    telefono=rset.getString(9);
+                    lista.add(new Retirado(eid,motivo,fechaRetiro, fechaMatricula,nombre,tutoriaCod,telefono));
+                }       
+                rset.close();
+                stmt.close();
+                disconnect();
+            } catch (Exception ex) {
+                Log.SendLog(ex.getMessage());
+            }
+        }
+        return lista;    }
 }
 
 
