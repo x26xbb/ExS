@@ -20,6 +20,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,11 +38,11 @@ public abstract class ConnBase {
         try {
                     File arc=new File(path);
                     FileInputStream fileIn = new FileInputStream(arc);
-                    ObjectInputStream in = new ObjectInputStream(fileIn);                
+                    //ObjectInputStream in = new ObjectInputStream(fileIn);                
 
-                     props = (ConnProps) in.readObject();
+                     props = new ConnProps();//(ConnProps) in.readObject();
             
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException e) {
             Log.SendLog(e.getMessage());
             Log.SendLog(path + " erroneo");
         }
@@ -456,9 +458,11 @@ public abstract class ConnBase {
     }
 
     public boolean insert_estudiante(Estudiante t) {
+        
         return execute_update(String.format(Querys.INSERT_ESTUDIANTE, t.getId(),
-                t.getNombre(), t.getPriApellido(), t.getSegApellido(),
+                t.getNombre(), t.getPriApellido(), t.getSegApellido(), 1,
                  t.getTelefono(), t.getCelular(), t.getEmail(), t.getCarrera(), t.getSede(), t.getBeca()));
+   
     }
 
     //Carreras
@@ -1038,6 +1042,26 @@ public abstract class ConnBase {
             }
         }
         return lista;    }
+
+    public void crearRespaldo(String path) {
+            
+        try {
+            String executeCmd = "mysqldump -u " + props.getUser() + " -p" + props.getPassword()  + "  " + props.getDb() + " > " + path+ ".sql";
+            Process runtimeProcess = Runtime.getRuntime().exec(executeCmd);
+            int processComplete = runtimeProcess.waitFor();
+            
+            /*NOTE: processComplete=0 if correctly executed, will contain other values if not*/
+            if (processComplete == 0) {
+                System.out.println("Backup Complete");
+            } else {
+                System.out.println("Backup Failure");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(ConnBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(ConnBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
 
 

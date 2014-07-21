@@ -443,4 +443,8 @@ public class Gestor extends Observable {
     public ArrayList<Retirado> getRetiraron() {
         return db_gestor.getRetirados();
     }
+
+    public void crearRespaldo(String path) {
+        db_gestor.crearRespaldo(path);
+    }
 }

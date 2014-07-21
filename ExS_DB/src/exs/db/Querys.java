@@ -31,21 +31,21 @@ public class Querys {
     public static String UPDATE_TUTOR = "UPDATE TUTOR SET NOM = '%s',   PAPE= '%s', SAPE= '%s', GENERO= 3, TEL= '%d', EMAIL= '%s'  WHERE ID = '%s'";
     public static String INSERT_TUTOR = "INSERT INTO TUTOR  (ID , NOM, PAPE, SAPE, GENERO, TEL, EMAIL) VALUES ('%s' , '%s', '%s', '%s', 3, '%d', '%s')";
     public static String VER_CURSOS_TUTOR = 
-    "select tutoria.nom,grupo.num,grupo.tcod,grupo.anio,grupo.ciclo," +
-    "grupo.horario,grupo.estado,tid,tutor.nom,tutor.pape,tutor.sape," +
-    "grupo.lugar from grupo,tutoria,tutor " +
-    "where tid='%d' " +
-    "and grupo.tcod=tutoria.cod and tutor.id=tid";
+    "SELECT TUTORIA.NOM,GRUPO.NUM,GRUPO.TCOD,GRUPO.ANIO,GRUPO.CICLO," +
+    "GRUPO.HORARIO,GRUPO.ESTADO,TID,TUTOR.NOM,TUTOR.PAPE,TUTOR.SAPE," +
+    "GRUPO.LUGAR FROM GRUPO,TUTORIA,TUTOR " +
+    "WHERE TID='%D' " +
+    "AND GRUPO.TCOD=TUTORIA.COD AND TUTOR.ID=TID";
     public static String GET_TUTOR_CURSO="SELECT TID FROM GRUPO "
             + "WHERE NUM='%s'";
     //
     //Grupos
-    public static String GET_HISTORICO= "select tutoria.nom,grupo.num,grupo.tcod,"
-        + "grupo.anio,grupo.ciclo,grupo.horario,grupo.estado,matricula.eid,estudiante.nom,"
-        + "estudiante.pape,estudiante.sape,grupo.lugar"
-        + " from tutoria,matricula,grupo,estudiante "
-        + "where matricula.eid='%d'and grupo.num=matricula.gnum "
-        + "and estudiante.id=matricula.eid and tutoria.cod=grupo.tcod";  
+    public static String GET_HISTORICO= "SELECT TUTORIA.NOM,GRUPO.NUM,GRUPO.TCOD,"
+        + "GRUPO.ANIO,GRUPO.CICLO,GRUPO.HORARIO,GRUPO.ESTADO,MATRICULA.EID,ESTUDIANTE.NOM,"
+        + "ESTUDIANTE.PAPE,ESTUDIANTE.SAPE,GRUPO.LUGAR"
+        + " FROM TUTORIA,MATRICULA,GRUPO,ESTUDIANTE "
+        + "WHERE MATRICULA.EID='%D'AND GRUPO.NUM=MATRICULA.GNUM "
+        + "AND ESTUDIANTE.ID=MATRICULA.EID AND TUTORIA.COD=GRUPO.TCOD";  
     public static String GET_CANT_GRUPO = "SELECT COUNT(*) FROM GRUPO WHERE TCOD = '%s' ";
     public static String GET_GRUPOS = "SELECT * FROM GRUPO WHERE TCOD = '%s' ";
     public static String GET_GRUPOS_C = "SELECT * FROM GRUPO WHERE TCOD = '%s'  AND CICLO= '%d' AND ANIO= '%d' AND ESTADO = '%s' ";
@@ -55,10 +55,10 @@ public class Querys {
     public static String GET_GRUPO= "SELECT * FROM GRUPO WHERE NUM= '%s' ";
     //
     //Estudiantes 
-    public static String GET_ESTUDIANTES = "select id,estudiante.nom,pape,"
-    + "sape,tel,cel,email,cid,tutoria.nom,horario,sede,genero,beca,ciclo"
-    +" from estudiante,grupo,matricula,tutoria where id=eid and gnum=num"
-    + " and tcod=cod ORDER BY estudiante.cid,estudiante.nom";
+    public static String GET_ESTUDIANTES = "SELECT ID,ESTUDIANTE.NOM,PAPE,"
+    + "SAPE,TEL,CEL,EMAIL,CID,TUTORIA.NOM,HORARIO,SEDE,GENERO,BECA,CICLO"
+    +" FROM ESTUDIANTE,GRUPO,MATRICULA,TUTORIA WHERE ID=EID AND GNUM=NUM"
+    + " AND TCOD=COD ORDER BY ESTUDIANTE.CID,ESTUDIANTE.NOM";
     public static String GET_ESTUDIANTE = "SELECT * FROM ESTUDIANTE WHERE ID = '%d'";
     // public static String GET_TUTORES_COD = "SELECT * FROM TUTOR WHERE ID = '%s'";
     public static String DEL_ESTUDIANTE = "DELETE FROM ESTUDIANTE WHERE ID = '%s'";

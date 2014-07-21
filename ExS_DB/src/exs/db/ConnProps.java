@@ -71,11 +71,13 @@ public class ConnProps implements Serializable {
     public void setDriver(String driver) {
         this.driver = driver;
     }
+    
+    
     private String url = "jdbc:mysql://";
     private String driver = "com.mysql.jdbc.Driver";
     private String user = "root";
-    private String password = "exito@una";
-    private String db = "exsdb";
-    private String ip = "10.0.18.53";
+    private String password = "root";
+    private String db = "EXSDB";
+    private String ip = "localhost";
     private String port = "3306";
 }
