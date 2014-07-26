@@ -5,12 +5,16 @@
             <url>src/exs/db/ConnBase.java</url>
             <bookmark id="1">
                 <name/>
-                <line>976</line>
+                <line>978</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/maynor/ExS/ExS_DB/src/exs/db/DBsource.sql</file>
+            <file>file:/home/maynor/ExS/ExS_DB/src/exs/db/ConnBase.java</file>
+            <file>file:/home/maynor/ExS/ExS_DB/src/exs/db/Querys.java</file>
+        </group>
     </open-files>
 </project-private>

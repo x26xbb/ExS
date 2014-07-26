@@ -36,13 +36,13 @@ public abstract class ConnBase {
     private void readProps(String path) {
         props = null;
         try {
-                    File arc=new File(path);
-                    FileInputStream fileIn = new FileInputStream(arc);
+                   // File arc=new File(path);
+                    //FileInputStream fileIn = new FileInputStream(arc);
                     //ObjectInputStream in = new ObjectInputStream(fileIn);                
 
                      props = new ConnProps();//(ConnProps) in.readObject();
             
-        } catch (IOException e) {
+        } catch (Exception e) {
             Log.SendLog(e.getMessage());
             Log.SendLog(path + " erroneo");
         }
@@ -268,7 +268,7 @@ public abstract class ConnBase {
         if (conn != null) {
             try {
                 stmt = conn.createStatement();
-                rset = stmt.executeQuery("select * from estudiante order by nom");
+                rset = stmt.executeQuery(Querys.GET_EST);
                 while (rset.next()) {
                     String id;
                     String nom, pape, sape, mail;
@@ -306,7 +306,7 @@ public abstract class ConnBase {
                 while (rset.next()) {
                     String id;
                     String nom, pape, sape, mail, tutoria, horario,ciclo;
-                    int gen,sede,beca, cel, tel, carrera;
+                    int gen=1,sede,beca, cel, tel, carrera;
                     id = rset.getString(1);
                     nom = rset.getString(2);
                     pape = rset.getString(3);
@@ -314,13 +314,15 @@ public abstract class ConnBase {
                     tel = rset.getInt(5);
                     cel = rset.getInt(6);
                     mail = rset.getString(7);
-                    carrera = rset.getInt(8);
-                    tutoria = rset.getString(9);
-                    horario = rset.getString(10);
+                    horario = rset.getString(8);
+                    ciclo=getCicloRomano(rset.getInt(9));
+                    carrera = rset.getInt(10);
+                    tutoria = rset.getString(10);
+                    
                     sede = rset.getInt(11);
-                    gen= rset.getInt(12);
-                    beca= rset.getInt(13);
-                    ciclo=getCicloRomano(rset.getInt(14));
+                    //gen= rset.getInt(13);
+                    beca= rset.getInt(11);
+                    
                     lista.add(new Estudiante(nom, pape, sape, Integer.parseInt(id), cel, tel, mail, sede,carrera,tutoria,horario,gen,beca,ciclo));
                 }
                 rset.close();
