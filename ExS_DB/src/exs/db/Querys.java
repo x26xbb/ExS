@@ -44,7 +44,7 @@ public class Querys {
         + "GRUPO.ANIO,GRUPO.CICLO,GRUPO.HORARIO,GRUPO.ESTADO,MATRICULA.EID,ESTUDIANTE.NOM,"
         + "ESTUDIANTE.PAPE,ESTUDIANTE.SAPE,GRUPO.LUGAR"
         + " FROM TUTORIA,MATRICULA,GRUPO,ESTUDIANTE "
-        + "WHERE MATRICULA.EID='%D'AND GRUPO.NUM=MATRICULA.GNUM "
+        + "WHERE MATRICULA.EID='%s'AND GRUPO.NUM=MATRICULA.GNUM "
         + "AND ESTUDIANTE.ID=MATRICULA.EID AND TUTORIA.COD=GRUPO.TCOD";  
     public static String GET_CANT_GRUPO = "SELECT COUNT(*) FROM GRUPO WHERE TCOD = '%s' ";
     public static String GET_GRUPOS = "SELECT * FROM GRUPO WHERE TCOD = '%s' ";
@@ -53,6 +53,7 @@ public class Querys {
     public static String UPDATE_GRUPO = "UPDATE GRUPO SET TID = '%s',   TCOD= '%s', LUGAR = '%s', ANIO= '%d', CICLO= '%d', HORARIO= '%s', ESTADO= '%s'  WHERE NUM = '%s'";
     public static String INSERT_GRUPO = "INSERT INTO GRUPO  (NUM , TID, TCOD, LUGAR ,ANIO, CICLO, HORARIO, ESTADO) VALUES ('%s' , '%s', '%s','%s', '%d', '%d', '%s', '%s')";
     public static String GET_GRUPO= "SELECT * FROM GRUPO WHERE NUM= '%s' ";
+    public static String DEL_MATRICULAS_GRUPO= "DELETE from MATRICULA WHERE GNUM= '%s' ";
     //
     //Estudiantes 
     public static String GET_EST ="select * from ESTUDIANTE order by NOM";

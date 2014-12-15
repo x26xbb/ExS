@@ -252,6 +252,7 @@ public abstract class ConnBase {
     }
 
     public boolean det_grupo(Grupo g) {
+        execute_update(String.format(Querys.DEL_MATRICULAS_GRUPO, g.getNum()));// BORRAR DE MATRICULAS
         return execute_update(String.format(Querys.DEL_GRUPO, g.getNum()));
     }
 
@@ -411,7 +412,7 @@ public abstract class ConnBase {
         if (conn != null) {
             try {
                 stmt = conn.createStatement();
-                if(tipo==1){
+                if(tipo==1){ String a=String.format(Querys.GET_HISTORICO, id);
                  rset = stmt.executeQuery(String.format(Querys.GET_HISTORICO, id));
                 }
                 if(tipo==2){
@@ -766,63 +767,63 @@ public abstract class ConnBase {
 
 
     public ArrayList<Estudiante> getEstudiantesFiltradosCicloCarreraAnio(int anio, String ciclo, int carrera) {
-        String query="Select id,estudiante.nom,pape,sape,tel,cel,email," +
-        "cid,tutoria.nom,horario,sede,genero,beca,ciclo "
-                + "from estudiante,matricula,grupo,tutoria "
-                    + " where matricula.eid=estudiante.id and "
-                    + " estudiante.cid="+carrera+" and "
-                    + " matricula.gnum=grupo.num and"
-                    + " grupo.ciclo="+getCiclo(ciclo)+" and "
-                    + " grupo.anio="+anio
+        String query="Select id,ESTUDIANTE.nom,pape,sape,tel,cel,email," +
+        "cid,TUTORIA.nom,horario,sede,genero,beca,ciclo "
+                + "from ESTUDIANTE,MATRICULA,GRUPO,TUTORIA "
+                    + " where MATRICULA.eid=ESTUDIANTE.id and "
+                    + " ESTUDIANTE.cid="+carrera+" and "
+                    + " MATRICULA.gnum=GRUPO.num and"
+                    + " GRUPO.ciclo="+getCiclo(ciclo)+" and "
+                    + " GRUPO.anio="+anio
                     +" and tcod=cod "
-                    + " order by estudiante.cid,estudiante.nom";     
+                    + " order by ESTUDIANTE.cid,ESTUDIANTE.nom";     
         return getEstudiantesFiltradosPor(query);     
                 
     }
     
     public ArrayList<Estudiante> getEstudiantesFiltradosAnioCiclo(int anio, String ciclo) {
-     String query="Select id,estudiante.nom,pape,sape,tel,cel,email," +
-        "cid,tutoria.nom,horario,sede,genero,beca,ciclo" +
-        " from estudiante,grupo,matricula,tutoria "
-                    + " where matricula.eid=estudiante.id and "
-                    + " matricula.gnum=grupo.num and"
-                    + " grupo.ciclo="+getCiclo(ciclo)+" and "
-                    + " grupo.anio="+anio
+     String query="Select id,ESTUDIANTE.nom,pape,sape,tel,cel,email," +
+        "cid,TUTORIA.nom,horario,sede,genero,beca,ciclo" +
+        " from ESTUDIANTE,GRUPO,MATRICULA,TUTORIA "
+                    + " where MATRICULA.eid=ESTUDIANTE.id and "
+                    + " MATRICULA.gnum=GRUPO.num and"
+                    + " GRUPO.ciclo="+getCiclo(ciclo)+" and "
+                    + " GRUPO.anio="+anio
                     +" and tcod=cod "
-                + " order by estudiante.cid,estudiante.nom";  
+                + " order by ESTUDIANTE.cid,ESTUDIANTE.nom";  
         return getEstudiantesFiltradosPor(query);         
     }
     
     
     public ArrayList<Estudiante> getEstudiantesFiltradosCarrera(int carrera) {
-        String query="Select id,estudiante.nom,pape,sape,tel,cel,email," +
-        "cid,tutoria.nom,horario,sede,genero,beca,ciclo" +
-        " from estudiante,grupo,matricula,tutoria where id=eid and gnum=num"
+        String query="Select id,ESTUDIANTE.nom,pape,sape,tel,cel,email," +
+        "cid,TUTORIA.nom,horario,sede,genero,beca,ciclo" +
+        " from ESTUDIANTE,GRUPO,MATRICULA,TUTORIA where id=eid and gnum=num"
          + " and tcod=cod and cid="+carrera
-                + " order by estudiante.nom";  
+                + " order by ESTUDIANTE.nom";  
         return getEstudiantesFiltradosPor(query); 
     }
 
     public ArrayList<Estudiante> getEstudiantesFiltradosAnio(String anio) {
-     String query="select id,estudiante.nom,pape,sape,tel,cel,email," +
-        "cid,tutoria.nom,horario,sede,genero,beca,ciclo" +
-        " from estudiante,grupo,matricula,tutoria"
+     String query="select id,ESTUDIANTE.nom,pape,sape,tel,cel,email," +
+        "cid,TUTORIA.nom,horario,sede,genero,beca,ciclo" +
+        " from ESTUDIANTE,GRUPO,MATRICULA,TUTORIA"
                 + " where id=eid and gnum=num " +
             " and tcod=cod"
                   + " and year(fecha)="+anio
                   + " and id=eid"
-                 + " order by estudiante.cid,estudiante.nom";  
+                 + " order by ESTUDIANTE.cid,ESTUDIANTE.nom";  
         return getEstudiantesFiltradosPor(query);        
     }
 
     public ArrayList<Estudiante> getEstudiantesFiltradosPorCarreraYanio(String anio, int carreras) {
-         String query="select distinct id,estudiante.nom,pape,sape,tel,"
-            + "cel,email,cid,tutoria.nom,horario,sede,genero,beca,ciclo " +
-            " from estudiante,grupo,matricula,tutoria "
+         String query="select distinct id,ESTUDIANTE.nom,pape,sape,tel,"
+            + "cel,email,cid,TUTORIA.nom,horario,sede,genero,beca,ciclo " +
+            " from ESTUDIANTE,GRUPO,MATRICULA,TUTORIA "
             + "where id=eid and gnum=num " +
             " and tcod=cod and "
            + "year(fecha)="+anio+" and cid="+carreras
-                + " order by estudiante.nom";  
+                + " order by ESTUDIANTE.nom";  
         return getEstudiantesFiltradosPor(query);
     }
     
@@ -876,28 +877,28 @@ public abstract class ConnBase {
     }
 
     public ArrayList<Estudiante> getEstudiantesFiltradosPorCiclo(String ciclo) {
-        String query="select id,estudiante.nom,pape,sape,tel,cel,email," +
-        "cid,tutoria.nom,horario,sede,genero,beca,ciclo "
-          + "from estudiante,matricula,grupo,tutoria where ciclo="+getCiclo(ciclo)
+        String query="select id,ESTUDIANTE.nom,pape,sape,tel,cel,email," +
+        "cid,TUTORIA.nom,horario,sede,genero,beca,ciclo "
+          + "from ESTUDIANTE,MATRICULA,GRUPO,TUTORIA where ciclo="+getCiclo(ciclo)
          + " and id=eid and gnum=grupo.num and cod=tcod order by cid,nom";
         return getEstudiantesFiltradosPor(query);
     }
 
     public ArrayList<Estudiante> getEstudiantesFiltradosPorCicloCarrera(String ciclo, int carreras) {
-        String query="select id,estudiante.nom,pape,sape,tel,cel,email," +
-        "cid,tutoria.nom,horario,sede,genero,beca,ciclo "
-          + " from estudiante,matricula,grupo,tutoria where ciclo="+getCiclo(ciclo)+
+        String query="select id,ESTUDIANTE.nom,pape,sape,tel,cel,email," +
+        "cid,TUTORIA.nom,horario,sede,genero,beca,ciclo "
+          + " from ESTUDIANTE,MATRICULA,GRUPO,TUTORIA where ciclo="+getCiclo(ciclo)+
         " and cid="+carreras+
         " and eid=id and gnum=grupo.num and cod=tcod order by nom";
         return getEstudiantesFiltradosPor(query);    
     }
 
     public ArrayList<Estudiante> getEstudiantesFiltradosPorCicloAnio(String ciclo, String anio) {
-        String query="select id,estudiante.nom,pape,sape,tel,cel,email," +
-        "cid,tutoria.nom,horario,sede,genero,beca,ciclo "
-          + "from estudiante,matricula,grupo,tutoria where ciclo="+getCiclo(ciclo)
+        String query="select id,ESTUDIANTE.nom,pape,sape,tel,cel,email," +
+        "cid,TUTORIA.nom,horario,sede,genero,beca,ciclo "
+          + "from ESTUDIANTE,MATRICULA,GRUPO,TUTORIA where ciclo="+getCiclo(ciclo)
                 + " and tcod=cod and eid=id and num=gnum and year(fecha)="+anio
-        + " order by estudiante.cid,estudiante.nom";  
+        + " order by ESTUDIANTE.cid,ESTUDIANTE.nom";  
         return getEstudiantesFiltradosPor(query);     }
 
     private String getCicloRomano(int aInt) {
@@ -915,7 +916,7 @@ public abstract class ConnBase {
         if (conn != null) {
             try {
                 stmt = conn.createStatement();
-                String sql = "Select cel from estudiante where id="+estudiante;
+                String sql = "Select cel from ESTUDIANTE where id="+estudiante;
                 Log.SendLog(sql);
                 rset = stmt.executeQuery(sql);                
                 while (rset.next()) {                    
@@ -938,7 +939,7 @@ public abstract class ConnBase {
                 String tutoria=getCodTutoria(g.getGrupo());
                 connect(); 
                 stmt = conn.createStatement();
-                String sql = "Select * from retiraron where eid='"+g.getEstudiante()+
+                String sql = "Select * from RETIRARON where eid='"+g.getEstudiante()+
                         "' and TUTORIACOD='"+tutoria+"'";
                 Log.SendLog(sql);
                 rset = stmt.executeQuery(sql);                 
@@ -965,7 +966,7 @@ public abstract class ConnBase {
         if (conn != null) {
             try {
                 stmt = conn.createStatement();
-                String sql = "Select tcod from grupo where num='"+grupo+"'";
+                String sql = "Select tcod from GRUPO where num='"+grupo+"'";
                 Log.SendLog(sql);
                 rset = stmt.executeQuery(sql);                
                 while (rset.next()) {                    
@@ -982,7 +983,7 @@ public abstract class ConnBase {
     }
 
     private void addTORetiradosTable(Matricula g, String tutoria, String motivo) {
-        String sql = "Insert into Retiraron values"
+        String sql = "Insert into RETIRARON values"
                         + "('" + g.getEstudiante() + "','" + g.getFecha() + "',sysdate(),'"
                         + tutoria + "','" + motivo+"'"
                         + ")";
@@ -994,12 +995,12 @@ public abstract class ConnBase {
             try {
                 connect(); 
                 stmt = conn.createStatement();
-                String sql = "Select * from retiraron where eid='"+id+
+                String sql = "Select * from RETIRARON where eid='"+id+
                         "' and TUTORIACOD='"+tcod+"'";
                 Log.SendLog(sql);
                 rset = stmt.executeQuery(sql);                 
                 while (rset.next()) {
-                    sql="Delete from retiraron where eid='"+id+
+                    sql="Delete from RETIRARON where eid='"+id+
                              "' and TUTORIACOD='"+tcod+"'";
                     execute_update(sql);    
                 }
@@ -1021,7 +1022,7 @@ public abstract class ConnBase {
                 stmt = conn.createStatement();
                 rset = stmt.executeQuery(
                         "select eid,nom,pape,sape,fechamatricula,fecharetiro,"
-                         + "tutoriacod,motivo,cel from retiraron , estudiante "
+                         + "tutoriacod,motivo,cel from RETIRARON , ESTUDIANTE "
                          + "where eid=id");
                 while (rset.next()) {
                     String eid;
